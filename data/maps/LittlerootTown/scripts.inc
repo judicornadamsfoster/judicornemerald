@@ -1109,6 +1109,7 @@ CheatStart2::
 	additem ITEM_TM29
 	additem ITEM_TM30
 	additem ITEM_TM31
+	additem ITEM_TM32
 	additem ITEM_TM35
 	additem ITEM_TM36
 	additem ITEM_HM01

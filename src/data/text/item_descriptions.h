@@ -1273,9 +1273,9 @@ static const u8 sTM31Desc[] = _(
     "and causes damage.");
 
 static const u8 sTM32Desc[] = _(
-    "Creates illusory\n"
-    "copies to enhance\n"
-    "elusiveness.");
+    "An attack that\n"
+	"leaves the foe\n"
+    "with at least 1 HP.");
 
 static const u8 sTM33Desc[] = _(
     "Creates a wall of\n"
