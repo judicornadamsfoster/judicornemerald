@@ -1016,13 +1016,13 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
-// cheatstart
-CheatStart::
+// cheatstart2
+CheatStart2::
 	lockall
 	//
 	faceplayer
 	checkflag FLAG_LANDMARK_POKEMON_LEAGUE
-	vgoto_if 1, CheatStart_EventScript_Already
+	vgoto_if 1, CheatStart2_EventScript_Already
 	//
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RESCUED_BIRCH
@@ -1087,9 +1087,19 @@ CheatStart::
 	setflag FLAG_RECEIVED_HM_DIVE
 	setflag FLAG_RECEIVED_HM_CUT
 	setflag FLAG_RECEIVED_HM_WATERFALL
+	setflag FLAG_RECEIVED_HM_STRENGTH
+	setflag FLAG_RECEIVED_HM_ROCK_SMASH
+	setflag FLAG_RECEIVED_HM_FLASH
+	setflag FLAG_RECEIVED_HM_FLY
+	setflag FLAG_RECEIVED_HM_SURF
+	setflag FLAG_RECEIVED_HM_DIVE
+	setflag FLAG_RECEIVED_HM_CUT
+	setflag FLAG_RECEIVED_HM_WATERFALL
+	setflag FLAG_HIDE_ROUTE_101_ZIGZAGOON
 	givemon SPECIES_RAYQUAZA, 70, ITEM_NONE
 	givemon SPECIES_GROUDON, 45, ITEM_NONE
 	givemon SPECIES_KYOGRE, 45, ITEM_NONE
+	additem ITEM_TM01
 	additem ITEM_TM02
 	additem ITEM_TM13
 	additem ITEM_TM21
@@ -1109,28 +1119,20 @@ CheatStart::
 	additem ITEM_HM06
 	additem ITEM_HM07
 	additem ITEM_HM08
-	additem ITEM_NUGGET
-	setflag FLAG_RECEIVED_HM_STRENGTH
-	setflag FLAG_RECEIVED_HM_ROCK_SMASH
-	setflag FLAG_RECEIVED_HM_FLASH
-	setflag FLAG_RECEIVED_HM_FLY
-	setflag FLAG_RECEIVED_HM_SURF
-	setflag FLAG_RECEIVED_HM_DIVE
-	setflag FLAG_RECEIVED_HM_CUT
-	setflag FLAG_RECEIVED_HM_WATERFALL
-	setflag FLAG_HIDE_ROUTE_101_ZIGZAGOON
-	msgbox CheatStart_Text_Activated, MSGBOX_NPC
+	additem ITEM_MASTER_BALL, 990
+	addmoney 999999
+	msgbox CheatStart2_Text_Activated, MSGBOX_NPC
 	releaseall
 	end
 
-CheatStart_EventScript_Already::
-	msgbox CheatStart_Text_Already, MSGBOX_NPC
+CheatStart2_EventScript_Already::
+	msgbox CheatStart2_Text_Already, MSGBOX_NPC
 	end
 
-CheatStart_Text_Activated:
+CheatStart2_Text_Activated:
 	.string "CheatStart 2.0 Activated!$"
 
-CheatStart_Text_Already:
+CheatStart2_Text_Already:
 	.string "CheatStart 2.0 Already Active!$"
 
 Bike_EventScript_SwitchBikes::
