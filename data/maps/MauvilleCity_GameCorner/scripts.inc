@@ -8,6 +8,7 @@ MauvilleCity_GameCorner_MapScripts::
 	.set TM_THUNDERBOLT_COINS, 4000
 	.set TM_ICE_BEAM_COINS, 4000
 	.set DOLL_COINS, 1000
+	.set MON_COINS, 6500
 
 	.set COINS_PRICE_50,  1000
 	.set COINS_PRICE_500, 10000
@@ -783,3 +784,209 @@ MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase:
 	.string "You can't play if you don't have\n"
 	.string "a COIN CASE.$"
 
+//pokemon seller
+EventScript_PrizeCornerMon::
+	lock
+	faceplayer
+	msgbox Text_ExchangeCoinsForMon, MSGBOX_DEFAULT
+	checkitem ITEM_COIN_CASE
+	goto_if_eq VAR_RESULT, TRUE, EventScript_ChooseMonMessage
+	end
+
+EventScript_ChooseMonMessage::
+	msgbox Text_WhichMon, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_TEMP_1, 0
+	showcoinsbox 1, 1
+	goto EventScript_ChooseMonPrize
+	end
+
+EventScript_ChooseMonPrize::
+	multichoice 12, 0, MULTI_GAME_CORNER_MON, FALSE
+	switch VAR_RESULT
+	case 0, EventScript_BuyBulbasaurMon
+	case 1, EventScript_BuyCharmanderMon
+	case 2, EventScript_BuySquirtleMon
+	case 3, EventScript_CancelMonSelect
+	goto EventScript_CancelMonSelect
+	end
+
+EventScript_BuyBulbasaurMon::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, MON_COINS, EventScript_NotEnoughCoinsForMon
+    getpartysize
+    compare VAR_RESULT, 6
+	goto_if_eq EventScript_NoRoomForMon
+	removecoins MON_COINS
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BULBASAUR
+	givemon SPECIES_BULBASAUR 5, ITEM_MIRACLE_SEED
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	hidecoinsbox 0, 0	
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_ReceiveBulbasaurParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_ReceiveBulbasaurPC
+	goto EventScript_NoRoomForMon
+	end
+
+EventScript_BuyCharmanderMon::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, MON_COINS, EventScript_NotEnoughCoinsForMon
+    getpartysize
+    compare VAR_RESULT, 6
+	goto_if_eq EventScript_NoRoomForMon
+	removecoins MON_COINS
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARMANDER
+	givemon SPECIES_CHARMANDER 5, ITEM_CHARCOAL
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	hidecoinsbox 0, 0	
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_ReceiveCharmanderParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_ReceiveCharmanderPC
+	goto EventScript_NoRoomForMon
+	end
+
+EventScript_BuySquirtleMon::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, MON_COINS, EventScript_NotEnoughCoinsForMon
+    getpartysize
+    compare VAR_RESULT, 6
+	goto_if_eq EventScript_NoRoomForMon
+	removecoins MON_COINS
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SQUIRTLE
+	givemon SPECIES_SQUIRTLE 5, ITEM_MYSTIC_WATER
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	hidecoinsbox 0, 0	
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_ReceiveSquirtleParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_ReceiveSquirtlePC
+	goto EventScript_NoRoomForMon
+	end
+
+EventScript_ReceiveBulbasaurParty::
+	call EventScript_ReceivedBulbasaurFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_FinishReceivingMon
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto EventScript_FinishReceivingMon
+	end
+
+EventScript_ReceiveCharmanderParty::
+	call EventScript_ReceivedCharmanderFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_FinishReceivingMon
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto EventScript_FinishReceivingMon
+	end
+
+EventScript_ReceiveSquirtleParty::
+	call EventScript_ReceivedSquirtleFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_FinishReceivingMon
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto EventScript_FinishReceivingMon
+	end
+
+EventScript_ReceiveBulbasaurPC::
+	call EventScript_ReceivedBulbasaurFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_TransferMonToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto EventScript_TransferMonToPC
+	end
+
+EventScript_ReceiveCharmanderPC::
+	call EventScript_ReceivedCharmanderFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_TransferMonToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto EventScript_TransferMonToPC
+	end
+
+EventScript_ReceiveSquirtlePC::
+	call EventScript_ReceivedSquirtleFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_TransferMonToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto EventScript_TransferMonToPC
+	end
+
+EventScript_ReceivedBulbasaurFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_BULBASAUR
+	playfanfare MUS_OBTAIN_ITEM
+	message Text_ReceivedMon
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_BULBASAUR
+	return
+
+EventScript_ReceivedCharmanderFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_CHARMANDER
+	playfanfare MUS_OBTAIN_ITEM
+	message Text_ReceivedMon
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CHARMANDER
+	return
+
+EventScript_ReceivedSquirtleFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SQUIRTLE
+	playfanfare MUS_OBTAIN_ITEM
+	message Text_ReceivedMon
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
+	return
+
+EventScript_TransferMonToPC::
+	call Common_EventScript_TransferredToPC
+	goto EventScript_FinishReceivingMon
+	end
+
+EventScript_FinishReceivingMon::
+	msgbox Text_ComeBackSoon, MSGBOX_DEFAULT
+	release
+	end
+	
+EventScript_NotEnoughCoinsForMon::
+	msgbox Text_NotEnoughCoinsForMon, MSGBOX_DEFAULT
+	hidecoinsbox 0, 0	
+	end
+
+EventScript_NoRoomForMon::
+	msgbox Text_NoRoomForMon, MSGBOX_DEFAULT
+	hidecoinsbox 0, 0	
+	end
+
+EventScript_CancelMonSelect::
+	msgbox Text_CancelMonSelect, MSGBOX_DEFAULT
+	hidecoinsbox 0, 0
+	release
+	end
+
+Text_CancelMonSelect:
+	.string "You don't want one?\p"
+	.string "No problemo.$"
+
+Text_ExchangeCoinsForMon:
+	.string "You can exchange your COINS for\n"
+	.string "POKéMON here.$"
+
+Text_WhichMon:
+	.string "Which one would you like?$"
+
+Text_NotEnoughCoinsForMon:
+	.string "You don't have enough coins.\p"
+	.string "Go win some!$"
+
+Text_NoRoomForMon:
+	.string "You don't have space left.\n"
+	.string "Make some room and come see me again!$"
+
+Text_ReceivedMon:
+	.string "{PLAYER} received {STR_VAR_2}.$"
+
+Text_ComeBackSoon:
+	.string "Come back again soon!$"

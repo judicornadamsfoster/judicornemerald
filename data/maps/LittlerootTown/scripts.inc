@@ -1120,8 +1120,10 @@ CheatStart2::
 	additem ITEM_HM06
 	additem ITEM_HM07
 	additem ITEM_HM08
+	additem ITEM_COIN_CASE
 	additem ITEM_MASTER_BALL, 990
 	addmoney 999999
+	addcoins 9999
 	msgbox CheatStart2_Text_Activated, MSGBOX_NPC
 	releaseall
 	end

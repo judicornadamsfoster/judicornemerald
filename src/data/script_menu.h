@@ -569,10 +569,11 @@ static const struct MenuAction MultichoiceList_FrontierGamblerBet[] =
     {gText_Exit},
 };
 
-static const struct MenuAction MultichoiceList_UnusedSSTidal1[] =
+static const struct MenuAction MultichoiceList_Game_Corner_Mon[] =
 {
-    {gText_SouthernIsland},
-    {gText_BirthIsland},
+    {gText_BulbasaurMonAndPrice},
+    {gText_CharmanderMonAndPrice},
+    {gText_SquirtleMonAndPrice},
     {gText_Exit},
 };
 
@@ -872,8 +873,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_LINK_CONTEST_MODE]          = MULTICHOICE(MultichoiceList_LinkContestMode),
     [MULTI_FORCED_START_MENU]          = MULTICHOICE(MultichoiceList_ForcedStartMenu),
     [MULTI_FRONTIER_GAMBLER_BET]       = MULTICHOICE(MultichoiceList_FrontierGamblerBet),
-    [MULTI_TENT]                       = MULTICHOICE(MultichoiceList_Tent),
-    [MULTI_UNUSED_SSTIDAL_1]           = MULTICHOICE(MultichoiceList_UnusedSSTidal1),
+	[MULTI_TENT]                       = MULTICHOICE(MultichoiceList_Tent),
+    [MULTI_GAME_CORNER_MON]            = MULTICHOICE(MultichoiceList_Game_Corner_Mon),
     [MULTI_UNUSED_SSTIDAL_2]           = MULTICHOICE(MultichoiceList_UnusedSSTidal2),
     [MULTI_UNUSED_SSTIDAL_3]           = MULTICHOICE(MultichoiceList_UnusedSSTidal3),
     [MULTI_UNUSED_SSTIDAL_4]           = MULTICHOICE(MultichoiceList_UnusedSSTidal4),

@@ -986,6 +986,8 @@ extern const u8 gText_ThrowInPremierBall[];
 extern const u8 gText_ShopBuy[];
 extern const u8 gText_ShopSell[];
 extern const u8 gText_ShopQuit[];
+extern const u8 gText_SoldOut[];
+extern const u8 gText_SoldOut2[];
 
 extern const u8 gText_OhABite[];
 extern const u8 gText_PokemonOnHook[];
@@ -1159,6 +1161,9 @@ extern const u8 gText_GlassDesk[];
 extern const u8 gText_TreeckoDollAndPrice[];
 extern const u8 gText_TorchicDollAndPrice[];
 extern const u8 gText_MudkipDollAndPrice[];
+extern const u8 gText_BulbasaurMonAndPrice[];
+extern const u8 gText_CharmanderMonAndPrice[];
+extern const u8 gText_SquirtleMonAndPrice[];
 extern const u8 gText_TM32AndPrice[];
 extern const u8 gText_TM29AndPrice[];
 extern const u8 gText_TM35AndPrice[];
