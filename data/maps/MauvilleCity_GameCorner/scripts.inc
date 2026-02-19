@@ -8,7 +8,7 @@ MauvilleCity_GameCorner_MapScripts::
 	.set TM_THUNDERBOLT_COINS, 4000
 	.set TM_ICE_BEAM_COINS, 4000
 	.set DOLL_COINS, 1000
-	.set MON_COINS, 6500
+	.set MON_COINS, 9500
 
 	.set COINS_PRICE_50,  1000
 	.set COINS_PRICE_500, 10000
