@@ -1129,6 +1129,8 @@ CheatStart2::
 	end
 
 CheatStart2_EventScript_Already::
+	addmoney 999999
+	addcoins 9999
 	msgbox CheatStart2_Text_Already, MSGBOX_NPC
 	end
 
@@ -1136,7 +1138,8 @@ CheatStart2_Text_Activated:
 	.string "CheatStart 2.0 Activated!$"
 
 CheatStart2_Text_Already:
-	.string "CheatStart 2.0 Already Active!$"
+	.string "CheatStart 2.0 Already Active!\n"
+	.string "Resetting money and coins!$"
 
 Bike_EventScript_SwitchBikes::
 	checkitem ITEM_ACRO_BIKE
@@ -1185,3 +1188,4 @@ ForceMirageIsland_Text_FlagActivated:
 	
 ForceMirageIsland_Text_FlagDeactivated: 
 	.string "Mirage Island deactivated.$"
+
