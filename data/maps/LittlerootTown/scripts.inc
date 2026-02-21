@@ -1189,3 +1189,23 @@ ForceMirageIsland_Text_FlagActivated:
 ForceMirageIsland_Text_FlagDeactivated: 
 	.string "Mirage Island deactivated.$"
 
+
+//
+ForceShiny::
+	checkflag FLAG_FORCE_SHINY
+	vgoto_if 1, ForceShiny_ActivatedFlag
+	setflag FLAG_FORCE_SHINY
+	msgbox ForceShiny_Text_FlagActivated, MSGBOX_NPC
+	end
+
+ForceShiny_ActivatedFlag::
+	clearflag FLAG_FORCE_SHINY
+	msgbox ForceShiny_Text_FlagDeactivated, MSGBOX_NPC
+	end
+
+ForceShiny_Text_FlagActivated: 
+	.string "Force Shiny activated.$"
+	
+ForceShiny_Text_FlagDeactivated: 
+	.string "Force Shiny deactivated.$"
+
