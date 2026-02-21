@@ -92,6 +92,15 @@
 
 // Shiny odds
 #define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
+/*	8   = 1 in 8192 (default)
+	16  = 1 in 4096
+	32  = 1 in 2048
+	64  = 1 in 1024
+	128 = 1 in 512
+	256 = 1 in 256
+	512 = 1 in 128
+*/
+	
 
 // Ribbon IDs used by TV and Pokénav
 #define CHAMPION_RIBBON       0
