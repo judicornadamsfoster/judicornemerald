@@ -4,6 +4,8 @@
 #include "battle_tower.h"
 #include "cable_club.h"
 #include "data.h"
+#include "daycare.h"
+
 #include "decoration.h"
 #include "diploma.h"
 #include "event_data.h"
@@ -64,6 +66,8 @@
 #include "constants/battle_frontier.h"
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
+#include "constants/species.h"
+#include "constants/region_map_sections.h"
 #include "palette.h"
 #include "item.h"
 #include "item_menu.h"
@@ -4284,4 +4288,31 @@ void ChooseItemFromBag(void)
     default:
         break;
     }
+}
+
+//oddegg script
+//check if the shiny code is correct
+//may need to create another CreateMon struct
+
+void GiveOddEgg(void)
+{
+    static const u16 oddEggSpeciesList[] = {
+        SPECIES_PICHU,
+        SPECIES_CLEFFA,
+        SPECIES_IGGLYBUFF,
+        SPECIES_TYROGUE,
+        SPECIES_SMOOCHUM,
+        SPECIES_ELEKID,
+        SPECIES_MAGBY
+    };
+
+    struct Pokemon mon;
+    u32 eggCycles;
+    u16 species = oddEggSpeciesList[Random() % ARRAY_COUNT(oddEggSpeciesList)];
+
+    CreateEgg(&mon, species, MAPSEC_FALLARBOR_TOWN);
+    GiveMoveToMon(&mon, MOVE_DIZZY_PUNCH);
+
+    // Return value ignored (should only ever go to party)
+    GiveMonToPlayer(&mon);
 }
