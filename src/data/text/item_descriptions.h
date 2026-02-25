@@ -1409,10 +1409,17 @@ static const u8 sHM08Desc[] = _(
     "attacks next turn.");
 
 // FireRed/LeafGreen key items
+/*
 static const u8 sOaksParcelDesc[] = _(
     "A parcel for PROF.\n"
     "OAK from a POKéMON\n"
     "MART's clerk.");
+*/
+
+static const u8 sEggTicketDesc[] = _(
+    "A ticket for an\n"
+    "ODD EGG from\n"
+    "FALLARBOR MART.");
 
 static const u8 sPokeFluteDesc[] = _(
     "A sweet-sounding\n"

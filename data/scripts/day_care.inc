@@ -1,4 +1,15 @@
 Route117_EventScript_DaycareMan::
+	goto_if_unset FLAG_RECEIVED_EGG_TICKET, Route117_EventScript_DaycareMan_EggTicket
+	goto_if_set FLAG_RECEIVED_EGG_TICKET, Route117_EventScript_DaycareManStart
+
+Route117_EventScript_DaycareMan_EggTicket::
+	lock
+	faceplayer
+	msgbox Text_DaycareMan_EggTicket
+	release
+	end
+	
+Route117_EventScript_DaycareManStart::
 	lock
 	faceplayer
 	special GetDaycareMonNicknames
@@ -71,6 +82,19 @@ Route117_EventScript_CheckOnTwoMons::
 	end
 
 Route117_PokemonDayCare_EventScript_DaycareWoman::
+	goto_if_unset FLAG_RECEIVED_EGG_TICKET, Route117_PokemonDayCare_EventScript_DaycareWoman_EggTicket
+	goto_if_set FLAG_RECEIVED_EGG_TICKET, Route117_PokemonDayCare_EventScript_DaycareWoman_Start
+
+Route117_PokemonDayCare_EventScript_DaycareWoman_EggTicket::
+	lock
+	faceplayer
+	msgbox Text_DaycareWoman_EggTicket
+	giveitem ITEM_EGG_TICKET
+	setflag FLAG_RECEIVED_EGG_TICKET
+	release
+	end
+
+Route117_PokemonDayCare_EventScript_DaycareWoman_Start::
 	lock
 	faceplayer
 	specialvar VAR_RESULT, GetDaycareState
@@ -412,3 +436,25 @@ Route117_PokemonDayCare_Text_YoullBeLeftWithJustOne:
 	.string "me, you'll be left with just one.\p"
 	.string "You will be better off if you catch\n"
 	.string "some more, I dare say.$"
+
+Text_DaycareMan_EggTicket:
+	.string "I'm the DAY-CARE MAN.\p"
+	.string "There's a promotion running in\n"
+	.string "FALLARBOR POKéMART called\l"
+	.string "the 'ODD EGG GIVEAWAY'.\p"
+	.string "I was given an EGG TICKET that can\n"
+	.string "be traded in for an ODD EGG.\p"
+	.string "But as we run a DAY-CARE, we don't\n"
+	.string "need any more EGGS.$"
+
+
+Text_DaycareWoman_EggTicket:
+	.string "I'm the DAY-CARE LADY.\p"
+	.string "Have you been to FALLARBOR's\n"
+	.string "POKéMART?\p"
+	.string "My husband went there recently\n"
+	.string "and got this promotional item.\p"
+	.string "We don't need it, since we have\n"
+	.string "enough to take care of already…\p"
+	.string "Oh, you look like a caring person,\n"
+	.string "perhaps you can trade it in.$"

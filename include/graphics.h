@@ -3795,8 +3795,10 @@ extern const u32 gItemIconPalette_RockTMHM[];
 extern const u32 gItemIconPalette_FlyingTMHM[];
 extern const u32 gItemIcon_HM[];
 // FireRed/LeafGreen key items
-extern const u32 gItemIcon_OaksParcel[];
-extern const u32 gItemIconPalette_OaksParcel[];
+//extern const u32 gItemIcon_OaksParcel[];
+//extern const u32 gItemIconPalette_OaksParcel[];
+extern const u32 gItemIcon_EggTicket[];
+extern const u32 gItemIconPalette_EggTicket[];
 extern const u32 gItemIcon_PokeFlute[];
 extern const u32 gItemIconPalette_PokeFlute[];
 extern const u32 gItemIcon_SecretKey[];

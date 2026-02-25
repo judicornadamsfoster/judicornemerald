@@ -4232,7 +4232,7 @@ const struct Item gItems[] =
     },
 
 // FireRed/LeafGreen key items
-
+/*
     [ITEM_OAKS_PARCEL] =
     {
         .name = _("OAK'S PARCEL"),
@@ -4244,7 +4244,20 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+*/
 
+    [ITEM_EGG_TICKET] =
+    {
+        .name = _("EGG TICKET"),
+        .itemId = ITEM_EGG_TICKET,
+        .price = 0,
+        .description = sEggTicketDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+	
     [ITEM_POKE_FLUTE] =
     {
         .name = _("POKé FLUTE"),
