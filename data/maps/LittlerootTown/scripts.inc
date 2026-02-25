@@ -1209,3 +1209,21 @@ ForceShiny_Text_FlagActivated:
 ForceShiny_Text_FlagDeactivated: 
 	.string "Force Shiny deactivated.$"
 
+
+ForceHatchEgg::
+	msgbox Text_ForceHatchEgg, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, FALSE, ForceHatchEgg_No
+	special ChoosePartyMon
+	waitstate
+	special EggHatch
+	waitstate
+	end
+
+ForceHatchEgg_No::
+	release
+	end
+
+Text_ForceHatchEgg:
+	.string "ONLY SELECT YES IF YOU\n"
+	.string "HAVE AN EGG IN THE PARTY!$"
+
