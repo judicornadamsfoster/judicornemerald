@@ -1130,6 +1130,8 @@ CheatStart2::
 	end
 
 CheatStart2_EventScript_Already::
+	removeitem ITEM_SUPER_ROD
+	additem ITEM_SUPER_ROD
 	addmoney 999999
 	addcoins 9999
 
