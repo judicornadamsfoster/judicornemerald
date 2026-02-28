@@ -1122,6 +1122,7 @@ CheatStart2::
 	additem ITEM_HM08
 	additem ITEM_COIN_CASE
 	additem ITEM_MASTER_BALL, 990
+	additem ITEM_SUPER_ROD
 	addmoney 999999
 	addcoins 9999
 	msgbox CheatStart2_Text_Activated, MSGBOX_NPC
@@ -1131,6 +1132,7 @@ CheatStart2::
 CheatStart2_EventScript_Already::
 	addmoney 999999
 	addcoins 9999
+
 	msgbox CheatStart2_Text_Already, MSGBOX_NPC
 	end
 
