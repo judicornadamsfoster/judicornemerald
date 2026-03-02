@@ -87,7 +87,7 @@
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
+#define FLAG_BILL_EEVEE      0x4C // Unused Flag -tenaya
 #define FLAG_FORCE_FEEBAS    0x4D // Unused Flag -tenaya
 #define FLAG_RECEIVED_EGG_TICKET    0x4E // Unused Flag
 #define FLAG_GOT_ODD_EGG     0x4F // Unused Flag -tenaya

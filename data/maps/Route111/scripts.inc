@@ -719,3 +719,226 @@ Route111_Text_TrainerHillSign:
 	.string "“Scale the heights, you hot-blooded\n"
 	.string "TRAINERS!”$"
 
+
+
+EventScript_BillTrigger0::
+	lockall
+	setvar VAR_0x8008, 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_ROUTE111_BILL, Movement_BillApproach0
+	waitmovement 0
+	goto EventScript_BillTrigger
+	end
+
+EventScript_BillTrigger1::
+	lockall
+	setvar VAR_0x8008, 1
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_ROUTE111_BILL, Movement_BillApproach1
+	waitmovement 0
+	goto EventScript_BillTrigger
+	end
+
+EventScript_BillTrigger2::
+	lockall
+	setvar VAR_0x8008, 2
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement LOCALID_ROUTE111_BILL, Movement_BillApproach2
+	waitmovement 0
+	goto EventScript_BillTrigger
+	end
+
+
+EventScript_BillTrigger::
+	delay 30
+	msgbox Text_BillTrigger, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EEVEE
+	givemon SPECIES_EEVEE 10, ITEM_NONE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, EventScript_ReceiveEeveeParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_ReceiveEeveePC
+	goto EventScript_ExplainEevee
+	end
+
+
+EventScript_ReceiveEeveeParty::
+	call EventScript_ReceivedEeveeFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_ExplainEevee
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto EventScript_ExplainEevee
+	end
+
+EventScript_ReceiveEeveePC::
+	call EventScript_ReceivedEeveeFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_SendEeveeToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto EventScript_SendEeveeToPC
+	end
+
+EventScript_SendEeveeToPC::
+	call Common_EventScript_TransferredToPC
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	goto EventScript_ExplainEevee
+	end
+
+EventScript_ReceivedEeveeFanfare::
+	playfanfare MUS_OBTAIN_ITEM
+	message Text_PlayerReceivedEevee
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	return
+
+EventScript_ExplainEevee::
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	msgbox Text_ExplainEevee, MSGBOX_DEFAULT
+	msgbox Text_NiceToMeet, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_BILL_EEVEE
+	call_if_eq VAR_0x8008, 0, EventScript_BillExit0
+	call_if_eq VAR_0x8008, 1, EventScript_BillExit1
+	call_if_eq VAR_0x8008, 2, EventScript_BillExit2
+	setvar VAR_ROUTE111_STATE, 1
+	removeobject LOCALID_ROUTE111_BILL
+	setvar VAR_BILL_STATE, 1
+	releaseall
+	end
+
+
+EventScript_BillExit0::
+	applymovement LOCALID_PLAYER, Movement_PlayerWatchBillExitLeft
+	applymovement LOCALID_ROUTE111_BILL, Movement_BillExit0
+	waitmovement 0
+	return
+
+EventScript_BillExit1::
+	applymovement LOCALID_PLAYER, Movement_PlayerWatchBillExit
+	applymovement LOCALID_ROUTE111_BILL, Movement_BillExit1
+	waitmovement 0
+	return
+
+EventScript_BillExit2::
+	applymovement LOCALID_PLAYER, Movement_PlayerWatchBillExit
+	applymovement LOCALID_ROUTE111_BILL, Movement_BillExit2
+	waitmovement 0
+	return
+
+
+Movement_PlayerWatchBillExit:
+	delay_16
+	walk_in_place_left
+	walk_in_place_down
+	step_end
+
+Movement_PlayerWatchBillExitLeft:
+	delay_16
+	walk_in_place_right
+	walk_in_place_down
+	step_end
+	
+Movement_BillApproach0:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_down
+	step_end
+
+Movement_BillApproach1:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+	
+Movement_BillApproach2:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_down
+	step_end
+
+
+Movement_BillExit0:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Movement_BillExit1:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Movement_BillExit2:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+
+
+
+Text_BillTrigger:
+	.string "Hi {PLAYER}!\p"
+	.string "I've heard about you from PROF. BIRCH.\p"
+	.string "… {PAUSE 60}Who am I?{PAUSE 60}{PAUSE 60}\p"
+	.string "My name's BILL, I invented the POKéMON\n"
+	.string "STORAGE SYSTEM in KANTO.\p"
+	.string "I've travelled here to meet a friend,\n"
+	.string "she lives in FALLARBOR TOWN…\p"
+	.string "I wanted to meet you to ask you a favor.\p"
+	.string "I've brought an EEVEE with me for\n"
+	.string "company, but I feel bad about keeping\l"
+	.string "it in a POKéBALL all the time.\p"
+	.string "Do you think you could take it for a\n"
+	.string "while and play with it?$"
+
+Text_PlayerReceivedEevee:
+	.string "{PLAYER} received EEVEE.$"
+
+Text_ExplainEevee:
+	.string "BILL: EEVEE is a remarkable POKéMON.\p"
+	.string "It can evolve into many different\n"
+	.string "forms!$"
+
+Text_NiceToMeet:
+	.string "… Oh, is that the time?\n"
+	.string "I'm late for a meeting at DEVON CORP!\p"
+	.string "It was nice to meet you {PLAYER}.\p"
+	.string "It would be cool if we were to meet\n"
+	.string "again somewhere.$"
+
