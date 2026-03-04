@@ -1489,13 +1489,8 @@ static void Cmd_get_highest_type_effectiveness(void)
 
         if (gCurrentMove != MOVE_NONE)
         {
-            // TypeCalc does not assign to gMoveResultFlags, Cmd_typecalc does
-            // This makes the check for gMoveResultFlags below always fail
-#ifdef BUGFIX
+
             gMoveResultFlags = TypeCalc(gCurrentMove, sBattler_AI, gBattlerTarget);
-#else
-            TypeCalc(gCurrentMove, sBattler_AI, gBattlerTarget);
-#endif
 
             if (gBattleMoveDamage == 120) // Super effective STAB.
                 gBattleMoveDamage = AI_EFFECTIVENESS_x2;
@@ -1530,16 +1525,9 @@ static void Cmd_if_type_effectiveness(void)
     gBattleMoveDamage = AI_EFFECTIVENESS_x1;
     gCurrentMove = AI_THINKING_STRUCT->moveConsidered;
 
-    // TypeCalc does not assign to gMoveResultFlags, Cmd_typecalc does
-    // This makes the check for gMoveResultFlags below always fail
-    // This is how you get the "dual non-immunity" glitch, where AI
-    // will use ineffective moves on immune pokémon if the second type
-    // has a non-neutral, non-immune effectiveness
-#ifdef BUGFIX
+
     gMoveResultFlags = TypeCalc(gCurrentMove, sBattler_AI, gBattlerTarget);
-#else
-    TypeCalc(gCurrentMove, sBattler_AI, gBattlerTarget);
-#endif
+
 
     if (gBattleMoveDamage == 120) // Super effective STAB.
         gBattleMoveDamage = AI_EFFECTIVENESS_x2;
@@ -1648,14 +1636,8 @@ static void Cmd_if_status_not_in_party(void)
 
 static void Cmd_get_weather(void)
 {
-    // BUG: due to the lack of an assignment in the case of there not being any
-    //      weather set any previously set value could possibly be interpreted
-    //      as a result of this function.
-    //      Assigning AI_WEATHER_NONE here matches the fix implemented in future
-    //      generations.
-    #ifdef BUGFIX
+
         AI_THINKING_STRUCT->funcResult = AI_WEATHER_NONE;
-    #endif
 
     if (gBattleWeather & B_WEATHER_RAIN)
         AI_THINKING_STRUCT->funcResult = AI_WEATHER_RAIN;
@@ -1793,11 +1775,9 @@ static void Cmd_if_cant_faint(void)
 
     gBattleMoveDamage = gBattleMoveDamage * AI_THINKING_STRUCT->simulatedRNG[AI_THINKING_STRUCT->movesetIndex] / 100;
 
-#ifdef BUGFIX
-    // Moves always do at least 1 damage.
     if (gBattleMoveDamage == 0)
         gBattleMoveDamage = 1;
-#endif
+
 
     if (gBattleMons[gBattlerTarget].hp > gBattleMoveDamage)
         gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 1);
@@ -2065,14 +2045,9 @@ static void Cmd_if_holds_item(void)
     itemHi = gAIScriptPtr[2];
     itemLo = gAIScriptPtr[3];
 
-#ifdef BUGFIX
-    // This bug doesn't affect the vanilla game because this script command
-    // is only used to check ITEM_PERSIM_BERRY, whose high byte happens to
-    // be 0.
+
     if (((itemHi << 8) | itemLo) == item)
-#else
-    if ((itemLo | itemHi) == item)
-#endif
+
         gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 4);
     else
         gAIScriptPtr += 8;

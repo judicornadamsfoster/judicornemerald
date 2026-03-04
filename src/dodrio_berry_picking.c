@@ -2249,9 +2249,9 @@ static bool32 AllPlayersReadyToStart(void)
 
     numPlayers = numPlayers; // Needed to force compiler to keep loop below
 
-#ifdef BUGFIX
-    i = 1; // i isn't reset, loop below never runs. As a result, game can begin before all players ready
-#endif
+
+    i = 1; 
+
     for (; i < numPlayers; i++)
     {
         if (sGame->readyToStart[i] == FALSE)
@@ -3966,9 +3966,9 @@ static void FreeDodrioSprites(u8 numPlayers)
         struct Sprite *sprite = &gSprites[*sDodrioSpriteIds[i]];
         if (sprite)
             DestroySpriteAndFreeResources(sprite);
-#ifdef BUGFIX
-        FREE_AND_SET_NULL(sDodrioSpriteIds[i]); // Memory should be freed here but is not.
-#endif
+
+        FREE_AND_SET_NULL(sDodrioSpriteIds[i]);
+
     }
 }
 
