@@ -84,7 +84,7 @@
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_HIDE_MIRAGE_MAN 0x49 // Unused Flag -tenaya
 #define FLAG_SET_BATTLE_BGM  0x4A // Unused Flag -tenaya
 #define FLAG_DEFEATED_RED    0x4B // Unused Flag -tenaya
 #define FLAG_BILL_EEVEE      0x4C // Unused Flag -tenaya

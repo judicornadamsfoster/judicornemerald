@@ -76,9 +76,158 @@
       "trainer_sight_or_berry_tree_id": "5",
       "script": "Route130_EventScript_Santiago",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MIRAGE_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 45,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_MirageMan_Start",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BRANDON",
+      "x": 43,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Debug_Ruby",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 44,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_Debug_Sapphire",
+      "flag": "0"
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "2",
+      "script": "EventScript_MirageMan_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "2",
+      "script": "EventScript_MirageMan_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "2",
+      "script": "EventScript_MirageMan_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "2",
+      "script": "EventScript_MirageMan_Trigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "5",
+      "script": "EventScript_MirageMan_Trigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "5",
+      "script": "EventScript_MirageMan_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "5",
+      "script": "EventScript_MirageMan_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "5",
+      "script": "EventScript_MirageMan_Trigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "7",
+      "script": "EventScript_MirageMan_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "7",
+      "script": "EventScript_MirageMan_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "7",
+      "script": "EventScript_MirageMan_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ROUTE130_STATE",
+      "var_value": "7",
+      "script": "EventScript_MirageMan_Trigger11"
+    }
+  ],
   "bg_events": []
 }

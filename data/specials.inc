@@ -539,3 +539,4 @@ gSpecials::
 	def_special SetRandomLotteryNumber
 	def_special ResetLotteryCorner
 	def_special GiveOddEgg
+
