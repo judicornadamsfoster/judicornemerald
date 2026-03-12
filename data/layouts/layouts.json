@@ -4410,6 +4410,26 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_MIRAGE_ISLAND_INT1",
+      "name": "MirageIsland_Int1_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MirageIsland_Int1/border.bin",
+      "blockdata_filepath": "data/layouts/MirageIsland_Int1/map.bin"
+    },
+    {
+      "id": "LAYOUT_MIRAGE_ISLAND_INT2",
+      "name": "MirageIsland_Int2_Layout",
+      "width": 20,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/MirageIsland_Int2/border.bin",
+      "blockdata_filepath": "data/layouts/MirageIsland_Int2/map.bin"
     }
   ]
 }
