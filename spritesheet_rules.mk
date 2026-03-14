@@ -700,3 +700,9 @@ $(OBJEVENTGFXDIR)/people/bill.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokemon/entei.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokemon/suicune.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokemon/raikou.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4

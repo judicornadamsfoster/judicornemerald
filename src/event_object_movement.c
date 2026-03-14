@@ -471,6 +471,8 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_BILL                    0x1124
 #define OBJ_EVENT_PAL_TAG_ENTEI                   0x1125
+#define OBJ_EVENT_PAL_TAG_SUICUNE                 0x1126
+#define OBJ_EVENT_PAL_TAG_RAIKOU                  0x1127
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -519,7 +521,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
 	{gObjectEventPal_Bill,                  OBJ_EVENT_PAL_TAG_BILL},
-	{gObjectEventPal_Entei,                 OBJ_EVENT_PAL_TAG_ENTEI},	
+	{gObjectEventPal_Entei,                 OBJ_EVENT_PAL_TAG_ENTEI},
+	{gObjectEventPal_Suicune,               OBJ_EVENT_PAL_TAG_SUICUNE},
+	{gObjectEventPal_Raikou,                OBJ_EVENT_PAL_TAG_RAIKOU},	
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 };
 
@@ -1857,7 +1861,7 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId)
         CameraObjectReset();
 }
 
-void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u8 graphicsId)
+void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
 {
     u8 objectEventId;
 

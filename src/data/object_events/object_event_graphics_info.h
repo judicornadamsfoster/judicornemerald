@@ -1479,7 +1479,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMagnemiteDol
     .images = sPicTable_UnusedMagnemiteDoll,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
-
+/*
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedSquirtleDoll = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
@@ -1498,7 +1498,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedSquirtleDoll
     .images = sPicTable_UnusedSquirtleDoll,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
-
+*/
+/*
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedWooperDoll = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
@@ -1517,7 +1518,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedWooperDoll =
     .images = sPicTable_UnusedWooperDoll,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
-
+*/
+/*
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedPikachuDoll = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
@@ -1536,7 +1538,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedPikachuDoll 
     .images = sPicTable_UnusedPikachuDoll,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
-
+*/
+/*
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedPorygon2Doll = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
@@ -1555,6 +1558,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedPorygon2Doll
     .images = sPicTable_UnusedPorygon2Doll,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+*/
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CuttableTree = {
     .tileTag = TAG_NONE,
@@ -4688,5 +4692,43 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Entei = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_Entei,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Suicune = { 
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SUICUNE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Suicune,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raikou = { 
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_RAIKOU,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Raikou,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
