@@ -59,7 +59,7 @@ RustboroCity_DevonCorp_2F_EventScript_FossilScientist::
 	faceplayer
 	goto_if_eq VAR_FOSSIL_RESURRECTION_STATE, 2, RustboroCity_DevonCorp_2F_EventScript_FossilMonReady
 	goto_if_eq VAR_FOSSIL_RESURRECTION_STATE, 1, RustboroCity_DevonCorp_2F_EventScript_StillRegenerating
-	goto_if_eq VAR_UNUSED_NUMBER_FOSSILS_REVIVED, 5, RustboroCity_DevonCorp_2F_EventScript_Given5Fossils
+	goto_if_eq VAR_UNUSED_NUMBER_FOSSILS_REVIVED, 6, RustboroCity_DevonCorp_2F_EventScript_Given5Fossils
 	msgbox RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils, MSGBOX_DEFAULT
 	checkitem ITEM_ROOT_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_NoticeRootFossil
@@ -378,7 +378,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedOmanyteFanfare::
 	return
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveAerodactyl::
-	addvar VAR_UNUSED_NUMBER_FOSSILS_REVIVED, 1
+	setvar VAR_UNUSED_NUMBER_FOSSILS_REVIVED, 6
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_AERODACTYL
 	givemon SPECIES_AERODACTYL, 20
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RustboroCity_DevonCorp_2F_EventScript_ReceiveAerodactylParty
@@ -416,6 +416,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedAerodactylFanfare::
 RustboroCity_DevonCorp_2F_EventScript_FinishReceiving::
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 0
 	setflag FLAG_RECEIVED_REVIVED_FOSSIL_MON
+	msgbox RustboroCity_DevonCorp_2F_Text_RaiseWell, MSGBOX_DEFAULT
 	release
 	end
 
@@ -562,6 +563,9 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 	.string "One couldn't ask for a better\n"
 	.string "environment as an engineer.$"
 
+RustboroCity_DevonCorp_2F_Text_RaiseWell:
+	.string "Have fun raising that POKéMON.$"
+	
 RustboroCity_DevonCorp_2F_Text_DontHaveFossil:
 	.string "Oh, you don't have a fossil.\n"
 	.string "Come back if are able to find any.$"
@@ -570,27 +574,10 @@ RustboroCity_DevonCorp_2F_Text_Given5Fossils:
 	.string "I've resurrected a lot of fossils for\n"
 	.string "you, haven't I?\p"
 	.string "I've learned that there have only been\n"
-	.string "five different POKéMON found in\l"
-	.string "fossils here in HOENN.\p"
+	.string "five different fossils found here\l"
+	.string "in HOENN.\p"
 	.string "Do you think one day other POKéMON\n"
 	.string "will be discovered as fossils in\l"
 	.string "other regions?\p"
 	.string "I hope someone continues my research!$"
-
-
-//debug for giving fossils
-RustboroCity_DevonCorp_2F_EventScript_DebugGiveFossils::
-	lock
-	faceplayer
-	additem ITEM_CLAW_FOSSIL
-	additem ITEM_ROOT_FOSSIL
-	additem ITEM_DOME_FOSSIL
-	additem ITEM_HELIX_FOSSIL
-	additem ITEM_OLD_AMBER
-	msgbox RustboroCity_DevonCorp_2F_Text_DebugGiveFossils, MSGBOX_DEFAULT
-	release
-	end
-
-RustboroCity_DevonCorp_2F_Text_DebugGiveFossils:
-	.string "5 fossils added!$"
 
