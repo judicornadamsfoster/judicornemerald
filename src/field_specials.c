@@ -4,7 +4,10 @@
 #include "battle_tower.h"
 #include "cable_club.h"
 #include "data.h"
+
+//for daily random egg npc
 #include "daycare.h"
+//
 
 #include "decoration.h"
 #include "diploma.h"
@@ -66,8 +69,12 @@
 #include "constants/battle_frontier.h"
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
+
+//for daily random egg npc
 #include "constants/species.h"
 #include "constants/region_map_sections.h"
+//
+
 #include "palette.h"
 #include "item.h"
 #include "item_menu.h"
@@ -4312,6 +4319,31 @@ void GiveOddEgg(void)
 
     CreateEgg(&mon, species, MAPSEC_FALLARBOR_TOWN);
     GiveMoveToMon(&mon, MOVE_DIZZY_PUNCH);
+
+    // Return value ignored (should only ever go to party)
+    GiveMonToPlayer(&mon);
+}
+
+
+void GiveRandomEgg(void)
+{
+    static const u16 randomEggSpeciesList[] = {
+	    SPECIES_GASTLY,
+        SPECIES_SURSKIT,
+	    SPECIES_LICKITUNG,
+        SPECIES_POLIWAG,
+        SPECIES_HOPPIP,
+        SPECIES_RATTATA,
+        SPECIES_DROWZEE,		
+        SPECIES_TYROGUE
+
+    };
+
+    struct Pokemon mon;
+    u32 eggCycles;
+    u16 species = randomEggSpeciesList[Random() % ARRAY_COUNT(randomEggSpeciesList)];
+
+    CreateEgg(&mon, species, MAPSEC_ROUTE_117);
 
     // Return value ignored (should only ever go to party)
     GiveMonToPlayer(&mon);
