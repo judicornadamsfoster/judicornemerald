@@ -92,3 +92,157 @@ PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
 	.string "But, it's weak against GRASS-type\n"
 	.string "and ELECTRIC-type POKéMON.$"
 
+
+
+//secretmon salesman
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_Salesman_Start::
+	lock
+	faceplayer
+	goto_if_set FLAG_BOUGHT_SECRETMON, PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_AlreadyBought
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_BuyForJustPrice
+	showmoneybox 1, 1
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_SoYoullBuyIt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_Decline
+	goto PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_TryBuy
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_TryBuy::
+	checkmoney 500
+	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_NotEnoughMoney
+    getpartysize
+    compare VAR_RESULT, 6
+	goto_if_eq PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_NoRoom
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
+	givemon SPECIES_MAGIKARP, 5
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_BuyParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_BuyPC
+	goto PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_NoRoom
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_BuyParty::
+	call PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_PayFor
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_End
+	call Common_EventScript_GetGiftMonPartySlot
+	goto PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_End
+	end
+	
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_BuyPC::
+	call PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_PayFor
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_TransferCloseMoneyBox
+	goto PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_End
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_End::
+	fadescreen FADE_TO_BLACK
+	hidemoneybox
+	special ChangeBoxPokemonNickname
+	waitstate
+	setflag FLAG_BOUGHT_SECRETMON
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_TransferCloseMoneyBox::
+	call Common_EventScript_TransferredToPC
+	hidemoneybox
+	setflag FLAG_BOUGHT_SECRETMON
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_Transfer::
+	call Common_EventScript_TransferredToPC
+	setflag FLAG_BOUGHT_SECRETMON
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_PayFor::
+	removemoney 500
+	updatemoneybox
+	playfanfare MUS_LEVEL_UP
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_PaidOutrageouslyFor
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MAGIKARP
+	return
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_Decline::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_FavorToYou, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_NotEnoughMoney::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_YoullNeedMoreMoney, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_AlreadyBought::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_IDontGiveRefunds, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_NoRoom::
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_NoRoom, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_BuyForJustPrice:
+    .string "MAN: Hey there, kiddo!\p"
+	.string "I heard you came from the\n"
+	.string "KANTO region?\p"
+	.string "Well, I'm from KANTO too!\p"
+    .string "Have I got a deal just for you!\p"
+    .string "I'll let you have a super secret\n"
+    .string "POKéMON for just ¥500!$"
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_SoYoullBuyIt:
+    .string "So, you'll buy it, am I right?$"
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_PaidOutrageouslyFor:
+    .string "{PLAYER} paid an outrageous ¥500\n"
+    .string "and bought a MAGIKARP…$"
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_FavorToYou:
+    .string "No? You say no? I'm only doing this\n"
+    .string "as a favor to you!$"
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_NoRoom:
+    .string "It looks like there's no room for\n"
+    .string "any more POKéMON.$"
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_YoullNeedMoreMoney:
+    .string "You'll need more money than that!$"
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_IDontGiveRefunds:
+    .string "MAN: I don't give out refunds.\n"
+    .string "You should have checked the small print!$"
+
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_DodgyMan::
+	lock
+	faceplayer
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_DodgyMan, MSGBOX_DEFAULT
+	goto_if_set FLAG_BOUGHT_SECRETMON, PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_DodgyMan_BoughtIt
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_DodgyMan_BoughtIt::
+	applymovement LOCALID_DODGYMAN, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox PetalburgCity_PokemonCenter_1F_Text_SecretMon_DodgyMan_Bought, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_DodgyMan:
+	.string "There's a man who keeps offering to\n"
+	.string "sell a secret POKéMON for ¥500.\p"
+	.string "If you ask me, that seems a bit dodgy!$"
+
+PetalburgCity_PokemonCenter_1F_Text_SecretMon_DodgyMan_Bought:
+	.string "You bought it?\p"
+	.string "You sucker!$"
+
+

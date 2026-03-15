@@ -80,7 +80,7 @@
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
+#define FLAG_BOUGHT_SECRETMON           0x45 // Unused Flag -tenaya
 #define FLAG_MIRAGE_ISLAND_ENTEI_1		0x46 // Unused Flag -tenaya
 #define FLAG_MIRAGE_ISLAND_INT2_ITEM	0x47 // Unused Flag -tenaya
 #define FLAG_MIRAGE_ISLAND_DOME_FOSSIL	0x48 // Unused Flag -tenaya
