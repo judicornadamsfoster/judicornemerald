@@ -321,16 +321,18 @@ replace gamecube script with
 
 // cheatstart2
 PlayersHouse_2F_EventScript_CheatStart2_Ask::
-	lock
+	lockall
+	goto_if_set FLAG_LANDMARK_POKEMON_LEAGUE, PlayersHouse_2F_EventScript_CheatStart2Already
 	msgbox PlayersHouse_2F_Text_CheatStart2_Ask, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, TRUE, PlayersHouse_2F_EventScript_CheatStart2_Do
-	release
+	goto_if_eq VAR_RESULT, FALSE, PlayersHouse_2F_EventScript_AfterCheatStart
+	releaseall
 	end
 
 PlayersHouse_2F_EventScript_CheatStart2_Do::
-	lock
+	lockall
 
-	goto_if_set FLAG_SYS_GAME_CLEAR, PlayersHouse_2F_EventScript_CheatStart2Already
+	goto_if_set FLAG_LANDMARK_POKEMON_LEAGUE, PlayersHouse_2F_EventScript_CheatStart2Already
 
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RESCUED_BIRCH
@@ -455,8 +457,8 @@ PlayersHouse_2F_EventScript_CheatStart2_Do::
 
 	addmoney 999999
 	addcoins 9999
-	msgbox PlayersHouse_2F_Text_CheatStart2Activated, MSGBOX_NPC
-	release
+	msgbox PlayersHouse_2F_Text_CheatStart2Activated, MSGBOX_DEFAULT
+	goto PlayersHouse_2F_EventScript_AfterCheatStart
 	end
 
 PlayersHouse_2F_EventScript_CheatStart2Already::
@@ -464,12 +466,16 @@ PlayersHouse_2F_EventScript_CheatStart2Already::
 	addcoins 9999
 	additem ITEM_MASTER_BALL, 99
 	additem ITEM_RARE_CANDY, 99
-	msgbox PlayersHouse_2F_Text_CheatStart2Already, MSGBOX_NPC
+	msgbox PlayersHouse_2F_Text_CheatStart2Already, MSGBOX_DEFAULT
+	goto PlayersHouse_2F_EventScript_AfterCheatStart
+	end
+
+PlayersHouse_2F_EventScript_AfterCheatStart::
 	call PlayersHouse_2F_EventScript_ForceHatchEgg_Ask
 	call PlayersHouse_2F_EventScript_Bike_Ask
 	call PlayersHouse_2F_EventScript_ForceMirageIsland_Ask
 	call PlayersHouse_2F_EventScript_ForceShiny_Ask
-	release
+	releaseall
 	end
 
 PlayersHouse_2F_Text_CheatStart2_Ask:
@@ -489,7 +495,7 @@ PlayersHouse_2F_EventScript_No::
 
 //force egg hatch
 PlayersHouse_2F_EventScript_ForceHatchEgg_Ask::
-	msgbox PlayersHouse_2F_Text_ForceHatchEggAsk, MSGBOX_YESNO
+	msgbox PlayersHouse_2F_Text_ForceHatchEgg_Ask, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, PlayersHouse_2F_EventScript_No
 	special ChoosePartyMon
 	waitstate
@@ -497,14 +503,14 @@ PlayersHouse_2F_EventScript_ForceHatchEgg_Ask::
 	waitstate
 	return
 
-PlayersHouse_2F_Text_ForceHatchEggAsk:
+PlayersHouse_2F_Text_ForceHatchEgg_Ask:
 	.string "Hatch an egg? MUST HAVE AN EGG\n"
 	.string "IN PARTY, OTHERWISE SELECT NO!$"
 
 
 //swap bikes
 PlayersHouse_2F_EventScript_Bike_Ask::
-	msgbox PlayersHouse_2F_Text_Bike_Ask, MSGBOX_DEFAULT
+	msgbox PlayersHouse_2F_Text_Bike_Ask, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, PlayersHouse_2F_EventScript_No
 	checkitem ITEM_ACRO_BIKE
 	goto_if_eq VAR_RESULT, TRUE, PlayersHouse_2F_EventScript_Bike_SwitchAcroForMach
@@ -551,7 +557,7 @@ PlayersHouse_2F_EventScript_ForceMirageIsland_ClearFlag::
 	return
 
 PlayersHouse_2F_Text_ForceMirageIsland_Ask:
-	.string "Force Mirage Island to show?"
+	.string "Force Mirage Island to show?$"
 	
 PlayersHouse_2F_Text_ForceMirageIsland_FlagActivated: 
 	.string "Mirage Island showing.$"
@@ -563,7 +569,7 @@ PlayersHouse_2F_Text_ForceMirageIsland_FlagDeactivated:
 //force shiny
 PlayersHouse_2F_EventScript_ForceShiny_Ask:
 	msgbox PlayersHouse_2F_Text_ForceShiny_Ask, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, FALSE, 
+	goto_if_eq VAR_RESULT, FALSE, PlayersHouse_2F_EventScript_ForceShiny_ClearFlag
 	goto_if_set FLAG_FORCE_SHINY, PlayersHouse_2F_EventScript_ForceShiny_ClearFlag
 	setflag FLAG_FORCE_SHINY
 	msgbox PlayersHouse_2F_Text_ForceShiny_FlagActivated, MSGBOX_NPC
@@ -572,7 +578,8 @@ PlayersHouse_2F_EventScript_ForceShiny_Ask:
 PlayersHouse_2F_EventScript_ForceShiny_ClearFlag::
 	clearflag FLAG_FORCE_SHINY
 	msgbox PlayersHouse_2F_Text_ForceShiny_FlagDeactivated, MSGBOX_NPC
-	return
+	release
+	end
 
 PlayersHouse_2F_Text_ForceShiny_Ask:
 	.string "Force shiny pokemon?$"
