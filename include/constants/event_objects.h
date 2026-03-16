@@ -81,11 +81,12 @@
 #define OBJ_EVENT_GFX_NOLAND                      74
 #define OBJ_EVENT_GFX_LUCY                        75
 #define OBJ_EVENT_GFX_UNUSED_NATU_DOLL            76
-#define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
+//#define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
 //#define OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL        78
 //#define OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL          79
 //#define OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL         80
 //#define OBJ_EVENT_GFX_UNUSED_PORYGON2_DOLL        81
+#define OBJ_EVENT_GFX_MIRAGEMAN                   77
 #define OBJ_EVENT_GFX_BILL                        78
 #define OBJ_EVENT_GFX_SUICUNE                     79
 #define OBJ_EVENT_GFX_RAIKOU                      80

@@ -79,7 +79,7 @@
     },
     {
       "local_id": "LOCALID_MIRAGE_MAN",
-      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "graphics_id": "OBJ_EVENT_GFX_MIRAGEMAN",
       "x": 45,
       "y": 27,
       "elevation": 0,

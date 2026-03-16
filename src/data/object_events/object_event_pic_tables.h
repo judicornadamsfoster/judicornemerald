@@ -834,10 +834,11 @@ static const struct SpriteFrameImage sPicTable_MauvilleOldMan2[] = {
 static const struct SpriteFrameImage sPicTable_UnusedNatuDoll[] = {
     obj_frame_tiles(gObjectEventPic_UnusedNatuDoll),
 };
-
+/*
 static const struct SpriteFrameImage sPicTable_UnusedMagnemiteDoll[] = {
     obj_frame_tiles(gObjectEventPic_UnusedMagnemiteDoll),
 };
+*/
 /*
 static const struct SpriteFrameImage sPicTable_UnusedSquirtleDoll[] = {
     obj_frame_tiles(gObjectEventPic_UnusedSquirtleDoll),
@@ -2223,4 +2224,15 @@ static const struct SpriteFrameImage sPicTable_Raikou[] = {
     overworld_frame(gObjectEventPic_Raikou, 4, 4, 3),
     overworld_frame(gObjectEventPic_Raikou, 4, 4, 5),
     overworld_frame(gObjectEventPic_Raikou, 4, 4, 5),
+};
+const struct SpriteFrameImage sPicTable_MirageMan[] = {
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 0),
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 1),
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 2),
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 3),
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 4),
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 5),
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 6),
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 7),
+    overworld_frame(gObjectEventPic_MirageMan, 2, 4, 8),
 };
