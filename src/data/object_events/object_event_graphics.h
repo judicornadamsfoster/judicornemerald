@@ -370,3 +370,5 @@ const u32 gObjectEventPic_Raikou[] = INCBIN_U32("graphics/object_events/pics/pok
 const u16 gObjectEventPal_Raikou[] = INCBIN_U16("graphics/object_events/palettes/raikou.gbapal");
 const u32 gObjectEventPic_MirageMan[] = INCBIN_U32("graphics/object_events/pics/people/mirage_man.4bpp");
 const u16 gObjectEventPal_MirageMan[] = INCBIN_U16("graphics/object_events/palettes/mirage_man.gbapal");
+const u32 gObjectEventPic_Mewtwo[] = INCBIN_U32("graphics/object_events/pics/pokemon/mewtwo.4bpp");
+const u16 gObjectEventPal_Mewtwo[] = INCBIN_U16("graphics/object_events/palettes/mewtwo.gbapal");

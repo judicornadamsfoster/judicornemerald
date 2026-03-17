@@ -247,6 +247,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Entei;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Suicune;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raikou;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MirageMan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 
@@ -497,6 +498,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_SUICUNE] =                  &gObjectEventGraphicsInfo_Suicune,
 	[OBJ_EVENT_GFX_RAIKOU] =                   &gObjectEventGraphicsInfo_Raikou,
 	[OBJ_EVENT_GFX_MIRAGEMAN] =                &gObjectEventGraphicsInfo_MirageMan,	
+	[OBJ_EVENT_GFX_MEWTWO] =                   &gObjectEventGraphicsInfo_Mewtwo,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
