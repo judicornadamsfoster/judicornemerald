@@ -6,6 +6,7 @@
 #include "daycare.h"
 #include "decompress.h"
 #include "event_data.h"
+#include "evolution_scene.h"
 #include "international_string_util.h"
 #include "link.h"
 #include "link_rfu.h"
@@ -222,3 +223,30 @@ void ReducePlayerPartyToSelectedMons(void)
 
     CalculatePlayerPartyCount();
 }
+
+//SCRIPTED EVOLUTION
+//Parameters: VAR_0x8000=party slot, VAR_0x8001=species, VAR_0x8002=allow cancel
+//Returns: VAR_RESULT=FALSE if species is invalid
+void EvolvePartyMonToSpecies(void){
+        u16 slotId = gSpecialVar_0x8000;
+        u16 targetSpecies = gSpecialVar_0x8001;
+        struct Pokemon *mon = &gPlayerParty[slotId];
+
+        if (targetSpecies == SPECIES_NONE || targetSpecies >= NUM_SPECIES){
+                gSpecialVar_Result = FALSE;
+                return;
+        }
+        gCB2_AfterEvolution = CB2_ReturnToField;
+        BeginEvolutionScene(mon, targetSpecies, gSpecialVar_0x8002, slotId);
+        gSpecialVar_Result = TRUE;
+}
+
+//Parameters: VAR_0x8000=party slot, VAR_0x8001=evolution number, VAR_0x8002=allow cancel
+//Returns: VAR_RESULT=FALSE if mon can't evolve
+void EvolvePartyMon(void){
+        extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
+        u32 species = GetMonData(&gPlayerParty[gSpecialVar_0x8000], MON_DATA_SPECIES);
+        gSpecialVar_0x8001 = gEvolutionTable[species][gSpecialVar_0x8001].targetSpecies;
+        EvolvePartyMonToSpecies();
+}
+
