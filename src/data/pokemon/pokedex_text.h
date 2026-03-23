@@ -2325,3 +2325,9 @@ const u8 gLeafeonPokedexText[] = _(
     "When you see LEAFEON asleep in a patch\n"
     "of sunshine, you'll know it is using\n"
     "photosynthesis to produce clean air.");
+
+const u8 gGlaceonPokedexText[] = _(
+    "By controlling its body heat, it can freeze\n"
+    "the atmosphere around it to make a\n"
+    "diamond-dust flurry. It's hairs can become\n"
+    "like needles it can fire.");

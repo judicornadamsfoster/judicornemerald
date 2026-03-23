@@ -4655,4 +4655,16 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 256,
         .trainerOffset = 0,
     },
+	
+	    [NATIONAL_DEX_GLACEON] =
+    {
+        .categoryName = _("Snow"),
+        .height = 8,
+        .weight = 259,
+        .description = gGlaceonPokedexText,
+        .pokemonScale = 315,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
 };
