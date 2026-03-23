@@ -390,6 +390,7 @@ gCryTable::
 	cry Cry_Chimecho
 	cry Cry_Leafeon
 	cry Cry_Glaceon
+	cry Cry_Sylveon
 
 	.align 2
 gCryTable_Reverse::
@@ -783,3 +784,4 @@ gCryTable_Reverse::
 	cry_reverse Cry_Chimecho
 	cry_reverse Cry_Leafeon
 	cry_reverse Cry_Glaceon
+	cry_reverse Cry_Sylveon

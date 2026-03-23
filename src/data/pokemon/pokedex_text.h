@@ -2331,3 +2331,9 @@ const u8 gGlaceonPokedexText[] = _(
     "the atmosphere around it to make a\n"
     "diamond-dust flurry. It's hairs can become\n"
     "like needles it can fire.");
+
+const u8 gSylveonPokedexText[] = _(
+    "SYLVEON wraps its ribbonlike feelers around\n"
+    "its Trainer's arm because this touch enables\n"
+    "it to read its Trainer's feelings. It also\n"
+    "sends a soothing aura through these feelers.");

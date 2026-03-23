@@ -4596,6 +4596,13 @@ static const union AnimCmd sAnim_Glaceon_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_Sylveon_1[] =
+{
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 40),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_Egg_1[] =
 {
     ANIMCMD_FRAME(0, 6),
@@ -5239,6 +5246,7 @@ DOUBLE_ANIMATION(Deoxys);
 SINGLE_ANIMATION(Chimecho);
 SINGLE_ANIMATION(Leafeon);
 SINGLE_ANIMATION(Glaceon);
+SINGLE_ANIMATION(Sylveon);
 SINGLE_ANIMATION(Egg);
 SINGLE_ANIMATION(UnownB);
 SINGLE_ANIMATION(UnownC);
@@ -5683,7 +5691,8 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_DEOXYS]      = sAnims_Deoxys,
     [SPECIES_CHIMECHO]    = sAnims_Chimecho,
 	[SPECIES_LEAFEON]     = sAnims_Leafeon,
-	[SPECIES_GLACEON]     = sAnims_Leafeon,
+	[SPECIES_GLACEON]     = sAnims_Glaceon,
+	[SPECIES_SYLVEON]     = sAnims_Sylveon,
     [SPECIES_EGG]         = sAnims_Egg,
     [SPECIES_UNOWN_B]     = sAnims_UnownB,
     [SPECIES_UNOWN_C]     = sAnims_UnownC,
