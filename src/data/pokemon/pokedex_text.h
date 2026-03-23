@@ -2319,3 +2319,9 @@ const u8 gDeoxysPokedexText[] = _(
     "extraterrestrial virus exposed to a laser\n"
     "beam. Its body is configured for superior\n"
     "agility and speed.");
+
+const u8 gLeafeonPokedexText[] = _(
+    "It's cells are similar to that of a plant.\n"
+    "When you see LEAFEON asleep in a patch\n"
+    "of sunshine, you'll know it is using\n"
+    "photosynthesis to produce clean air.");
