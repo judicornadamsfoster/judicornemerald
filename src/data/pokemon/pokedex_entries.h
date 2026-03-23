@@ -4646,7 +4646,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_LEAFEON] =
     {
-        .categoryName = _("Verdant"),
+        .categoryName = _("VERDANT"),
         .height = 10,
         .weight = 255,
         .description = gLeafeonPokedexText,
@@ -4658,7 +4658,7 @@ const struct PokedexEntry gPokedexEntries[] =
 	
 	    [NATIONAL_DEX_GLACEON] =
     {
-        .categoryName = _("Snow"),
+        .categoryName = _("SNOW"),
         .height = 8,
         .weight = 259,
         .description = gGlaceonPokedexText,
@@ -4670,7 +4670,7 @@ const struct PokedexEntry gPokedexEntries[] =
 	
 	    [NATIONAL_DEX_SYLVEON] =
     {
-        .categoryName = _("Interwine"),
+        .categoryName = _("INTERWINE"),
         .height = 10,
         .weight = 235,
         .description = gSylveonPokedexText,

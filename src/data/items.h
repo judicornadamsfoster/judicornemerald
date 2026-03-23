@@ -679,12 +679,14 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_034] =
+	
+	//fairy feather
+    [ITEM_FAIRY_FEATHER] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("FAIRY FEATHER"),
+        .itemId = ITEM_FAIRY_FEATHER,
+        .price = 400,
+        .description = sFairyFeatherDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

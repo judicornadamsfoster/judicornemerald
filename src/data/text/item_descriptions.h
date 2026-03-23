@@ -251,6 +251,12 @@ static const u8 sGreenShardDesc[] = _(
     "ancient item. Can\n"
     "be sold cheaply.");
 
+	// Fairy feather
+static const u8 sFairyFeatherDesc[] = _(
+	"A shiny feather\n"
+    "said to bring luck\n"
+    "of the fairies.");
+
 // Vitamins
 static const u8 sHPUpDesc[] = _(
     "Raises the base HP\n"
