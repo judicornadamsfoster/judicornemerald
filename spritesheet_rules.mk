@@ -712,3 +712,9 @@ $(OBJEVENTGFXDIR)/people/mirage_man.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokemon/mewtwo.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/ruby.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+
+$(OBJEVENTGFXDIR)/misc/sapphire.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2

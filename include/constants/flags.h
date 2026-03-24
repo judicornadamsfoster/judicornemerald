@@ -78,8 +78,8 @@
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
+#define FLAG_RECEIVED_SAPPHIRE          0x43 // Unused Flag -tenaya
+#define FLAG_RECEIVED_RUBY   0x44 // Unused Flag- tenaya
 #define FLAG_BOUGHT_SECRETMON           0x45 // Unused Flag -tenaya
 #define FLAG_MIRAGE_ISLAND_ENTEI_1		0x46 // Unused Flag -tenaya
 #define FLAG_MIRAGE_ISLAND_INT2_ITEM	0x47 // Unused Flag -tenaya

@@ -2248,3 +2248,11 @@ static const struct SpriteFrameImage sPicTable_Mewtwo[] = {
     overworld_frame(gObjectEventPic_Mewtwo, 4, 4, 5),
 };
 
+static const struct SpriteFrameImage sPicTable_Ruby[] = {
+    obj_frame_tiles(gObjectEventPic_Ruby),
+};
+
+static const struct SpriteFrameImage sPicTable_Sapphire[] = {
+    obj_frame_tiles(gObjectEventPic_Sapphire),
+};
+
