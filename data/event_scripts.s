@@ -1064,3 +1064,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/MirageIsland_Int1/scripts.inc"
 
 	.include "data/maps/MirageIsland_Int2/scripts.inc"
+
+	.include "data/maps/AlteringCave_Ruby/scripts.inc"

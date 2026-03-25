@@ -75,6 +75,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_FLANNERY_MATCH_CALL
+	setflag FLAG_OPEN_ALTERING_CAVE
 	release
 	end
 

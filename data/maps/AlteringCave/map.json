@@ -13,22 +13,7 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [
-    {
-      "local_id": "LOCALID_ALTERINGCAVE_RUBY",
-      "graphics_id": "OBJ_EVENT_GFX_RUBY",
-      "x": 5,
-      "y": 13,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "AlteringCave_EventScript_RubyAsk",
-      "flag": "FLAG_RECEIVED_RUBY"
-    }
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 18,
@@ -36,13 +21,20 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE103",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ALTERING_CAVE_RUBY",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 13,
-      "y": 18,
+      "x": 17,
+      "y": 11,
       "elevation": 0,
       "var": "VAR_ROUTE130_STATE",
       "var_value": "1",

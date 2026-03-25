@@ -4430,6 +4430,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/MirageIsland_Int2/border.bin",
       "blockdata_filepath": "data/layouts/MirageIsland_Int2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALTERING_CAVE_RUBY",
+      "name": "AlteringCave_Ruby_Layout",
+      "width": 12,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AlteringCave_Ruby/border.bin",
+      "blockdata_filepath": "data/layouts/AlteringCave_Ruby/map.bin"
     }
   ]
 }

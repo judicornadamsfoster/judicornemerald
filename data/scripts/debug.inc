@@ -42,11 +42,53 @@ Debug_CheatStart::
 	release
 	end
 
+//sets and clears FLAG_SYS_GAME_CLEAR
 Debug_Script_1::
+	lock
+	goto_if_set FLAG_SYS_GAME_CLEAR, Debug_Script_1_Clear
+	setflag FLAG_SYS_GAME_CLEAR
+	msgbox Debug_Script_1_Text_Set, MSGBOX_DEFAULT
+	release
 	end
 
-Debug_Script_2::
+Debug_Script_1_Clear:
+	clearflag FLAG_SYS_GAME_CLEAR
+	msgbox Debug_Script_1_Text_Clear, MSGBOX_DEFAULT
+	release
 	end
+
+Debug_Script_1_Text_Set:
+	.string "FLAG SYS GAME CLEAR set.$"
+
+Debug_Script_1_Text_Clear:
+	.string "FLAG SYS GAME CLEAR cleared.$"
+
+
+//sets and clears FLAG_OPEN_ALTERING_CAVE
+Debug_Script_2::
+	lock
+	goto_if_set FLAG_OPEN_ALTERING_CAVE, Debug_Script_2_Clear
+	setflag FLAG_OPEN_ALTERING_CAVE
+	msgbox Debug_Script_2_Text_Set, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_Script_2_Clear:
+	clearflag FLAG_OPEN_ALTERING_CAVE
+	msgbox Debug_Script_2_Text_Clear, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_Script_2_Text_Set:
+	.string "FLAG OPEN ALTERING CAVE set.$"
+
+Debug_Script_2_Text_Clear:
+	.string "FLAG OPEN ALTERING CAVE cleared.$"
+
+
+
+
+
 
 Debug_Script_3::
 	end
