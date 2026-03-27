@@ -1,0 +1,353 @@
+{
+  "id": "MAP_VICTORY_ROAD_SAPPHIRE_1",
+  "name": "VictoryRoad_Sapphire_1",
+  "layout": "LAYOUT_VICTORY_ROAD_SAPPHIRE_1",
+  "music": "MUS_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_VICTORY_ROAD",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_VRMON1",
+      "graphics_id": "OBJ_EVENT_GFX_DUSCLOPS",
+      "x": 20,
+      "y": 29,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VictoryRoad_Sapphire_1_EventScript_Mon1",
+      "flag": "FLAG_HIDE_VICTORYROADMON_1"
+    },
+    {
+      "local_id": "LOCALID_VRMON2",
+      "graphics_id": "OBJ_EVENT_GFX_DUSCLOPS",
+      "x": 28,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VictoryRoad_Sapphire_1_EventScript_Mon2",
+      "flag": "FLAG_HIDE_VICTORYROADMON_2"
+    },
+    {
+      "local_id": "LOCALID_VRMON3",
+      "graphics_id": "OBJ_EVENT_GFX_DUSCLOPS",
+      "x": 20,
+      "y": 44,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VictoryRoad_Sapphire_1_EventScript_Mon3",
+      "flag": "FLAG_HIDE_VICTORYROADMON_3"
+    },
+    {
+      "local_id": "LOCALID_VRMON4",
+      "graphics_id": "OBJ_EVENT_GFX_DUSCLOPS",
+      "x": 20,
+      "y": 51,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VictoryRoad_Sapphire_1_EventScript_Mon4",
+      "flag": "FLAG_HIDE_VICTORYROADMON_4"
+    },
+    {
+      "local_id": "LOCALID_VR_THIEF2",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 24,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_VR_THIEF_2"
+    },
+    {
+      "local_id": "LOCALID_VR_THIEF1",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 35,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_VR_THIEF_1"
+    },
+    {
+      "local_id": "LOCALID_SAPPHIRE",
+      "graphics_id": "OBJ_EVENT_GFX_SAPPHIRE",
+      "x": 17,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VictoryRoad_Sapphire_1_EventScript_Sapphire",
+      "flag": "FLAG_HIDE_SAPPHIRE"
+    },
+    {
+      "local_id": "LOCALID_VR_THIEF3",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 5,
+      "y": 51,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VictoryRoad_Sapphire_1_EventScript_ThiefEntrance",
+      "flag": "FLAG_VR_THIEF_3"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_VICTORY_ROAD_1F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 11,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_VICTORY_ROAD_SAPPHIRE_1",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 6,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_VICTORY_ROAD_SAPPHIRE_1",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 2,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_VICTORY_ROAD_SAPPHIRE_1",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 27,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_VICTORY_ROAD_SAPPHIRE_1",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 4,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_VICTORY_ROAD_SAPPHIRE_1",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 24,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_VICTORY_ROAD_SAPPHIRE_1",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 25,
+      "y": 53,
+      "elevation": 0,
+      "dest_map": "MAP_VICTORY_ROAD_SAPPHIRE_2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "3",
+      "script": "VictoryRoad_Sapphire_1_EventScript_ThiefTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "4",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon1a"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "4",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon1b"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "4",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon1c"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "5",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon2a"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "5",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon2b"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "5",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon2c"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 43,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "6",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon3"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "7",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon4a"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "7",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon4b"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "7",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMon4c"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "1",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMoveBack1"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "1",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMoveBack2"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "1",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerMoveBack3"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "0",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerItsASapphire"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "0",
+      "script": "VictoryRoad_Sapphire_1_EventScript_TriggerItsASapphire"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "3",
+      "script": "VictoryRoad_Sapphire_1_EventScript_ThiefTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_VICTORY_ROAD_THIEF",
+      "var_value": "3",
+      "script": "VictoryRoad_Sapphire_1_EventScript_ThiefTrigger2"
+    }
+  ],
+  "bg_events": []
+}

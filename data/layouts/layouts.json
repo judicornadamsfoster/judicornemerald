@@ -4440,6 +4440,26 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AlteringCave_Ruby/border.bin",
       "blockdata_filepath": "data/layouts/AlteringCave_Ruby/map.bin"
+    },
+    {
+      "id": "LAYOUT_VICTORY_ROAD_SAPPHIRE_1",
+      "name": "VictoryRoad_Sapphire_1_Layout",
+      "width": 40,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_Sapphire_1/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_Sapphire_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_VICTORY_ROAD_SAPPHIRE_2",
+      "name": "VictoryRoad_Sapphire_2_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/VictoryRoad_Sapphire_2/border.bin",
+      "blockdata_filepath": "data/layouts/VictoryRoad_Sapphire_2/map.bin"
     }
   ]
 }

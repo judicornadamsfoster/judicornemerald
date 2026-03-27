@@ -1,11 +1,30 @@
 VictoryRoad_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, VictoryRoad_1F_OnLoad
+	map_script MAP_SCRIPT_ON_RESUME, VictoryRoad_1F_OnLoad
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, VictoryRoad_1F_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, VictoryRoad_1F_OnTransition
 	.byte 0
+
+VictoryRoad_1F_OnLoad:
+	call_if_ge VAR_ROUTE130_STATE, 4, VictoryRoad_1F_OpenCave
+	end
 
 VictoryRoad_1F_OnTransition:
 	call_if_eq VAR_VICTORY_ROAD_1F_STATE, 1, VictoryRoad_1F_EventScript_SetEntranceWallyPos1
 	call_if_eq VAR_VICTORY_ROAD_1F_STATE, 2, VictoryRoad_1F_EventScript_SetEntranceWallyPos2
+	call_if_ge VAR_ROUTE130_STATE, 4, VictoryRoad_1F_OpenCave
 	end
+
+VictoryRoad_1F_OpenCave:
+	setmetatile 14, 11, 0x20B, TRUE
+	setmetatile 15, 11, 0x20C, TRUE
+	setmetatile 16, 11, 0x20D, TRUE
+	setmetatile 14, 12, 0x213, TRUE
+	setmetatile 15, 12, 0x214, FALSE
+	setmetatile 16, 12, 0x215, TRUE
+	special DrawWholeMapView
+	return
+
 
 VictoryRoad_1F_EventScript_SetEntranceWallyPos1::
 	setobjectxyperm LOCALID_VICTORY_ROAD_ENTRANCE_WALLY, 2, 24

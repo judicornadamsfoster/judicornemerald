@@ -431,7 +431,9 @@
     "TerraCave_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "AlteringCave_Ruby"
+    "AlteringCave_Ruby",
+    "VictoryRoad_Sapphire_1",
+    "VictoryRoad_Sapphire_2"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
