@@ -61,6 +61,8 @@ VictoryRoad_Sapphire_1_EventScript_ThiefTrigger2::
 	closemessage
 	applymovement LOCALID_VR_THIEF2, VictoryRoad_Sapphire_1_EventScript_Movement_Thief2
 	waitmovement 0
+	playse SE_EXIT
+	waitse
 	removeobject LOCALID_VR_THIEF2
 	setflag FLAG_VR_THIEF_2
 	setvar VAR_VICTORY_ROAD_THIEF, 4
@@ -485,9 +487,11 @@ VictoryRoad_Sapphire_1_EventScript_Sapphire::
 	call_if_eq VAR_FACING, DIR_EAST, VictoryRoad_Sapphire_1_EventScript_ThiefExitPlayerEast
 	call_if_eq VAR_FACING, DIR_WEST, VictoryRoad_Sapphire_1_EventScript_ThiefExitPlayerWest
 	playse SE_EXIT
+	waitse
 	delay 35
 	removeobject LOCALID_VR_THIEF1
 	setflag FLAG_VR_THIEF_1
+	setflag FLAG_VR_THIEF_PL
 	setvar VAR_VICTORY_ROAD_THIEF, 3
 	release
 	end

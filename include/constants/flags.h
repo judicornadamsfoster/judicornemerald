@@ -61,9 +61,9 @@
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
+#define FLAG_VR_THIEF_PL     0x32 // Unused Flag -tenaya
+#define FLAG_VR_EATINGMON    0x33 // Unused Flag -tenaya
+#define FLAG_HIDE_TEA        0x34 // Unused Flag -tenaya
 #define FLAG_HIDE_SAPPHIRE   0x35 // Unused Flag -tenaya 
 #define FLAG_VR_THIEF_1      0x36 // Unused Flag -tenaya
 #define FLAG_VR_THIEF_2      0x37 // Unused Flag -tenaya

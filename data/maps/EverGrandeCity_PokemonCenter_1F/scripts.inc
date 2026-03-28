@@ -3,10 +3,115 @@ EverGrandeCity_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
 
+
+//
 EverGrandeCity_PokemonCenter_1F_OnTransition:
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY
 	call_if_unset FLAG_MET_SCOTT_IN_EVERGRANDE, EverGrandeCity_PokemonCenter_1F_EventScript_TryShowScott
+	call_if_set FLAG_VR_THIEF_PL, EverGrandeCity_PokemonCenter_1F_EventScript_HideVRThiefPL
 	end
+
+
+EverGrandeCity_PokemonCenter_1F_EventScript_HideVRThiefPL::
+	removeobject LOCALID_VR_THIEF_PL
+	setflag FLAG_TEMP_4
+	return
+
+EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_Start::
+	lock
+	faceplayer
+	goto_if_eq VAR_VICTORY_ROAD_THIEF, 11, EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_TryGiveSapphire
+	goto_if_eq VAR_VICTORY_ROAD_THIEF, 12, EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_StayHereAndRecover
+	message EverGrandeCity_PokemonCenter_1F_Text_VRThiefPL_GoingInvestigating
+	waitmessage
+	closemessage
+	call_if_eq VAR_FACING, DIR_NORTH, EverGrandeCity_PokemonCenter_1F_EventScript_ThiefLeavePlayerNorthEast
+	call_if_eq VAR_FACING, DIR_SOUTH, EverGrandeCity_PokemonCenter_1F_EventScript_ThiefLeavePlayerSouthWest
+	call_if_eq VAR_FACING, DIR_EAST, EverGrandeCity_PokemonCenter_1F_EventScript_ThiefLeavePlayerNorthEast
+	call_if_eq VAR_FACING, DIR_WEST, EverGrandeCity_PokemonCenter_1F_EventScript_ThiefLeavePlayerSouthWest
+	playse SE_EXIT
+	waitse
+	removeobject LOCALID_VR_THIEF_PL
+	setflag FLAG_VR_THIEF_PL
+	release
+	end
+
+EverGrandeCity_PokemonCenter_1F_Text_VRThiefPL_GoingInvestigating:
+	.string "Sorry, I'm just leaving to back to\n"
+	.string "investigating VICTORY ROAD.\p"
+	.string "There's rumours that there are gems\n"
+	.string "everywhere.$"
+
+EverGrandeCity_PokemonCenter_1F_EventScript_ThiefLeavePlayerNorthEast::
+	applymovement LOCALID_VR_THIEF1, EverGrandeCity_PokemonCenter_1F_Movement_ThiefLeavePlayerNorthEast
+	waitmovement 0
+	return
+
+EverGrandeCity_PokemonCenter_1F_EventScript_ThiefLeavePlayerSouthWest::
+	applymovement LOCALID_VR_THIEF1, EverGrandeCity_PokemonCenter_1F_Movement_ThiefLeavePlayerSouthWest
+	waitmovement 0
+	return
+
+EverGrandeCity_PokemonCenter_1F_Movement_ThiefLeavePlayerNorthEast::
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	step_end
+
+EverGrandeCity_PokemonCenter_1F_Movement_ThiefLeavePlayerSouthWest::
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right	
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	step_end
+
+
+EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_TryGiveSapphire::
+	lock
+	faceplayer
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_VRThiefPL_TryGiveSapphire, MSGBOX_DEFAULT
+	giveitem ITEM_SAPPHIRE
+	goto_if_eq VAR_RESULT, FALSE, EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_YouStillNeedSpace
+	setflag FLAG_RECEIVED_SAPPHIRE
+	setvar VAR_VICTORY_ROAD_THIEF, 12
+	goto EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_StayHereAndRecover
+	end
+
+EverGrandeCity_PokemonCenter_1F_Text_VRThiefPL_TryGiveSapphire:
+	.string "Have you got space for the SAPPHIRE yet?$"
+
+EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_YouStillNeedSpace::
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_VRThiefPL_YouStillNeedSpace, MSGBOX_NPC
+	end
+
+EverGrandeCity_PokemonCenter_1F_Text_VRThiefPL_YouStillNeedSpace:
+	.string "You still don't have space yet.$"
+	
+EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_StayHereAndRecover::
+	msgbox EverGrandeCity_PokemonCenter_1F_Text_VRThiefPL_StayHereAndRecover, MSGBOX_NPC
+	end
+
+EverGrandeCity_PokemonCenter_1F_Text_VRThiefPL_StayHereAndRecover:
+	.string "I'm gonna stay here and recover for a\n"
+	.string "while before I go back to exploring.\p"
+	.string "Stay safe out there.$"
+//
+
+
+
+
+
 
 EverGrandeCity_PokemonCenter_1F_EventScript_TryShowScott::
 	goto_if_unset FLAG_BADGE06_GET, Common_EventScript_NopReturn

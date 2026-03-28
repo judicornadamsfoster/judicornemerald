@@ -445,9 +445,6 @@ PlayersHouse_2F_EventScript_CheatStart2_Do::
 	additem ITEM_RARE_CANDY, 99
 	additem ITEM_SUPER_ROD
 
-// for mirage island event
-	additem ITEM_RUBY
-	additem ITEM_SAPPHIRE
 
 //for devon corp fossill reviver and fossil maniac
 	additem ITEM_CLAW_FOSSIL

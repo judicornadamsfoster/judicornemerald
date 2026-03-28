@@ -67,6 +67,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_PokemonCenter_1F_EventScript_Scott",
       "flag": "FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT"
+    },
+    {
+      "local_id": "LOCALID_VR_THIEF_PL",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EverGrandeCity_PokemonCenter_1F_EventScript_VRThiefPL_Start",
+      "flag": "FLAG_VR_THIEF_PL"
     }
   ],
   "warp_events": [
