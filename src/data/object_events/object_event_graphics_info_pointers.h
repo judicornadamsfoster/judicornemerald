@@ -250,6 +250,18 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MirageMan;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ruby;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sapphire;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Articuno;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dewgong;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Electabuzz;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Houndoom;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jynx;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lairon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Larvitar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Magmar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moltres;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sneasel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zapdos;
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 
@@ -503,6 +515,17 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_MEWTWO] =                   &gObjectEventGraphicsInfo_Mewtwo,
     [OBJ_EVENT_GFX_RUBY] =                     &gObjectEventGraphicsInfo_Ruby,
     [OBJ_EVENT_GFX_SAPPHIRE] =                 &gObjectEventGraphicsInfo_Sapphire,
+	[OBJ_EVENT_GFX_ARTICUNO] =                 &gObjectEventGraphicsInfo_Articuno,
+	[OBJ_EVENT_GFX_DEWGONG] =                  &gObjectEventGraphicsInfo_Dewgong,
+	[OBJ_EVENT_GFX_ELECTABUZZ] =               &gObjectEventGraphicsInfo_Electabuzz,
+	[OBJ_EVENT_GFX_HOUNDOOM] =                 &gObjectEventGraphicsInfo_Houndoom,
+	[OBJ_EVENT_GFX_JYNX] =                     &gObjectEventGraphicsInfo_Jynx,
+	[OBJ_EVENT_GFX_LAIRON] =                   &gObjectEventGraphicsInfo_Lairon,
+	[OBJ_EVENT_GFX_LARVITAR] =                 &gObjectEventGraphicsInfo_Larvitar,
+	[OBJ_EVENT_GFX_MAGMAR] =                   &gObjectEventGraphicsInfo_Magmar,
+	[OBJ_EVENT_GFX_MOLTRES] =                  &gObjectEventGraphicsInfo_Moltres,
+	[OBJ_EVENT_GFX_SNEASEL] =                  &gObjectEventGraphicsInfo_Sneasel,
+	[OBJ_EVENT_GFX_ZAPDOS] =                   &gObjectEventGraphicsInfo_Zapdos,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

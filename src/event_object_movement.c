@@ -471,6 +471,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
+
 #define OBJ_EVENT_PAL_TAG_BILL                    0x1124
 #define OBJ_EVENT_PAL_TAG_ENTEI                   0x1125
 #define OBJ_EVENT_PAL_TAG_SUICUNE                 0x1126
@@ -478,6 +479,18 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MIRAGEMAN               0x1128
 #define OBJ_EVENT_PAL_TAG_MEWTWO                  0x1129
 #define OBJ_EVENT_PAL_TAG_RUBYSAPPHIRE            0x1130
+#define OBJ_EVENT_PAL_TAG_ARTICUNO                0x1131
+#define OBJ_EVENT_PAL_TAG_DEWGONG                 0x1132
+#define OBJ_EVENT_PAL_TAG_ELECTABUZZ              0x1133
+#define OBJ_EVENT_PAL_TAG_HOUNDOOM                0x1134
+#define OBJ_EVENT_PAL_TAG_JYNX                    0x1135
+#define OBJ_EVENT_PAL_TAG_LAIRON                  0x1136
+#define OBJ_EVENT_PAL_TAG_LARVITAR                0x1137
+#define OBJ_EVENT_PAL_TAG_MAGMAR                  0x1138
+#define OBJ_EVENT_PAL_TAG_MOLTRES                 0x1139
+#define OBJ_EVENT_PAL_TAG_SNEASEL                 0x1140
+#define OBJ_EVENT_PAL_TAG_ZAPDOS                  0x1141
+
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -525,14 +538,26 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+	
 	{gObjectEventPal_Bill,                  OBJ_EVENT_PAL_TAG_BILL},
 	{gObjectEventPal_Entei,                 OBJ_EVENT_PAL_TAG_ENTEI},
 	{gObjectEventPal_Suicune,               OBJ_EVENT_PAL_TAG_SUICUNE},
 	{gObjectEventPal_Raikou,                OBJ_EVENT_PAL_TAG_RAIKOU},	
-	{gObjectEventPal_MirageMan,                OBJ_EVENT_PAL_TAG_MIRAGEMAN},
+	{gObjectEventPal_MirageMan,             OBJ_EVENT_PAL_TAG_MIRAGEMAN},
 	{gObjectEventPal_Mewtwo,                OBJ_EVENT_PAL_TAG_MEWTWO},
 	{gObjectEventPal_RubySapphire,          OBJ_EVENT_PAL_TAG_RUBYSAPPHIRE},
-
+	{gObjectEventPal_Articuno,              OBJ_EVENT_PAL_TAG_ARTICUNO},
+	{gObjectEventPal_Dewgong,               OBJ_EVENT_PAL_TAG_DEWGONG},
+	{gObjectEventPal_Electabuzz,            OBJ_EVENT_PAL_TAG_ELECTABUZZ},
+	{gObjectEventPal_Houndoom,              OBJ_EVENT_PAL_TAG_HOUNDOOM},
+	{gObjectEventPal_Jynx,                  OBJ_EVENT_PAL_TAG_JYNX},
+	{gObjectEventPal_Lairon,                OBJ_EVENT_PAL_TAG_LAIRON},
+	{gObjectEventPal_Larvitar,              OBJ_EVENT_PAL_TAG_LARVITAR},
+	{gObjectEventPal_Magmar,                OBJ_EVENT_PAL_TAG_MAGMAR},
+	{gObjectEventPal_Moltres,               OBJ_EVENT_PAL_TAG_MOLTRES},
+	{gObjectEventPal_Sneasel,               OBJ_EVENT_PAL_TAG_SNEASEL},
+	{gObjectEventPal_Zapdos,                OBJ_EVENT_PAL_TAG_ZAPDOS},
+	
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 };
 
