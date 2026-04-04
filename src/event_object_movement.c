@@ -490,6 +490,9 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MOLTRES                 0x1139
 #define OBJ_EVENT_PAL_TAG_SNEASEL                 0x1140
 #define OBJ_EVENT_PAL_TAG_ZAPDOS                  0x1141
+#define OBJ_EVENT_PAL_TAG_METEOR                  0x1142
+#define OBJ_EVENT_PAL_TAG_MOSS_ROCK               0x1143
+#define OBJ_EVENT_PAL_TAG_ICY_ROCK                0x1144
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
@@ -557,6 +560,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_Moltres,               OBJ_EVENT_PAL_TAG_MOLTRES},
 	{gObjectEventPal_Sneasel,               OBJ_EVENT_PAL_TAG_SNEASEL},
 	{gObjectEventPal_Zapdos,                OBJ_EVENT_PAL_TAG_ZAPDOS},
+	{gObjectEventPal_Meteor,                OBJ_EVENT_PAL_TAG_METEOR},
+	{gObjectEventPal_Moss_Rock,             OBJ_EVENT_PAL_TAG_MOSS_ROCK},
+	{gObjectEventPal_Icy_Rock,              OBJ_EVENT_PAL_TAG_ICY_ROCK},
 	
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 };

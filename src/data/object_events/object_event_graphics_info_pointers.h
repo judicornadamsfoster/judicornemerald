@@ -261,6 +261,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Magmar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moltres;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sneasel;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zapdos;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meteor;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moss_Rock;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Icy_Rock;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
@@ -526,6 +529,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_MOLTRES] =                  &gObjectEventGraphicsInfo_Moltres,
 	[OBJ_EVENT_GFX_SNEASEL] =                  &gObjectEventGraphicsInfo_Sneasel,
 	[OBJ_EVENT_GFX_ZAPDOS] =                   &gObjectEventGraphicsInfo_Zapdos,
+	[OBJ_EVENT_GFX_METEOR] =                   &gObjectEventGraphicsInfo_Meteor,
+	[OBJ_EVENT_GFX_MOSS_ROCK] =                &gObjectEventGraphicsInfo_Moss_Rock,
+	[OBJ_EVENT_GFX_ICY_ROCK] =                 &gObjectEventGraphicsInfo_Icy_Rock,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

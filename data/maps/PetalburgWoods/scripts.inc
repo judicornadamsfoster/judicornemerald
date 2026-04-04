@@ -471,3 +471,135 @@ PetalburgWoods_Text_TrainerTipsPP:
 	.string "If a POKéMON runs out of PP, it must be\n"
 	.string "taken to a POKéMON CENTER.$"
 
+
+//eevee into leafeon checks
+
+PetalburgWoods_EventScript_MossRock_ResetTrigger::
+	lock
+	setvar VAR_TEMP_F, 0
+	release
+	end
+
+PetalburgWoods_EventScript_MossRock_EeveeNoise_Trigger::
+	lock
+	setflag FLAG_SYS_NO_ENCOUNTER
+	setflag FLAG_SYS_NO_TRAINER_SEE
+	playmoncry SPECIES_EEVEE, 0
+	waitmoncry
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox PetalburgWoods_Text_EeveeMakingNoisesMoss, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	setvar VAR_TEMP_F, 1
+	release
+	end
+
+PetalburgWoods_EventScript_MossRock_Start::
+	lock
+	msgbox PetalburgWoods_Text_MossRock, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	setvar VAR_0x8004, 0
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoods_EventScript_MossRock_CheckSlot2
+	call PetalburgWoods_EventScript_MossRock_EeveeReacting
+	setvar VAR_0x8000, 0 @slot
+	setvar VAR_0x8001, SPECIES_LEAFEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+PetalburgWoods_EventScript_MossRock_CheckSlot2:
+	setvar VAR_0x8004, 1
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoods_EventScript_MossRock_CheckSlot3
+	call PetalburgWoods_EventScript_MossRock_EeveeReacting
+	setvar VAR_0x8000, 1 @slot
+	setvar VAR_0x8001, SPECIES_LEAFEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+PetalburgWoods_EventScript_MossRock_CheckSlot3:
+	setvar VAR_0x8004, 2
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoods_EventScript_MossRock_CheckSlot4
+	call PetalburgWoods_EventScript_MossRock_EeveeReacting
+	setvar VAR_0x8000, 2 @slot
+	setvar VAR_0x8001, SPECIES_LEAFEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+PetalburgWoods_EventScript_MossRock_CheckSlot4:
+	setvar VAR_0x8004, 3
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoods_EventScript_MossRock_CheckSlot5
+	call PetalburgWoods_EventScript_MossRock_EeveeReacting
+	setvar VAR_0x8000, 3 @slot
+	setvar VAR_0x8001, SPECIES_LEAFEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+PetalburgWoods_EventScript_MossRock_CheckSlot5:
+	setvar VAR_0x8004, 4
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoods_EventScript_MossRock_CheckSlot6
+	call PetalburgWoods_EventScript_MossRock_EeveeReacting
+	setvar VAR_0x8000, 4 @slot
+	setvar VAR_0x8001, SPECIES_LEAFEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+PetalburgWoods_EventScript_MossRock_CheckSlot6:
+	setvar VAR_0x8004, 5
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoods_EventScript_MossRock_DontEvolve
+	call PetalburgWoods_EventScript_MossRock_EeveeReacting
+	setvar VAR_0x8000, 5 @slot
+	setvar VAR_0x8001, SPECIES_LEAFEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+PetalburgWoods_EventScript_MossRock_EeveeReacting:
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox PetalburgWoods_Text_EeveeReactingMossRock, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	setvar VAR_TEMP_F, 0
+	clearflag FLAG_SYS_NO_ENCOUNTER
+	clearflag FLAG_SYS_NO_TRAINER_SEE
+	return
+
+PetalburgWoods_EventScript_MossRock_DontEvolve:
+	release
+	end
+
+PetalburgWoods_Text_MossRock:
+	.string "It's a rock covered in moss.$"
+
+PetalburgWoods_Text_EeveeMakingNoisesMoss:
+	.string "EEVEE is making noises inside\n"
+	.string "it's POKéBALL.\p"
+	.string "It appears to be reacting to something\n"
+	.string "nearby.$"
+
+PetalburgWoods_Text_EeveeReactingMossRock:
+	.string "EEVEE is reacting to this mossy rock.$"

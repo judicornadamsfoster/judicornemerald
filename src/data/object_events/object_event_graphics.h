@@ -398,3 +398,10 @@ const u32 gObjectEventPic_Sneasel[] = INCBIN_U32("graphics/object_events/pics/po
 const u16 gObjectEventPal_Sneasel[] = INCBIN_U16("graphics/object_events/palettes/sneasel.gbapal");
 const u32 gObjectEventPic_Zapdos[] = INCBIN_U32("graphics/object_events/pics/pokemon/zapdos.4bpp");
 const u16 gObjectEventPal_Zapdos[] = INCBIN_U16("graphics/object_events/palettes/zapdos.gbapal");
+const u32 gObjectEventPic_Meteor[] = INCBIN_U32("graphics/object_events/pics/misc/meteor.4bpp");
+const u16 gObjectEventPal_Meteor[] = INCBIN_U16("graphics/object_events/palettes/meteor.gbapal");
+const u32 gObjectEventPic_Moss_Rock[] = INCBIN_U32("graphics/object_events/pics/misc/moss_rock.4bpp");
+const u16 gObjectEventPal_Moss_Rock[] = INCBIN_U16("graphics/object_events/palettes/moss_rock.gbapal");
+const u32 gObjectEventPic_Icy_Rock[] = INCBIN_U32("graphics/object_events/pics/misc/icy_rock.4bpp");
+const u16 gObjectEventPal_Icy_Rock[] = INCBIN_U16("graphics/object_events/palettes/icy_rock.gbapal");
+

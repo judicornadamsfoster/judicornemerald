@@ -297,3 +297,131 @@ Route118_Text_RouteSign119:
 	.string "ROUTE 118\n"
 	.string "{UP_ARROW} ROUTE 119$"
 
+
+
+//eevee into glaceon checks
+
+Route118_EventScript_IceRock_ResetTrigger::
+	lock
+	setvar VAR_TEMP_F, 0
+	release
+	end
+
+Route118_EventScript_IceRock_EeveeNoise_Trigger::
+	playmoncry SPECIES_EEVEE, 0
+	waitmoncry
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Route118_Text_EeveeMakingNoisesIce, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	setvar VAR_TEMP_F, 1
+	release
+	end
+
+Route118_EventScript_IceRock_Start::
+	lock
+	msgbox Route118_Text_IceRock, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	setvar VAR_0x8004, 0
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_IceRock_CheckSlot2
+	call Route118_EventScript_IceRock_EeveeReacting
+	setvar VAR_0x8000, 0 @slot
+	setvar VAR_0x8001, SPECIES_GLACEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+Route118_EventScript_IceRock_CheckSlot2:
+	setvar VAR_0x8004, 1
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_IceRock_CheckSlot3
+	call Route118_EventScript_IceRock_EeveeReacting
+	setvar VAR_0x8000, 1 @slot
+	setvar VAR_0x8001, SPECIES_GLACEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+Route118_EventScript_IceRock_CheckSlot3:
+	setvar VAR_0x8004, 2
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_IceRock_CheckSlot4
+	call Route118_EventScript_IceRock_EeveeReacting
+	setvar VAR_0x8000, 2 @slot
+	setvar VAR_0x8001, SPECIES_GLACEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+Route118_EventScript_IceRock_CheckSlot4:
+	setvar VAR_0x8004, 3
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_IceRock_CheckSlot5
+	call Route118_EventScript_IceRock_EeveeReacting
+	setvar VAR_0x8000, 3 @slot
+	setvar VAR_0x8001, SPECIES_GLACEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+Route118_EventScript_IceRock_CheckSlot5:
+	setvar VAR_0x8004, 4
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_IceRock_CheckSlot6
+	call Route118_EventScript_IceRock_EeveeReacting
+	setvar VAR_0x8000, 4 @slot
+	setvar VAR_0x8001, SPECIES_GLACEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+Route118_EventScript_IceRock_CheckSlot6:
+	setvar VAR_0x8004, 5
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_IceRock_DontEvolve
+	call Route118_EventScript_IceRock_EeveeReacting
+	setvar VAR_0x8000, 5 @slot
+	setvar VAR_0x8001, SPECIES_GLACEON	@species
+	setvar VAR_0x8002, TRUE		@allow cancel
+	callnative EvolvePartyMonToSpecies
+	release
+	end
+
+Route118_EventScript_IceRock_EeveeReacting:
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Route118_Text_EeveeReactingIceRock, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	setvar VAR_TEMP_F, 0
+	return
+
+Route118_EventScript_IceRock_DontEvolve:
+	release
+	end
+
+Route118_Text_IceRock:
+	.string "It's a rock covered in ice.$"
+
+Route118_Text_EeveeMakingNoisesIce:
+	.string "EEVEE is making noises inside\n"
+	.string "it's POKéBALL.\p"
+	.string "It appears to be reacting to something\n"
+	.string "nearby.$"
+
+Route118_Text_EeveeReactingIceRock:
+	.string "EEVEE is reacting to this icy rock.$"

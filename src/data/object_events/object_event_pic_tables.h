@@ -2388,3 +2388,15 @@ static const struct SpriteFrameImage sPicTable_Zapdos[] = {
     overworld_frame(gObjectEventPic_Zapdos, 4, 4, 5),
 };
 
+static const struct SpriteFrameImage sPicTable_Meteor[] = {
+    obj_frame_tiles(gObjectEventPic_Meteor),
+};
+
+static const struct SpriteFrameImage sPicTable_Moss_Rock[] = {
+    obj_frame_tiles(gObjectEventPic_Moss_Rock),
+};
+
+static const struct SpriteFrameImage sPicTable_Icy_Rock[] = {
+    obj_frame_tiles(gObjectEventPic_Icy_Rock),
+};
+
