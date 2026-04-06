@@ -299,13 +299,14 @@ Route118_Text_RouteSign119:
 
 
 
-//eevee into glaceon checks
-
+//eevee into glaceon
+/*not used
 Route118_EventScript_IceRock_ResetTrigger::
 	lock
 	setvar VAR_TEMP_F, 0
 	release
 	end
+*/
 
 Route118_EventScript_IceRock_EeveeNoise_Trigger::
 	playmoncry SPECIES_EEVEE, 0
@@ -397,7 +398,7 @@ Route118_EventScript_IceRock_CheckSlot6:
 	setvar VAR_0x8000, 5 @slot
 	setvar VAR_0x8001, SPECIES_GLACEON	@species
 	setvar VAR_0x8002, TRUE		@allow cancel
-	callnative EvolvePartyMonToSpecies
+	callnative EvolvePartyMonToSpecies	
 	release
 	end
 
@@ -407,7 +408,7 @@ Route118_EventScript_IceRock_EeveeReacting:
 	msgbox Route118_Text_EeveeReactingIceRock, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-	setvar VAR_TEMP_F, 0
+	setvar VAR_TEMP_F, 2
 	return
 
 Route118_EventScript_IceRock_DontEvolve:
@@ -425,3 +426,28 @@ Route118_Text_EeveeMakingNoisesIce:
 
 Route118_Text_EeveeReactingIceRock:
 	.string "EEVEE is reacting to this icy rock.$"
+
+
+Route118_EventScript_RockGirl::
+	setvar 0x8005, SPECIES_GLACEON
+	special CheckSpecies
+	goto_if_eq VAR_RESULT, TRUE, Route118_EventScript_GlaceonInParty
+	msgbox Route118_Text_TellIceRock, MSGBOX_SIGN
+	end
+
+Route118_EventScript_GlaceonInParty:
+	msgbox Route118_Text_GlaceonInParty, MSGBOX_NPC
+	end
+
+Route118_Text_GlaceonInParty:
+	.string "Woah! You have a Glaceon!\p"
+	.string "I've never seen one in HOENN before.\p"
+	.string "A friend of mine says he once saw one\n"
+	.string "on his holiday in SINNOH.$"
+
+
+Route118_Text_TellIceRock:
+	.string "I think that rock is haunted.\p"
+	.string "The ice on it never melts and some\n"
+	.string "POKéMON act weird when near it.\p"
+	.string "Weird, huh?$"

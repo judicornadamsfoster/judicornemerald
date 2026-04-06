@@ -540,4 +540,5 @@ gSpecials::
 	def_special ResetLotteryCorner
 	def_special GiveOddEgg
 	def_special GiveRandomEgg
+	def_special CheckSpecies
 

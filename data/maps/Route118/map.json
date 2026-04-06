@@ -113,7 +113,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
       "x": 12,
-      "y": 10,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -312,8 +312,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ICY_ROCK",
-      "x": 4,
-      "y": 4,
+      "x": 15,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -321,6 +321,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route118_EventScript_IceRock_Start",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route118_EventScript_RockGirl",
       "flag": "0"
     }
   ],
@@ -370,7 +383,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 8,
       "y": 7,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -379,7 +392,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 8,
       "y": 8,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -388,7 +401,7 @@
     },
     {
       "type": "trigger",
-      "x": 1,
+      "x": 8,
       "y": 9,
       "elevation": 0,
       "var": "VAR_TEMP_F",
@@ -397,129 +410,174 @@
     },
     {
       "type": "trigger",
-      "x": 6,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
-    },
-    {
-      "type": "trigger",
-      "x": 0,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 0,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 0,
-      "y": 9,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 0,
+      "x": 8,
       "y": 10,
       "elevation": 0,
       "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
     },
     {
       "type": "trigger",
-      "x": 10,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 9,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 10,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
+      "x": 8,
       "y": 11,
       "elevation": 0,
       "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
     },
     {
       "type": "trigger",
       "x": 10,
-      "y": 12,
+      "y": 7,
       "elevation": 0,
       "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
     },
     {
       "type": "trigger",
       "x": 10,
-      "y": 13,
+      "y": 10,
       "elevation": 0,
       "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 14,
-      "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "1",
-      "script": "Route118_EventScript_IceRock_ResetTrigger"
+      "var_value": "0",
+      "script": "Route118_EventScript_IceRock_EeveeNoise_Trigger"
     }
   ],
   "bg_events": [

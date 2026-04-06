@@ -473,17 +473,16 @@ PetalburgWoods_Text_TrainerTipsPP:
 
 
 //eevee into leafeon checks
-
+/*not used
 PetalburgWoods_EventScript_MossRock_ResetTrigger::
 	lock
 	setvar VAR_TEMP_F, 0
 	release
 	end
+*/
 
 PetalburgWoods_EventScript_MossRock_EeveeNoise_Trigger::
 	lock
-	setflag FLAG_SYS_NO_ENCOUNTER
-	setflag FLAG_SYS_NO_TRAINER_SEE
 	playmoncry SPECIES_EEVEE, 0
 	waitmoncry
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
@@ -584,8 +583,6 @@ PetalburgWoods_EventScript_MossRock_EeveeReacting:
 	waitmessage
 	closemessage
 	setvar VAR_TEMP_F, 0
-	clearflag FLAG_SYS_NO_ENCOUNTER
-	clearflag FLAG_SYS_NO_TRAINER_SEE
 	return
 
 PetalburgWoods_EventScript_MossRock_DontEvolve:
@@ -603,3 +600,25 @@ PetalburgWoods_Text_EeveeMakingNoisesMoss:
 
 PetalburgWoods_Text_EeveeReactingMossRock:
 	.string "EEVEE is reacting to this mossy rock.$"
+
+
+PetalburgWoods_EventScript_RockBoy::
+	setvar 0x8005, SPECIES_LEAFEON
+	special CheckSpecies
+	goto_if_eq VAR_RESULT, TRUE, PetalburgWoods_EventScript_LeafeonInParty
+	msgbox PetalburgWoods_Text_TellMossRock, MSGBOX_SIGN
+	end
+
+PetalburgWoods_EventScript_LeafeonInParty:
+	msgbox PetalburgWoods_Text_LeafeonInParty, MSGBOX_NPC
+	end
+
+PetalburgWoods_Text_LeafeonInParty:
+	.string "Is that a LEAFEON?\p"
+	.string "Did you get that in SINNOH?$"
+
+PetalburgWoods_Text_TellMossRock:
+	.string "The moss growing on that rock feels\n"
+	.string "warm when you touch it.\p"
+	.string "My friend says one of his POKéMON\n"
+	.string "acted crazy when he went near it.$"
