@@ -4679,4 +4679,41 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 256,
         .trainerOffset = 0,
     },
+	
+	
+    [NATIONAL_DEX_DEOXYS_ATTACK] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gDeoxysPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_DEOXYS_DEFENSE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gDeoxysPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_DEOXYS_SPEED] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gDeoxysPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
 };

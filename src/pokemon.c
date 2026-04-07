@@ -521,6 +521,9 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(LEAFEON),
     SPECIES_TO_HOENN(GLACEON),
 	SPECIES_TO_HOENN(SYLVEON),
+    //SPECIES_TO_HOENN(DEOXYS_ATTACK),
+    //SPECIES_TO_HOENN(DEOXYS_DEFENSE),
+    //SPECIES_TO_HOENN(DEOXYS_SPEED),
 };
 
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -940,6 +943,9 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(LEAFEON),
     SPECIES_TO_NATIONAL(GLACEON),
     SPECIES_TO_NATIONAL(SYLVEON),	
+    //SPECIES_TO_NATIONAL(DEOXYS_ATTACK),
+    //SPECIES_TO_NATIONAL(DEOXYS_DEFENSE),
+    //SPECIES_TO_NATIONAL(DEOXYS_SPEED),
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -1359,6 +1365,9 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
 	HOENN_TO_NATIONAL(LEAFEON),
 	HOENN_TO_NATIONAL(GLACEON),	
 	HOENN_TO_NATIONAL(SYLVEON),	
+    //HOENN_TO_NATIONAL(DEOXYS_ATTACK),
+    //HOENN_TO_NATIONAL(DEOXYS_DEFENSE),
+    //HOENN_TO_NATIONAL(DEOXYS_SPEED),
 };
 
 const struct SpindaSpot gSpindaSpotGraphics[] =
@@ -1802,6 +1811,9 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_LEAFEON - 1]     = ANIM_V_STRETCH,
     [SPECIES_GLACEON - 1]     = ANIM_V_STRETCH,
 	[SPECIES_SYLVEON - 1]     = ANIM_V_STRETCH,
+    [SPECIES_DEOXYS_ATTACK - 1]    = ANIM_GROW_VIBRATE,
+    [SPECIES_DEOXYS_DEFENSE - 1]   = ANIM_GROW_VIBRATE,
+    [SPECIES_DEOXYS_SPEED - 1]     = ANIM_GROW_VIBRATE,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =

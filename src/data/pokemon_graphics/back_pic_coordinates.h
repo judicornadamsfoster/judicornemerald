@@ -419,6 +419,10 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_LEAFEON]     = { .size = MON_COORDS_SIZE(48, 64), .y_offset =  0 },
     [SPECIES_GLACEON]     = { .size = MON_COORDS_SIZE(56, 64), .y_offset =  6 },
     [SPECIES_SYLVEON]     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  4 },
+    [SPECIES_DEOXYS_ATTACK]    = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  1 },
+    [SPECIES_DEOXYS_DEFENSE]   = { .size = MON_COORDS_SIZE(64, 56), .y_offset =  8 },
+    [SPECIES_DEOXYS_SPEED]     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+
     [SPECIES_EGG]         = { .size = MON_COORDS_SIZE(24, 48), .y_offset = 10 },
     [SPECIES_UNOWN_B]     = { .size = MON_COORDS_SIZE(40, 48), .y_offset =  9 },
     [SPECIES_UNOWN_C]     = { .size = MON_COORDS_SIZE(48, 56), .y_offset =  6 },

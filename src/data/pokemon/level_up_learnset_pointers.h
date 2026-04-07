@@ -415,4 +415,7 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_LEAFEON] = sLeafeonLevelUpLearnset,
     [SPECIES_GLACEON] = sGlaceonLevelUpLearnset,
     [SPECIES_SYLVEON] = sSylveonLevelUpLearnset,
+    [SPECIES_DEOXYS_ATTACK] = sDeoxysALevelUpLearnset,
+    [SPECIES_DEOXYS_DEFENSE] = sDeoxysDLevelUpLearnset,
+    [SPECIES_DEOXYS_SPEED] = sDeoxysSLevelUpLearnset,
 };

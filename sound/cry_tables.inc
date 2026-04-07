@@ -391,6 +391,9 @@ gCryTable::
 	cry Cry_Leafeon
 	cry Cry_Glaceon
 	cry Cry_Sylveon
+	cry Cry_DeoxysA
+	cry Cry_DeoxysD
+	cry Cry_DeoxysS
 
 	.align 2
 gCryTable_Reverse::
@@ -785,3 +788,6 @@ gCryTable_Reverse::
 	cry_reverse Cry_Leafeon
 	cry_reverse Cry_Glaceon
 	cry_reverse Cry_Sylveon
+	cry_reverse Cry_DeoxysA
+	cry_reverse Cry_DeoxysD
+	cry_reverse Cry_DeoxysS

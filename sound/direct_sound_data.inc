@@ -1951,6 +1951,18 @@ Cry_Sylveon::
 	.incbin "sound/direct_sound_samples/cries/sylveon.bin"
 
 	.align 2
+Cry_DeoxysA::
+	.incbin "sound/direct_sound_samples/cries/deoxys.bin"
+
+	.align 2
+Cry_DeoxysD::
+	.incbin "sound/direct_sound_samples/cries/deoxys.bin"
+
+	.align 2
+Cry_DeoxysS::
+	.incbin "sound/direct_sound_samples/cries/deoxys.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 
