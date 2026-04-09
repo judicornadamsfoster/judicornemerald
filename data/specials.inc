@@ -541,4 +541,4 @@ gSpecials::
 	def_special GiveOddEgg
 	def_special GiveRandomEgg
 	def_special CheckSpecies
-
+	def_special TryChangeDeoxysForm
