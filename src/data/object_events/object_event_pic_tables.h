@@ -2400,3 +2400,10 @@ static const struct SpriteFrameImage sPicTable_Icy_Rock[] = {
     obj_frame_tiles(gObjectEventPic_Icy_Rock),
 };
 
+static const struct SpriteFrameImage sPicTable_Meteor2[] = {
+    obj_frame_tiles(gObjectEventPic_Meteor2),
+};
+
+static const struct SpriteFrameImage sPicTable_Meteor3[] = {
+    obj_frame_tiles(gObjectEventPic_Meteor3),
+};

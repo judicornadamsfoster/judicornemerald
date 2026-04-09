@@ -759,3 +759,9 @@ $(OBJEVENTGFXDIR)/misc/moss_rock.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/icy_rock.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/misc/meteor2.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+
+$(OBJEVENTGFXDIR)/misc/meteor3.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+

@@ -309,6 +309,49 @@ Route118_EventScript_IceRock_ResetTrigger::
 */
 
 Route118_EventScript_IceRock_EeveeNoise_Trigger::
+	lock
+	setvar VAR_0x8004, 0
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_TriggerSlot2
+	goto Route118_EventScript_EeveeNoiseIce_TriggerCont
+
+Route118_EventScript_TriggerSlot2:
+	setvar VAR_0x8004, 1
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_TriggerSlot3
+	goto Route118_EventScript_EeveeNoiseIce_TriggerCont
+
+Route118_EventScript_TriggerSlot3:
+	setvar VAR_0x8004, 2
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_TriggerSlot4
+	goto Route118_EventScript_EeveeNoiseIce_TriggerCont
+
+Route118_EventScript_TriggerSlot4:
+	setvar VAR_0x8004, 3
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_TriggerSlot5
+	goto Route118_EventScript_EeveeNoiseIce_TriggerCont
+
+Route118_EventScript_TriggerSlot5:
+	setvar VAR_0x8004, 4
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_TriggerSlot6
+	goto Route118_EventScript_EeveeNoiseIce_TriggerCont
+
+Route118_EventScript_TriggerSlot6:
+	setvar VAR_0x8004, 5
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne Route118_EventScript_IceRock_DontEvolve
+	goto Route118_EventScript_EeveeNoiseIce_TriggerCont
+
+Route118_EventScript_EeveeNoiseIce_TriggerCont:
 	playmoncry SPECIES_EEVEE, 0
 	waitmoncry
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
@@ -319,6 +362,7 @@ Route118_EventScript_IceRock_EeveeNoise_Trigger::
 	setvar VAR_TEMP_F, 1
 	release
 	end
+
 
 Route118_EventScript_IceRock_Start::
 	lock

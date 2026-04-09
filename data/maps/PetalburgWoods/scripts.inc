@@ -483,6 +483,48 @@ PetalburgWoods_EventScript_MossRock_ResetTrigger::
 
 PetalburgWoods_EventScript_MossRock_EeveeNoise_Trigger::
 	lock
+	setvar VAR_0x8004, 0
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoodsEventScript_TriggerSlot2
+	goto PetalburgWoodsEventScript_EeveeNoiseMoss_TriggerCont
+
+PetalburgWoodsEventScript_TriggerSlot2:
+	setvar VAR_0x8004, 1
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoodsEventScript_TriggerSlot3
+	goto PetalburgWoodsEventScript_EeveeNoiseMoss_TriggerCont
+
+PetalburgWoodsEventScript_TriggerSlot3:
+	setvar VAR_0x8004, 2
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoodsEventScript_TriggerSlot4
+	goto PetalburgWoodsEventScript_EeveeNoiseMoss_TriggerCont
+
+PetalburgWoodsEventScript_TriggerSlot4:
+	setvar VAR_0x8004, 3
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoodsEventScript_TriggerSlot5
+	goto PetalburgWoodsEventScript_EeveeNoiseMoss_TriggerCont
+
+PetalburgWoodsEventScript_TriggerSlot5:
+	setvar VAR_0x8004, 4
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoodsEventScript_TriggerSlot6
+	goto PetalburgWoodsEventScript_EeveeNoiseMoss_TriggerCont
+
+PetalburgWoodsEventScript_TriggerSlot6:
+	setvar VAR_0x8004, 5
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EEVEE
+	goto_if_ne PetalburgWoods_EventScript_MossRock_DontEvolve
+	goto PetalburgWoodsEventScript_EeveeNoiseMoss_TriggerCont
+
+PetalburgWoodsEventScript_EeveeNoiseMoss_TriggerCont:
 	playmoncry SPECIES_EEVEE, 0
 	waitmoncry
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
@@ -493,6 +535,8 @@ PetalburgWoods_EventScript_MossRock_EeveeNoise_Trigger::
 	setvar VAR_TEMP_F, 1
 	release
 	end
+
+
 
 PetalburgWoods_EventScript_MossRock_Start::
 	lock
