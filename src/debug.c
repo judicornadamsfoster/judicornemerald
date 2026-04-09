@@ -446,9 +446,9 @@ static const u8 sDebugText_Cancel[] =           _("Cancel");
 // Script menu
 static const u8 sDebugText_Util_Script_1[] =               _("GAME CLEAR");
 static const u8 sDebugText_Util_Script_2[] =               _("OPEN ALTERING CAVE");
-static const u8 sDebugText_Util_Script_3[] =               _("Script 3");
-static const u8 sDebugText_Util_Script_4[] =               _("Script 4");
-static const u8 sDebugText_Util_Script_5[] =               _("Script 5");
+static const u8 sDebugText_Util_Script_3[] =               _("Hatch an EGG");
+static const u8 sDebugText_Util_Script_4[] =               _("Force Mirage Island");
+static const u8 sDebugText_Util_Script_5[] =               _("Force shiny encounter");
 static const u8 sDebugText_Util_Script_6[] =               _("Script 6");
 static const u8 sDebugText_Util_Script_7[] =               _("Script 7");
 static const u8 sDebugText_Util_Script_8[] =               _("Script 8");
