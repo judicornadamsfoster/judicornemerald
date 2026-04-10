@@ -253,7 +253,7 @@ Debug_Script_2_Text_Set:
 Debug_Script_2_Text_Clear:
 	.string "FLAG OPEN ALTERING CAVE cleared.$"
 
-
+/*
 //egg hatch
 Debug_Script_3::
 	lock
@@ -273,6 +273,38 @@ Debug_Script_3_EventScript_No:
 Debug_Script_3_Text_ForceHatchEgg_Ask:
 	.string "Hatch an egg? MUST HAVE AN EGG\n"
 	.string "IN PARTY, OTHERWISE SELECT NO!$"
+*/
+
+Debug_Script_3::
+	lockall
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, Debug_NoPokemon
+	special ChoosePartyMon
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_HatchAnEgg_End
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	goto_if_ne VAR_RESULT, SPECIES_EGG, DebugScript_HatchAnEgg_CantForceHatch
+	special EggHatch
+	waitstate
+Debug_HatchAnEgg_End::
+	releaseall
+	end
+
+Debug_NoPokemon::
+	msgbox DebugScript_Text_EmptyParty, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_HatchAnEgg_CantForceHatch::
+	msgbox DebugScript_HatchAnEgg_Text_NotAnEgg, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_Text_EmptyParty::
+	.string "You have no Pokémon nor Eggs.$"
+
+DebugScript_HatchAnEgg_Text_NotAnEgg::
+	.string "That's not a Pokémon Egg.$"
 
 
 //mirage island
