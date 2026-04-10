@@ -60,7 +60,7 @@
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_SURF_PICHU_EGG  0x31 // Unused Flag -tenaya
 #define FLAG_VR_THIEF_PL     0x32 // Unused Flag -tenaya
 #define FLAG_VR_EATINGMON    0x33 // Unused Flag -tenaya
 #define FLAG_HIDE_TEA        0x34 // Unused Flag -tenaya

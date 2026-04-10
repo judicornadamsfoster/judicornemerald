@@ -1,3 +1,4 @@
+
 MysteryGiftScript_SurfPichu::
 	setvaddress MysteryGiftScript_SurfPichu
 	vgoto_if_unset FLAG_MYSTERY_GIFT_DONE, SurfPichu_GiveIfPossible
@@ -12,9 +13,11 @@ SurfPichu_GiveIfPossible:
 	faceplayer
 	vmessage sText_MysteryGiftEgg
 	waitmessage
-	waitbuttonpress
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
+	vmessage sText_LookAfterEgg
+	waitmessage
+	waitbuttonpress
 	release
 	end
 
@@ -59,14 +62,14 @@ SurfPichu_Slot5:
 	return
 
 sText_MysteryGiftEgg:
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
-	.string "From the POKéMON CENTER we\n"
-	.string "have a gift--a POKéMON EGG!\p"
-	.string "Please raise it with love and\n"
-	.string "kindness.$"
+	.string "{PLAYER} received the EGG.$"
 
 sText_FullParty:
 	.string "Oh, your party appears to be full.\p"
-	.string "Please come see me after storing\n"
-	.string "a POKéMON on a PC.$"
+	.string "Maybe you could store one of your\n"
+	.string "POKéMON in your PC.$"
+
+sText_LookAfterEgg:
+	.string "Please look after it and raise it\n"
+	.string "with love and kindness.$"
+
