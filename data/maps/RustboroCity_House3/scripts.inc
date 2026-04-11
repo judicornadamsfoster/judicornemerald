@@ -87,4 +87,5 @@ RustboroCity_House3_EventScript_Kid::
 
 RustboroCity_House3_Text_Kid:
 	.string "I'm helping Mommy clean Meemaw and\n"
-	.string "Peepaw's house!"
+	.string "Peepaw's house!$"
+
