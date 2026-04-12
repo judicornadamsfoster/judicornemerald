@@ -406,5 +406,7 @@ const u32 gObjectEventPic_Icy_Rock[] = INCBIN_U32("graphics/object_events/pics/m
 const u16 gObjectEventPal_Icy_Rock[] = INCBIN_U16("graphics/object_events/palettes/icy_rock.gbapal");
 const u32 gObjectEventPic_Meteor2[] = INCBIN_U32("graphics/object_events/pics/misc/meteor2.4bpp");
 const u32 gObjectEventPic_Meteor3[] = INCBIN_U32("graphics/object_events/pics/misc/meteor3.4bpp");
+const u32 gObjectEventPic_Hallowed_Tower[] = INCBIN_U32("graphics/object_events/pics/misc/hallowed_tower.4bpp");
+const u16 gObjectEventPal_Hallowed_Tower[] = INCBIN_U16("graphics/object_events/palettes/hallowed_tower.gbapal");
 
 

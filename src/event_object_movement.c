@@ -493,6 +493,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_METEOR                  0x1142
 #define OBJ_EVENT_PAL_TAG_MOSS_ROCK               0x1143
 #define OBJ_EVENT_PAL_TAG_ICY_ROCK                0x1144
+#define OBJ_EVENT_PAL_TAG_HALLOWED_TOWER          0x1145
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
@@ -563,6 +564,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPal_Meteor,                OBJ_EVENT_PAL_TAG_METEOR},
 	{gObjectEventPal_Moss_Rock,             OBJ_EVENT_PAL_TAG_MOSS_ROCK},
 	{gObjectEventPal_Icy_Rock,              OBJ_EVENT_PAL_TAG_ICY_ROCK},
+	{gObjectEventPal_Hallowed_Tower,        OBJ_EVENT_PAL_TAG_HALLOWED_TOWER},
 	
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 };

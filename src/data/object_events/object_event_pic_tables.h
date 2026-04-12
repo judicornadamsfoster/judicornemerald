@@ -2407,3 +2407,8 @@ static const struct SpriteFrameImage sPicTable_Meteor2[] = {
 static const struct SpriteFrameImage sPicTable_Meteor3[] = {
     obj_frame_tiles(gObjectEventPic_Meteor3),
 };
+
+static const struct SpriteFrameImage sPicTable_Hallowed_Tower[] = {
+    obj_frame_tiles(gObjectEventPic_Hallowed_Tower),
+};
+

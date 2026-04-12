@@ -765,3 +765,5 @@ $(OBJEVENTGFXDIR)/misc/meteor2.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/meteor3.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
+$(OBJEVENTGFXDIR)/misc/hallowed_tower.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
