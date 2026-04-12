@@ -394,6 +394,7 @@ gCryTable::
 	cry Cry_DeoxysA
 	cry Cry_DeoxysD
 	cry Cry_DeoxysS
+	cry Cry_Spiritomb
 
 	.align 2
 gCryTable_Reverse::
@@ -791,3 +792,5 @@ gCryTable_Reverse::
 	cry_reverse Cry_DeoxysA
 	cry_reverse Cry_DeoxysD
 	cry_reverse Cry_DeoxysS
+	cry_reverse Cry_Spiritomb
+

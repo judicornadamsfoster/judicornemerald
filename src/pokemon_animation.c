@@ -604,6 +604,7 @@ static const u8 sSpeciesToBackAnimSet[] =
     [SPECIES_DEOXYS_ATTACK]   = BACK_ANIM_SHRINK_GROW_VIBRATE,
     [SPECIES_DEOXYS_DEFENSE]  = BACK_ANIM_SHRINK_GROW_VIBRATE,
     [SPECIES_DEOXYS_SPEED]    = BACK_ANIM_SHRINK_GROW_VIBRATE,
+	[SPECIES_SPIRITOMB]    = BACK_ANIM_SHAKE_GLOW_GREEN,
 };
 
 // Equivalent to struct YellowFlashData, but doesn't match as a struct

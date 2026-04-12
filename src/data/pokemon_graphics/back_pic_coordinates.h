@@ -422,6 +422,8 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_DEOXYS_ATTACK]    = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  1 },
     [SPECIES_DEOXYS_DEFENSE]   = { .size = MON_COORDS_SIZE(64, 56), .y_offset =  8 },
     [SPECIES_DEOXYS_SPEED]     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_SPIRITOMB]   = { .size = MON_COORDS_SIZE(64, 56), .y_offset =  5 },
+
 
     [SPECIES_EGG]         = { .size = MON_COORDS_SIZE(24, 48), .y_offset = 10 },
     [SPECIES_UNOWN_B]     = { .size = MON_COORDS_SIZE(40, 48), .y_offset =  9 },

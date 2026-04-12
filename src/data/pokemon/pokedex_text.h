@@ -2337,3 +2337,10 @@ const u8 gSylveonPokedexText[] = _(
     "its Trainer's arm because this touch enables\n"
     "it to read its Trainer's feelings. It also\n"
     "sends a soothing aura through these feelers.");
+
+const u8 gSpiritombPokedexText[] = _(
+    "A Pokémon that was formed by 108 spirits.\n"
+    "Its constant mischief and misdeeds\n"
+    "resulted in it being bound to an\n"
+    "Odd Keystone by a mysterious spell.");
+

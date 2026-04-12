@@ -2786,6 +2786,14 @@ extern const u32 gMonStillFrontPic_DeoxysS[];
 extern const u8 gMonIcon_DeoxysS[];
 extern const u8 gMonFootprint_DeoxysS[];
 
+extern const u32 gMonFrontPic_Spiritomb[];
+extern const u32 gMonPalette_Spiritomb[];
+extern const u32 gMonBackPic_Spiritomb[];
+extern const u32 gMonShinyPalette_Spiritomb[];
+extern const u32 gMonStillFrontPic_Spiritomb[];
+extern const u8 gMonIcon_Spiritomb[];
+extern const u8 gMonFootprint_Spiritomb[];
+
 extern const u32 gMonPic_Egg[];
 extern const u32 gMonPalette_Egg[];
 extern const u32 gMonFrontPic_Egg[];

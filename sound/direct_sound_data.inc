@@ -1961,6 +1961,10 @@ Cry_DeoxysD::
 	.align 2
 Cry_DeoxysS::
 	.incbin "sound/direct_sound_samples/cries/deoxys.bin"
+	
+	.align 2
+Cry_Spiritomb::
+	.incbin "sound/direct_sound_samples/cries/spiritomb.bin"
 
 	.align 2
 DirectSoundWaveData_register_noise::

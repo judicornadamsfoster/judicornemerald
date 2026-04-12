@@ -418,4 +418,5 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_DEOXYS_ATTACK] = sDeoxysALevelUpLearnset,
     [SPECIES_DEOXYS_DEFENSE] = sDeoxysDLevelUpLearnset,
     [SPECIES_DEOXYS_SPEED] = sDeoxysSLevelUpLearnset,
+    [SPECIES_SPIRITOMB] = sSpiritombLevelUpLearnset,
 };
