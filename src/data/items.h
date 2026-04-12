@@ -680,24 +680,25 @@ const struct Item gItems[] =
     },
 
 	
-	//fairy feather
-    [ITEM_FAIRY_FEATHER] =
+	//fairy scarf
+    [ITEM_FAIRY_SCARF] =
     {
-        .name = _("FAIRY FEATHER"),
-        .itemId = ITEM_FAIRY_FEATHER,
+        .name = _("FAIRY SCARF"),
+        .itemId = ITEM_FAIRY_SCARF,
         .price = 400,
-        .description = sFairyFeatherDesc,
+        .description = sFairyScarfDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_035] =
+    // odd keystone
+    [ITEM_ODD_KEYSTONE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("ODD KEYSTONE"),
+        .itemId = ITEM_ODD_KEYSTONE,
         .price = 0,
-        .description = sDummyDesc,
+        .description = sOddKeystoneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

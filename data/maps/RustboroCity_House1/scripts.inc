@@ -46,8 +46,29 @@ RustboroCity_House1_EventScript_TradeCompleted::
 	end
 
 RustboroCity_House1_EventScript_Hiker::
-	msgbox RustboroCity_House1_Text_AllSortsOfPlaces, MSGBOX_NPC
+	lock
+	goto_if_set FLAG_FAIRY_SCARF_HIKER, RustboroCity_House1_EventScript_GivenScarf
+	msgbox RustboroCity_House1_Text_Scarf, MSGBOX_DEFAULT
+	giveitem ITEM_FAIRY_SCARF
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_FAIRY_SCARF_HIKER
+	msgbox RustboroCity_House1_Text_Scarf2, MSGBOX_DEFAULT
+	release
 	end
+
+RustboroCity_House1_EventScript_GivenScarf::
+	msgbox RustboroCity_House1_Text_AllSortsOfPlaces, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_House1_Text_Scarf:
+	.string "I found this scarf while I was hiking\n"
+	.string "near ROUTE 113.\p"
+	.string "I don't like the color, so you can take\n"
+	.string "it for your POKéMON.$"
+	
+RustboroCity_House1_Text_Scarf2:
+	.string "I've heard EEVEE like to wear these.$"
 
 RustboroCity_House1_Text_IllTradeIfYouWant:
 	.string "Huh? My POKéMON is cute?\n"

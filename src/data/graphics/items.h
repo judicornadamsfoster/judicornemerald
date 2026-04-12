@@ -129,8 +129,11 @@ const u32 gItemIconPalette_BlueShard[] = INCBIN_U32("graphics/items/icon_palette
 const u32 gItemIconPalette_YellowShard[] = INCBIN_U32("graphics/items/icon_palettes/yellow_shard.gbapal.lz");
 const u32 gItemIconPalette_GreenShard[] = INCBIN_U32("graphics/items/icon_palettes/green_shard.gbapal.lz");
 
-const u32 gItemIcon_FairyFeather[] = INCBIN_U32("graphics/items/icons/fairy_feather.4bpp.lz");
-const u32 gItemIconPalette_FairyFeather[] = INCBIN_U32("graphics/items/icon_palettes/fairy_feather.gbapal.lz");
+const u32 gItemIcon_FairyScarf[] = INCBIN_U32("graphics/items/icons/fairy_scarf.4bpp.lz");
+const u32 gItemIconPalette_FairyScarf[] = INCBIN_U32("graphics/items/icon_palettes/fairy_scarf.gbapal.lz");
+
+const u32 gItemIcon_OddKeystone[] = INCBIN_U32("graphics/items/icons/odd_keystone.4bpp.lz");
+const u32 gItemIconPalette_OddKeystone[] = INCBIN_U32("graphics/items/icon_palettes/odd_keystone.gbapal.lz");
 
 
 // Vitamins
