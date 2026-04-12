@@ -251,11 +251,18 @@ static const u8 sGreenShardDesc[] = _(
     "ancient item. Can\n"
     "be sold cheaply.");
 
-	// Fairy feather
-static const u8 sFairyFeatherDesc[] = _(
-	"A shiny feather\n"
-    "said to bring luck\n"
-    "of the fairies.");
+	// Fairy scarf
+	static const u8 sFairyScarfDesc[] = _(
+	"A lovely scarf\n"
+    "said to bring\n"
+    "fairy luck.");
+
+	// odd keystone
+	static const u8 sOddKeystoneDesc[] = _(
+	"An odd stone,\n"
+    "whispers can be\n"
+    "heard from it.");
+
 
 // Vitamins
 static const u8 sHPUpDesc[] = _(
