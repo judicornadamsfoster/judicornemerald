@@ -56,9 +56,9 @@
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
+#define FLAG_HIDE_SPIRITOMB_WOMAN       0x2D // Unused Flag -tenaya
+#define FLAG_DEFEAT_SPIRITOMB           0x2E // Unused Flag -tenaya
+#define FLAG_RECEIVED_ODD_KEYSTONE      0x2F // Unused Flag -tenaya
 #define FLAG_FAIRY_SCARF_HIKER          0x30 // Unused Flag -tenaya
 #define FLAG_SURF_PICHU_EGG  0x31 // Unused Flag -tenaya
 #define FLAG_VR_THIEF_PL     0x32 // Unused Flag -tenaya

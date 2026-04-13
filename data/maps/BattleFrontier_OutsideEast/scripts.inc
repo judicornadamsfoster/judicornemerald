@@ -435,3 +435,313 @@ BattleFrontier_OutsideEast_Text_StickyMonWithLongTail:
 	.string "with a long tail up ahead!\p"
 	.string "It was hiding under a boulder, and\n"
 	.string "it kept staring at me!$"
+
+
+//spiritomb events
+BattleFrontier_OutsideEast_EventScript_SpiritombWoman_Start::
+	goto_if_set FLAG_RECEIVED_ODD_KEYSTONE, BattleFrontier_OutsideEast_EventScript_SpiritombWoman_HaveKeystone
+	lock
+	faceplayer
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_UsedToBeTower, MSGBOX_DEFAULT
+	giveitem ITEM_ODD_KEYSTONE
+	setflag FLAG_RECEIVED_ODD_KEYSTONE
+	setvar VAR_SPIRITOMB_STATE, 0
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_HaveKeystone, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_UsedToBeTower:
+	.string "There used to be an ancient structure\n"
+	.string "here called the Hallowed Tower.\p"
+	.string "A powerful trainer once sealed away\n"
+	.string "a mischievous POKéMON by binding 108\l"
+	.string "souls to a part of the structure\l"
+	.string "called a KEYSTONE.\p"
+	.string "I found the KEYSTONE nearby but have\n"
+	.string "no clue what to do with it.\p"
+	.string "If I give you it could you find out\n"
+	.string "how to release the POKéMON?$"
+
+BattleFrontier_OutsideEast_EventScript_SpiritombWoman_HaveKeystone:
+	lock
+	faceplayer
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_HaveKeystone, MSGBOX_DEFAULT //have a keystone
+	release
+	end
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_HaveKeystone:
+	.string "There must be someone nearby that\n"
+	.string "knows about the Hallowed Tower.$"
+	
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_Start::
+	goto_if_unset FLAG_RECEIVED_ODD_KEYSTONE, BattleFrontier_OutsideEast_EventScript_SpiritombTower_0
+	goto_if_set FLAG_DEFEAT_SPIRITOMB, BattleFrontier_OutsideEast_EventScript_SpiritombTower_End
+	goto_if_le VAR_SPIRITOMB_STATE, 7, BattleFrontier_OutsideEast_EventScript_SpiritombTower_7
+	goto_if_le VAR_SPIRITOMB_STATE, 14, BattleFrontier_OutsideEast_EventScript_SpiritombTower_14
+	goto_if_le VAR_SPIRITOMB_STATE, 21, BattleFrontier_OutsideEast_EventScript_SpiritombTower_21
+	goto_if_le VAR_SPIRITOMB_STATE, 28, BattleFrontier_OutsideEast_EventScript_SpiritombTower_28
+	goto_if_le VAR_SPIRITOMB_STATE, 31, BattleFrontier_OutsideEast_EventScript_SpiritombTower_31
+	goto_if_ge VAR_SPIRITOMB_STATE, 32, BattleFrontier_OutsideEast_EventScript_SpiritombTower_32
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_0:
+	applymovement LOCALID_SPIRITOMB_WOMAN, Common_Movement_ExclamationMark
+	goto BattleFrontier_OutsideEast_EventScript_SpiritombWoman_Start
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_7:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombTower_7, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_14:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombTower_14, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_21:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombTower_21, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_28:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombTower_28, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_31:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombTower_31, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_32:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombTower_32, MSGBOX_DEFAULT
+	removeitem ITEM_ODD_KEYSTONE, 1
+	setwildbattle SPECIES_SPIRITOMB, 25
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, BattleFrontier_OutsideEast_EventScript_DefeatedSpiritombRetry
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, BattleFrontier_OutsideEast_EventScript_DefeatedSpiritombRetry
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, BattleFrontier_OutsideEast_EventScript_DefeatedSpiritombRetry
+	goto BattleFrontier_OutsideEast_EventScript_DefeatedSpiritomb
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombTower_End:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombTower_End, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_DefeatedSpiritomb:
+	setflag FLAG_DEFEAT_SPIRITOMB
+	goto BattleFrontier_OutsideEast_EventScript_SpiritombWoman_SpiritombDefeat
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_DefeatedSpiritombRetry:
+	additem ITEM_ODD_KEYSTONE, 1
+	goto BattleFrontier_OutsideEast_EventScript_SpiritombWoman_SpiritombDefeat_RetryBattle
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombWoman_SpiritombDefeat_RetryBattle:
+	applymovement LOCALID_SPIRITOMB_WOMAN, Common_Movement_Delay32
+	waitmovement 0
+	applymovement LOCALID_SPIRITOMB_WOMAN, Common_Movement_QuestionMark
+	waitmovement 0
+	msgbox BattleFrontier_OutsideEast_SpiritombWoman_Text_RetryBattle, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_SpiritombWoman_Text_RetryBattle:
+	.string "You made SPIRITOMB faint!\p"
+	.string "Can you try again?$"
+	
+BattleFrontier_OutsideEast_Text_SpiritombTower_7:
+	.string "It's the ruins of the Hallowed Tower.\p"
+	.string "It appears to have been built many\n"
+	.string "years ago.$"
+
+BattleFrontier_OutsideEast_Text_SpiritombTower_14:
+	.string "It's the ruins of the Hallowed Tower.\p"
+	.string "It's stones appear to have shifted.$"
+
+BattleFrontier_OutsideEast_Text_SpiritombTower_21:
+	.string "It's the ruins of the Hallowed Tower.\p"
+	.string "Is there crying coming from inside?$"
+
+BattleFrontier_OutsideEast_Text_SpiritombTower_28:
+	.string "It's the ruins of the Hallowed Tower.\p"
+	.string "Is the tower shaking ever so slightly?$"
+
+BattleFrontier_OutsideEast_Text_SpiritombTower_31:
+	.string "It's the ruins of the Hallowed Tower.\p"
+	.string "There is some sort of presence...\n"
+	.string "It appears ready to emerge!$"
+
+BattleFrontier_OutsideEast_Text_SpiritombTower_32:
+	.string "Yulaah!$"
+
+BattleFrontier_OutsideEast_Text_SpiritombTower_End:
+	.string "It's the ruins of the Hallowed Tower.$"
+
+BattleFrontier_OutsideEast_EventScript_SpiritombWoman_SpiritombDefeat:
+	lock
+	applymovement LOCALID_SPIRITOMB_WOMAN, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_SpiritombDefeat, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_OutsideEast_EventScript_SpiritombWoman_AnswerNo
+	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_OutsideEast_EventScript_SpiritombWoman_AnswerYes
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombWoman_AnswerNo:
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_AnswerNo, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_OutsideEast_EventScript_SpiritombWoman_StillNo
+	goto_if_eq VAR_RESULT, TRUE, BattleFrontier_OutsideEast_EventScript_SpiritombWoman_AnswerYes
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombWoman_StillNo:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_StillNo, MSGBOX_DEFAULT
+	applymovement LOCALID_SPIRITOMB_WOMAN, BattleFrontier_OutsideEast_Movement_SpiritombWoman_Leave
+	waitmovement 0
+	removeobject LOCALID_SPIRITOMB_WOMAN
+	setflag FLAG_HIDE_SPIRITOMB_WOMAN
+	release
+	end
+
+BattleFrontier_OutsideEast_Movement_SpiritombWoman_Leave:
+	fly_up
+	delay_16
+	delay_16
+	emote_exclamation_mark
+	step_end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombWoman_AnswerYes:
+	lock
+	faceplayer
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_AnswerYes, MSGBOX_DEFAULT
+	waitmessage
+	applymovement LOCALID_SPIRITOMB_WOMAN, BattleFrontier_OutsideEast_Movement_SpiritombWoman_GoComeBack
+	waitmovement 0
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_GiveBack, MSGBOX_DEFAULT
+	waitmessage
+	playfanfare FANFARE_OBTAIN_ITEM 
+	waitfanfare
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_GiveBack2, MSGBOX_DEFAULT
+	waitmessage
+	giveitem ITEM_TIMER_BALL, 5
+	applymovement LOCALID_SPIRITOMB_WOMAN, BattleFrontier_OutsideEast_Movement_SpiritombWoman_Leave2
+	waitmovement 0	
+	removeobject LOCALID_SPIRITOMB_WOMAN
+	setflag FLAG_HIDE_SPIRITOMB_WOMAN
+	release
+	end
+
+BattleFrontier_OutsideEast_Movement_SpiritombWoman_GoComeBack:
+	fly_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	fly_down
+	step_end
+
+BattleFrontier_OutsideEast_Movement_SpiritombWoman_Leave2:
+	fly_up
+	delay_16
+	step_end
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_SpiritombDefeat:
+	.string "So the POKéMON that was sealed away\n"
+	.string "was a SPIRITOMB?\p"
+	.string "... {PAUSE 60}\p"
+	.string "Can I have it?$"
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_AnswerNo:
+	.string "Please please won't you reconsider?$"
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_StillNo:
+	.string "You're mean, even after I gave you the\n"
+	.string "KEYSTONE in the first place!\p"
+	.string "GOODBYE!!$"
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_AnswerYes:
+	.string "What, really?\n"
+	.string "I expected you to say no.\p"
+	.string "I feel bad taking it from you since\n"
+	.string "you only just caught it.\p"
+	.string "... {PAUSE 60}\p"
+	.string "I know, I'll breed it at the DAYCARE\n"
+	.string "CENTER and give it back to you.\l"
+	.string "I'll be back soon.$"
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_GiveBack:
+	.string "Here's your SPIRITOMB back.$"
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_GiveBack2:
+	.string "I now have a SPIRITOMB that I hatched!\p"
+	.string "Thank you so much {PLAYER}.\n"
+	.string "I want you to have these in thanks.$"
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_Leave2:
+	.string "I'm going to go show my new favorite\n"
+	.string "POKéMON off to my friends.\p"
+	.string "Byeeeee!$"
+
+
+BattleFrontier_OutsideEast_EventScript_SpiritombSwimmer::
+	goto_if_set FLAG_RECEIVED_ODD_KEYSTONE, BattleFrontier_OutsideEast_EventScript_SpiritombSwimmer2
+	goto_if_set FLAG_DEFEAT_SPIRITOMB, BattleFrontier_OutsideEast_EventScript_SpiritombSwimmer3
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombSwimmer1
+
+BattleFrontier_OutsideEast_EventScript_SpiritombSwimmer2:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombSwimmer2, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_SpiritombSwimmer3:
+	lock
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombSwimmer3, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_Text_SpiritombSwimmer1:
+	.string "I love swimming under waterfalls.$"
+
+BattleFrontier_OutsideEast_Text_SpiritombSwimmer2:
+	.string "I love swimming under waterfalls.\p"
+	.string "...\p"
+	.string "The Hallowed Tower?\n"
+	.string "There's stories that the KEYSTONE tied\l"
+	.string "to the POKéMON gains power by being\l"
+	.string "near people that are also mischievous.\p"
+	.string "I wonder if that could mean children\n"
+	.string "in a school?$"
+
+BattleFrontier_OutsideEast_Text_SpiritombSwimmer3:
+	.string "I love swimming under waterfalls.\p"
+	.string "...\p"
+	.string "You caught the POKéMON from the tower?\n"
+	.string "That's amazing.$"
+
+//debug
+BattleFrontier_OutsideEast_EventScript_Spiritomb_VarGuy::
+	lock
+	addvar VAR_SPIRITOMB_STATE, 32
+	msgbox BattleFrontier_OutsideEast_Text_Spiritomb_VarGuy, MSGBOX_DEFAULT
+	release
+	end
+BattleFrontier_OutsideEast_Text_Spiritomb_VarGuy:
+	.string "+32 added$"
