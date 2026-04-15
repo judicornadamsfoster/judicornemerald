@@ -542,3 +542,4 @@ gSpecials::
 	def_special GiveRandomEgg
 	def_special CheckSpecies
 	def_special TryChangeDeoxysForm
+	def_special FieldLoadFlyMap
