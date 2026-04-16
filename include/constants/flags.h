@@ -55,7 +55,7 @@
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
+#define FLAG_SPIRITOMB_SWIMMER          0x2C // Unused Flag -tenaya
 #define FLAG_HIDE_SPIRITOMB_WOMAN       0x2D // Unused Flag -tenaya
 #define FLAG_DEFEAT_SPIRITOMB           0x2E // Unused Flag -tenaya
 #define FLAG_RECEIVED_ODD_KEYSTONE      0x2F // Unused Flag -tenaya
@@ -1574,11 +1574,11 @@
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_HIDE_RED                               (DAILY_FLAGS_START + 0x3)  // Unused Flag -tenaya
-#define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
-#define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
-#define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
-#define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
-#define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
+#define FLAG_DAILY_0x924                            (DAILY_FLAGS_START + 0x4)  // Unused Flag -tenaya
+#define FLAG_DAILY_0x925                            (DAILY_FLAGS_START + 0x5)  // Unused Flag -tenaya
+#define FLAG_DAILY_0x926                            (DAILY_FLAGS_START + 0x6)  // Unused Flag -tenaya
+#define FLAG_DAILY_0x927                            (DAILY_FLAGS_START + 0x7)  // Unused Flag -tenaya
+#define FLAG_DAILY_0x928                            (DAILY_FLAGS_START + 0x8)  // Unused Flag -tenaya
 #define FLAG_UNUSED_0x929                           (DAILY_FLAGS_START + 0x9)  // Unused Flag
 #define FLAG_DAILY_PICKED_LOTO_TICKET               (DAILY_FLAGS_START + 0xA)
 #define FLAG_DAILY_ROUTE_114_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xB)

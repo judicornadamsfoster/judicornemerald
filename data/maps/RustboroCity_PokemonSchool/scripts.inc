@@ -50,25 +50,63 @@ RustboroCity_PokemonSchool_EventScript_ExitTopicSelect::
 	releaseall
 	end
 
+
+//spiritomb var
 RustboroCity_PokemonSchool_EventScript_GameboyKid1::
+	goto_if_set FLAG_DAILY_0x924, RustboroCity_PokemonSchool_EventScript_GameboyKid1_Set
+	addvar VAR_SPIRITOMB_STATE, 1
+	setflag FLAG_DAILY_0x924
+	msgbox RustboroCity_PokemonSchool_Text_TradingRightNow, MSGBOX_NPC
+	end
+
+RustboroCity_PokemonSchool_EventScript_GameboyKid1_Set:
 	msgbox RustboroCity_PokemonSchool_Text_TradingRightNow, MSGBOX_NPC
 	end
 
 RustboroCity_PokemonSchool_EventScript_GameboyKid2::
+	goto_if_set FLAG_DAILY_0x925, RustboroCity_PokemonSchool_EventScript_GameboyKid2_Set
+	addvar VAR_SPIRITOMB_STATE, 1
+	setflag FLAG_DAILY_0x925
+	msgbox RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot, MSGBOX_NPC
+	end
+
+RustboroCity_PokemonSchool_EventScript_GameboyKid2_Set:
 	msgbox RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot, MSGBOX_NPC
 	end
 
 RustboroCity_PokemonSchool_EventScript_RichBoy::
+	goto_if_set FLAG_DAILY_0x926, RustboroCity_PokemonSchool_EventScript_RichBoy_Set
+	addvar VAR_SPIRITOMB_STATE, 1
+	setflag FLAG_DAILY_0x926
+	msgbox RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems, MSGBOX_NPC
+	end
+
+RustboroCity_PokemonSchool_EventScript_RichBoy_Set:
 	msgbox RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems, MSGBOX_NPC
 	end
 
 RustboroCity_PokemonSchool_EventScript_Lass::
+	goto_if_set FLAG_DAILY_0x927, RustboroCity_PokemonSchool_EventScript_Lass_Set
+	addvar VAR_SPIRITOMB_STATE, 1
+	setflag FLAG_DAILY_0x927
+	msgbox RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself, MSGBOX_NPC
+	end
+
+RustboroCity_PokemonSchool_EventScript_Lass_Set:
 	msgbox RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself, MSGBOX_NPC
 	end
 
 RustboroCity_PokemonSchool_EventScript_SchoolKidM::
+	goto_if_set FLAG_DAILY_0x928, RustboroCity_PokemonSchool_EventScript_SchoolKidM_Set
+	addvar VAR_SPIRITOMB_STATE, 1
+	setflag FLAG_DAILY_0x928
 	msgbox RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry, MSGBOX_NPC
 	end
+
+RustboroCity_PokemonSchool_EventScript_SchoolKidM_Set:
+	msgbox RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry, MSGBOX_NPC
+	end
+
 
 RustboroCity_PokemonSchool_EventScript_StudentNotebook::
 	msgbox RustboroCity_PokemonSchool_Text_StudentsNotes, MSGBOX_SIGN

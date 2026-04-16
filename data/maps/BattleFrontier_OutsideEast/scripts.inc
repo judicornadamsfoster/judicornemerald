@@ -437,6 +437,7 @@ BattleFrontier_OutsideEast_Text_StickyMonWithLongTail:
 	.string "it kept staring at me!$"
 
 
+
 //spiritomb events
 BattleFrontier_OutsideEast_EventScript_SpiritombWoman_Start::
 	goto_if_set FLAG_RECEIVED_ODD_KEYSTONE, BattleFrontier_OutsideEast_EventScript_SpiritombWoman_HaveKeystone
@@ -463,16 +464,34 @@ BattleFrontier_OutsideEast_Text_SpiritombWoman_UsedToBeTower:
 	.string "how to release the POKéMON?$"
 
 BattleFrontier_OutsideEast_EventScript_SpiritombWoman_HaveKeystone:
+	goto_if_set FLAG_SPIRITOMB_SWIMMER, BattleFrontier_OutsideEast_EventScript_SpiritombWoman_School
 	lock
 	faceplayer
-	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_HaveKeystone, MSGBOX_DEFAULT //have a keystone
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_HaveKeystone, MSGBOX_DEFAULT
 	release
 	end
 
 BattleFrontier_OutsideEast_Text_SpiritombWoman_HaveKeystone:
 	.string "There must be someone nearby that\n"
 	.string "knows about the Hallowed Tower.$"
-	
+
+BattleFrontier_OutsideEast_EventScript_SpiritombWoman_School:
+	lock
+	faceplayer
+	applymovement LOCALID_SPIRITOMB_WOMAN, Common_Movement_Delay32
+	waitmovement 0
+	applymovement LOCALID_SPIRITOMB_WOMAN, Common_Movement_QuestionMark
+	waitmovement 0
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_School, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_Text_SpiritombWoman_School:
+	.string "... people that are mischievous ...\n"
+	.string "... where they learn...\p"
+	.string "I wonder if that means children in a\n"
+	.string "school?\p"
+	.string "Maybe the school in Rustboro?$"
 
 BattleFrontier_OutsideEast_EventScript_SpiritombTower_Start::
 	goto_if_unset FLAG_RECEIVED_ODD_KEYSTONE, BattleFrontier_OutsideEast_EventScript_SpiritombTower_0
@@ -526,10 +545,10 @@ BattleFrontier_OutsideEast_EventScript_SpiritombTower_32:
 	setwildbattle SPECIES_SPIRITOMB, 25
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, BattleFrontier_OutsideEast_EventScript_DefeatedSpiritombRetry
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, BattleFrontier_OutsideEast_EventScript_DefeatedSpiritombRetry
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, BattleFrontier_OutsideEast_EventScript_DefeatedSpiritombRetry
-	goto BattleFrontier_OutsideEast_EventScript_DefeatedSpiritomb
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, BattleFrontier_OutsideEast_EventScript_SpiritombRetry
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, BattleFrontier_OutsideEast_EventScript_SpiritombRetry
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, BattleFrontier_OutsideEast_EventScript_SpiritombRetry
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, BattleFrontier_OutsideEast_EventScript_CaughtSpiritomb
 	release
 	end
 
@@ -539,19 +558,14 @@ BattleFrontier_OutsideEast_EventScript_SpiritombTower_End:
 	release
 	end
 
-BattleFrontier_OutsideEast_EventScript_DefeatedSpiritomb:
+BattleFrontier_OutsideEast_EventScript_CaughtSpiritomb:
 	setflag FLAG_DEFEAT_SPIRITOMB
 	goto BattleFrontier_OutsideEast_EventScript_SpiritombWoman_SpiritombDefeat
 	release
 	end
 
-BattleFrontier_OutsideEast_EventScript_DefeatedSpiritombRetry:
+BattleFrontier_OutsideEast_EventScript_SpiritombRetry:
 	additem ITEM_ODD_KEYSTONE, 1
-	goto BattleFrontier_OutsideEast_EventScript_SpiritombWoman_SpiritombDefeat_RetryBattle
-	release
-	end
-
-BattleFrontier_OutsideEast_EventScript_SpiritombWoman_SpiritombDefeat_RetryBattle:
 	applymovement LOCALID_SPIRITOMB_WOMAN, Common_Movement_Delay32
 	waitmovement 0
 	applymovement LOCALID_SPIRITOMB_WOMAN, Common_Movement_QuestionMark
@@ -640,6 +654,8 @@ BattleFrontier_OutsideEast_EventScript_SpiritombWoman_AnswerYes:
 	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_GiveBack2, MSGBOX_DEFAULT
 	waitmessage
 	giveitem ITEM_TIMER_BALL, 5
+	msgbox BattleFrontier_OutsideEast_Text_SpiritombWoman_Leave2, MSGBOX_DEFAULT
+	waitmessage
 	applymovement LOCALID_SPIRITOMB_WOMAN, BattleFrontier_OutsideEast_Movement_SpiritombWoman_Leave2
 	waitmovement 0	
 	removeobject LOCALID_SPIRITOMB_WOMAN
@@ -708,6 +724,7 @@ BattleFrontier_OutsideEast_EventScript_SpiritombSwimmer::
 BattleFrontier_OutsideEast_EventScript_SpiritombSwimmer2:
 	lock
 	msgbox BattleFrontier_OutsideEast_Text_SpiritombSwimmer2, MSGBOX_DEFAULT
+	setflag FLAG_SPIRITOMB_SWIMMER
 	release
 	end
 
@@ -726,9 +743,8 @@ BattleFrontier_OutsideEast_Text_SpiritombSwimmer2:
 	.string "The Hallowed Tower?\n"
 	.string "There's stories that the KEYSTONE tied\l"
 	.string "to the POKéMON gains power by being\l"
-	.string "near people that are also mischievous.\p"
-	.string "I wonder if that could mean children\n"
-	.string "in a school?$"
+	.string "near people that are also mischievous\p"
+	.string "in a place where they learn.$"
 
 BattleFrontier_OutsideEast_Text_SpiritombSwimmer3:
 	.string "I love swimming under waterfalls.\p"
@@ -739,9 +755,10 @@ BattleFrontier_OutsideEast_Text_SpiritombSwimmer3:
 //debug
 BattleFrontier_OutsideEast_EventScript_Spiritomb_VarGuy::
 	lock
-	addvar VAR_SPIRITOMB_STATE, 32
+	addvar VAR_SPIRITOMB_STATE, 5
 	msgbox BattleFrontier_OutsideEast_Text_Spiritomb_VarGuy, MSGBOX_DEFAULT
 	release
 	end
 BattleFrontier_OutsideEast_Text_Spiritomb_VarGuy:
-	.string "+32 added$"
+	.string "+5 added$"
+
