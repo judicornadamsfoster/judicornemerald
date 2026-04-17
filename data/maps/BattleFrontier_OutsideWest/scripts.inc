@@ -515,3 +515,446 @@ BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier:
 	.string "Oh, challenges can wait. I feel driven\n"
 	.string "to find the delightful creature!$"
 
+
+//bill start
+//triggers start when VAR_BILL_STATE=5
+BattleFrontier_OutsideWest_EventScript_Bill_Trigger0::
+	lock
+	setvar VAR_TEMP_E, 0
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer0
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_Bill_Start
+	end
+BattleFrontier_OutsideWest_EventScript_Bill_Trigger1::
+	lock
+	setvar VAR_TEMP_E, 1
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer1
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_Bill_Start
+	end
+BattleFrontier_OutsideWest_EventScript_Bill_Trigger2::
+	lock
+	setvar VAR_TEMP_E, 2
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer2
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_Bill_Start
+	end
+BattleFrontier_OutsideWest_EventScript_Bill_Trigger3::
+	lock
+	setvar VAR_TEMP_E, 3
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer3
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_Bill_Start
+	end
+BattleFrontier_OutsideWest_EventScript_Bill_Trigger4::
+	lock
+	setvar VAR_TEMP_E, 4
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer4
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_Bill_Start
+	end
+
+BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer0:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end
+BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer1:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	walk_left
+	walk_down
+	step_end
+BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer2:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	walk_down
+	step_end
+BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer3:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	walk_right
+	walk_down
+	step_end
+BattleFrontier_OutsideWest_Movement_Bill_MoveToPlayer4:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	step_end
+
+BattleFrontier_OutsideWest_EventScript_Bill_Start::
+	msgbox BattleFrontier_OutsideWest_Text_Bill_HeardYouWere, MSGBOX_DEFAULT
+	applymovement LOCALID_BILL_BFWEST, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox BattleFrontier_OutsideWest_Text_Bill_ComeWithMe, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	goto_if_eq VAR_TEMP_E, 0, BattleFrontier_OutsideWest_EventScript_BillMoveToPC0
+	goto_if_eq VAR_TEMP_E, 1, BattleFrontier_OutsideWest_EventScript_BillMoveToPC1
+	goto_if_eq VAR_TEMP_E, 2, BattleFrontier_OutsideWest_EventScript_BillMoveToPC2
+	goto_if_eq VAR_TEMP_E, 3, BattleFrontier_OutsideWest_EventScript_BillMoveToPC3
+	goto_if_eq VAR_TEMP_E, 4, BattleFrontier_OutsideWest_EventScript_BillMoveToPC4
+
+BattleFrontier_OutsideWest_EventScript_BillMoveToPC0:
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_BillMoveToPC0
+	applymovement LOCALID_PLAYER, BattleFrontier_OutsideWest_Movement_PlayerMoveToPC0
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_BillLeavesFrame
+BattleFrontier_OutsideWest_EventScript_BillMoveToPC1:
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_BillMoveToPC1
+	applymovement LOCALID_PLAYER, BattleFrontier_OutsideWest_Movement_PlayerMoveToPC1
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_BillLeavesFrame
+BattleFrontier_OutsideWest_EventScript_BillMoveToPC2:
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_BillMoveToPC2
+	applymovement LOCALID_PLAYER, BattleFrontier_OutsideWest_Movement_PlayerMoveToPC2
+	waitmovement 0
+	msgbox BattleFrontier_OutsideWest_Text_Bill_NotMuchFurther, MSGBOX_DEFAULT
+	goto BattleFrontier_OutsideWest_EventScript_BillLeavesFrame
+BattleFrontier_OutsideWest_EventScript_BillMoveToPC3:
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_BillMoveToPC3
+	applymovement LOCALID_PLAYER, BattleFrontier_OutsideWest_Movement_PlayerMoveToPC3
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_BillLeavesFrame
+BattleFrontier_OutsideWest_EventScript_BillMoveToPC4:
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_BillMoveToPC4
+	applymovement LOCALID_PLAYER, BattleFrontier_OutsideWest_Movement_PlayerMoveToPC4
+	waitmovement 0
+	goto BattleFrontier_OutsideWest_EventScript_BillLeavesFrame
+
+//24 steps right
+BattleFrontier_OutsideWest_Movement_BillMoveToPC0:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_left
+	step_end
+BattleFrontier_OutsideWest_Movement_PlayerMoveToPC0:
+	delay_16
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+//22 steps right
+BattleFrontier_OutsideWest_Movement_BillMoveToPC1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_left
+	step_end
+BattleFrontier_OutsideWest_Movement_PlayerMoveToPC1:
+	delay_16
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+//21 steps right
+BattleFrontier_OutsideWest_Movement_BillMoveToPC2:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_left
+	step_end
+BattleFrontier_OutsideWest_Movement_PlayerMoveToPC2:
+	delay_16
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+//20 steps right
+BattleFrontier_OutsideWest_Movement_BillMoveToPC3:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_left
+	step_end
+BattleFrontier_OutsideWest_Movement_PlayerMoveToPC3:
+	delay_16
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+//18 steps right
+BattleFrontier_OutsideWest_Movement_BillMoveToPC4:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_left
+	step_end
+BattleFrontier_OutsideWest_Movement_PlayerMoveToPC4:
+	delay_16
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+BattleFrontier_OutsideWest_EventScript_BillLeavesFrame:
+	msgbox BattleFrontier_OutsideWest_Text_Bill_NotMuchFurther, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_BILL_BFWEST, BattleFrontier_OutsideWest_Movement_BillMoveFinish
+	applymovement LOCALID_PLAYER, BattleFrontier_OutsideWest_Movement_PlayerMoveFinish
+	waitmovement 0
+	removeobject LOCALID_BILL_BFWEST
+	setflag FLAG_BILL_BFWEST
+	release
+	end
+
+
+//12 steps right
+BattleFrontier_OutsideWest_Movement_BillMoveFinish:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_fast_right
+	walk_fast_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	step_end
+BattleFrontier_OutsideWest_Movement_PlayerMoveFinish:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	delay_16
+	emote_question_mark
+	delay_16
+	step_end
+
+
+BattleFrontier_OutsideWest_Text_Bill_HeardYouWere:
+	.string "BILL: Hi {PLAYER}, I heard you were\n"
+	.string "coming so I wanted to come meet you.\l"
+	.string "Welcome to the BATTLE FRONTIER.\p"
+	.string "...\p"
+	.string "Why am I here?\n"
+	.string "LYNETTE asked me to help sync up the\n"
+	.string "POKéMON STORAGE SYSTEM pcs on the\p"
+	.string "island to my system so that people\n"
+	.string "from KANTO can access their POKéMON\l"
+	.string "when they come here to battle.$"
+
+BattleFrontier_OutsideWest_Text_Bill_ComeWithMe:
+	.string "I'm heading to the POKéCENTER.\n"
+	.string "Can you come with me?\l"
+	.string "I've a favor to ask.$"
+
+BattleFrontier_OutsideWest_Text_Bill_NotMuchFurther:
+	.string "It's not much further.\n"
+	.string "Come on.$"

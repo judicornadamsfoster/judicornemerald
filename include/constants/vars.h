@@ -123,13 +123,13 @@
 #define VAR_ROUTE108_STATE                               0x4067 // Unused Var
 #define VAR_ROUTE109_STATE                               0x4068 // Unused Var
 #define VAR_ROUTE110_STATE                               0x4069
-#define VAR_ROUTE111_STATE                               0x406A // Unused Var
+#define VAR_ROUTE111_STATE                               0x406A // Unused Var -tenaya 0=trigger Bill, 1=Bill given eevee
 #define VAR_ROUTE112_STATE                               0x406B // Unused Var
 #define VAR_ROUTE113_STATE                               0x406C // Unused Var
 #define VAR_ROUTE114_STATE                               0x406D // Unused Var
 #define VAR_ROUTE115_STATE                               0x406E // Unused Var
 #define VAR_ROUTE116_STATE                               0x406F
-#define VAR_ROUTE117_STATE                               0x4070 // Unused Var -tenaya 0=trigger Bill, 1=Bill given eevee
+#define VAR_ROUTE117_STATE                               0x4070 // Unused Var
 #define VAR_ROUTE118_STATE                               0x4071
 #define VAR_ROUTE119_STATE                               0x4072
 #define VAR_ROUTE120_STATE                               0x4073 // Unused Var
@@ -148,7 +148,7 @@
 #define VAR_ROUTE133_STATE                               0x4080 // Unused Var
 #define VAR_ROUTE134_STATE                               0x4081 // Unused Var
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
-#define VAR_BILL_STATE                                   0x4083 // Unused Var -tenaya
+#define VAR_BILL_STATE                                   0x4083 // Unused Var -tenaya 1=given eevee,2=,3=,4=,5=meet at BF, 6=
 #define VAR_BIRCH_LAB_STATE                              0x4084
 #define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
 #define VAR_CONTEST_HALL_STATE                           0x4086
