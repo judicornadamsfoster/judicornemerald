@@ -763,30 +763,3 @@ BattleFrontier_OutsideEast_Text_Spiritomb_VarGuy:
 	.string "+5 added$"
 
 
-//bill outside pokecenter
-BattleFrontier_OutsideEast_EventScript_Bill_OutsidePC::
-	lock
-	faceplayer
-	applymovement LOCALID_BILL_BFEAST, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox BattleFrontier_OutsideEast_Text_Bill_SorryILeftYou, MSGBOX_DEFAULT
-	applymovement LOCALID_BILL_BFEAST, Common_Movement_FaceUp
-	waitmovement 0
-	opendoor 3, 51
-	waitdooranim
-	applymovement LOCALID_BILL_BFEAST, Common_Movement_WalkUp
-	waitmovement 0
-	removeobject LOCALID_BILL_BFEAST
-	setflag FLAG_BILL_BFEAST
-	closedoor 3, 51
-	waitdooranim
-	setvar VAR_BILL_STATE, 6
-	release
-	end
-
-BattleFrontier_OutsideEast_Text_Bill_SorryILeftYou:
-	.string "BILL: {PLAYER}, sorry I left you\n"
-	.string "behind, I just got so excited to get\l"
-	.string "to the POKéCENTER and back to work.\p"
-	.string "Come on inside.$"
-

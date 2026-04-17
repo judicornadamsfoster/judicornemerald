@@ -902,6 +902,7 @@ BattleFrontier_OutsideWest_EventScript_BillLeavesFrame:
 	waitmovement 0
 	removeobject LOCALID_BILL_BFWEST
 	setflag FLAG_BILL_BFWEST
+	setvar VAR_BILL_STATE, 6
 	release
 	end
 
