@@ -543,3 +543,7 @@ gSpecials::
 	def_special CheckSpecies
 	def_special TryChangeDeoxysForm
 	def_special FieldLoadFlyMap
+	def_special GetSeenMon
+	def_special GetCaughtMon
+	def_special SetSeenMon
+	def_special SetCaughtMon
