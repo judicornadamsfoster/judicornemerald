@@ -4439,7 +4439,7 @@ void TryChangeDeoxysForm(void)
 
     gSpecialVar_Result = FALSE;
 //#endif
-
+}
 
 bool8 GetSeenMon(void)
 {
