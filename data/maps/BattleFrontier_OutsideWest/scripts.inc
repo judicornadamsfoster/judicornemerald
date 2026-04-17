@@ -945,7 +945,7 @@ BattleFrontier_OutsideWest_Text_Bill_HeardYouWere:
 	.string "Welcome to the BATTLE FRONTIER.\p"
 	.string "...\p"
 	.string "Why am I here?\n"
-	.string "LYNETTE asked me to help sync up the\n"
+	.string "LANETTE asked me to help sync up the\n"
 	.string "POKéMON STORAGE SYSTEM pcs on the\p"
 	.string "island to my system so that people\n"
 	.string "from KANTO can access their POKéMON\l"

@@ -148,7 +148,7 @@
 #define VAR_ROUTE133_STATE                               0x4080 // Unused Var
 #define VAR_ROUTE134_STATE                               0x4081 // Unused Var
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
-#define VAR_BILL_STATE                                   0x4083 // Unused Var -tenaya 1=given eevee,2=,3=,4=,5=meet at BF, 6=
+#define VAR_BILL_STATE                                   0x4083 // Unused Var -tenaya 1=given eevee,2=,3=,4=,5=meet at BF, 6=temp til bill goes to pc,7=after asked to find lati,8=goes to lanettes
 #define VAR_BIRCH_LAB_STATE                              0x4084
 #define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
 #define VAR_CONTEST_HALL_STATE                           0x4086
