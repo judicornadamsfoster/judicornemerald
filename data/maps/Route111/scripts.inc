@@ -808,6 +808,7 @@ EventScript_ExplainEevee::
 	setvar VAR_ROUTE111_STATE, 1
 	removeobject LOCALID_ROUTE111_BILL
 	setvar VAR_BILL_STATE, 1
+	setflag FLAG_HIDE_BILL_LANETTES
 	releaseall
 	end
 

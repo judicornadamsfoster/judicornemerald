@@ -50,9 +50,9 @@
 #define FLAG_SYS_NO_CATCHING        0x24 // Unused Flag //DEBUG
 #define FLAG_SYS_PC_FROM_DEBUG_MENU 0x25 // Unused Flag //DEBUG
 #define FLAG_SYS_NO_BATTLE_DMG      0x26 // Unused Flag //DEBUG
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_HIDE_BILL_LANETTES         0x27 // Unused Flag -tenaya
 #define FLAG_FORCE_LOAD_OFFSCREEN_OBJ   0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+#define FLAG_BOTH_LATI_UNLOCK           0x29 // Unused Flag -tenaya
 #define FLAG_BILL_BFPC       0x2A // Unused Flag -tenaya
 #define FLAG_BILL_BFWEST     0x2B // Unused Flag -tenaya
 #define FLAG_SPIRITOMB_SWIMMER          0x2C // Unused Flag -tenaya
