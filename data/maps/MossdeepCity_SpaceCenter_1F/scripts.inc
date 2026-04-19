@@ -418,3 +418,127 @@ MossdeepCity_SpaceCenter_1F_Text_MagmaIntentToStealNotice:
 	.string "We will take the fuel no matter what.\p"
 	.string "“Let there be more land!\n"
 	.string "                                          TEAM MAGMA”$"
+
+
+
+//bill at space center
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_Start::
+	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 0, MossdeepCity_SpaceCenter_1F_EventScript_Bill_BeforeMagma
+	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 1, MossdeepCity_SpaceCenter_1F_EventScript_Bill_BeforeMagma
+	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_Bill_Magma
+	lock
+	faceplayer
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Bill_AfterMagma, MSGBOX_DEFAULT
+	giveitem ITEM_THUNDER_STONE
+	giveitem ITEM_WATER_STONE
+	giveitem ITEM_FIRE_STONE
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Bill_ItemsForEevee, MSGBOX_DEFAULT
+	call_if_eq VAR_FACING, DIR_NORTH, MossdeepCity_SpaceCenter_1F_EventScript_Bill_WalkInPlaceNorth
+	call_if_eq VAR_FACING, DIR_WEST, MossdeepCity_SpaceCenter_1F_EventScript_Bill_WalkInPlaceWest
+	call_if_eq VAR_FACING, DIR_EAST, MossdeepCity_SpaceCenter_1F_EventScript_Bill_WalkInPlaceEast
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Bill_BetterGo, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	call_if_eq VAR_FACING, DIR_NORTH, MossdeepCity_SpaceCenter_1F_EventScript_Bill_ExitNorth
+	call_if_eq VAR_FACING, DIR_WEST, MossdeepCity_SpaceCenter_1F_EventScript_Bill_ExitWE
+	call_if_eq VAR_FACING, DIR_EAST, MossdeepCity_SpaceCenter_1F_EventScript_Bill_ExitWE
+	playse SE_EXIT
+	removeobject LOCALID_BILL_SPACECENTER
+	waitse
+	setflag FLAG_HIDE_BILL_SPACECENTER
+	setvar VAR_BILL_STATE, 5
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_WalkInPlaceNorth:
+	applymovement LOCALID_BILL_SPACECENTER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	return
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_WalkInPlaceWest:
+	applymovement LOCALID_BILL_SPACECENTER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	return
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_WalkInPlaceEast:
+	applymovement LOCALID_BILL_SPACECENTER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	return
+
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_ExitNorth:
+	applymovement LOCALID_BILL_SPACECENTER, MossdeepCity_SpaceCenter_1F_Movement_Bill_ExitNorth
+	waitmovement 0
+	return
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_ExitWE:
+	applymovement LOCALID_BILL_SPACECENTER, MossdeepCity_SpaceCenter_1F_Movement_Bill_ExitWE
+	waitmovement 0
+	return
+
+MossdeepCity_SpaceCenter_1F_Movement_Bill_ExitNorth:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	step_end
+MossdeepCity_SpaceCenter_1F_Movement_Bill_ExitWE:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	step_end
+
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_BeforeMagma:
+	goto_if_eq VAR_BILL_STATE, 2, MossdeepCity_SpaceCenter_1F_EventScript_Bill_BeforeMagma2
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Bill_BeforeMagma, MSGBOX_NPC
+	setvar VAR_BILL_STATE, 2
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_BeforeMagma2:
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Bill_BeforeMagma2, MSGBOX_NPC
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_Bill_Magma:
+	msgbox MossdeepCity_SpaceCenter_1F_Text_Bill_Magma, MSGBOX_NPC
+	end
+
+MossdeepCity_SpaceCenter_1F_Text_Bill_BeforeMagma:
+	.string "BILL: Hi {PLAYER}, it's good to see\n"
+	.string "you again.\p"
+	.string "It's been a while since we met back\n"
+	.string "on ROUTE 111, isn't it.\p"
+	.string "I thought I'd have a look at this\n"
+	.string "amazing SPACE CENTER before I go see\p"
+	.string "my friend LANETTE.$"
+
+MossdeepCity_SpaceCenter_1F_Text_Bill_BeforeMagma2:
+	.string "This SPACE CENTER is amazing.\p"
+	.string "I haven't seen anything like this on\n"
+	.string "my travels in JOHTO and KANTO.$"
+
+MossdeepCity_SpaceCenter_1F_Text_Bill_Magma:
+	.string "BILL: {PLAYER}, are you okay?\p"
+	.string "I came to have a look at the SPACE\n"
+	.string "CENTER at the wrong time.\p"
+	.string "Just after I got here, these evil\n"
+	.string "people turn up to steal rocket fuel.$"
+
+MossdeepCity_SpaceCenter_1F_Text_Bill_AfterMagma:
+	.string "BILL: {PLAYER}, did you defeat TEAM\n"
+	.string "MAGMA?\p"
+	.string "They came running through here with\n"
+	.string "their tails between their legs.\p"
+	.string "...\p"
+	.string "Because you helped save everyone, I\n"
+	.string "want you to have these.$"
+
+MossdeepCity_SpaceCenter_1F_Text_Bill_ItemsForEevee:
+	.string "You can use those items on the EEVEE\n"
+	.string "that I gave you.\p"
+	.string "They cause evolution into one of the\n"
+	.string "eight POKéMON EEVEE can evolve in to.$"
+
+MossdeepCity_SpaceCenter_1F_Text_Bill_BetterGo:
+	.string "I better get going.\n"
+	.string "I have my friend LANETTE to go meet.\p"
+	.string "Take care of yourself {PLAYER},\n"
+	.string "I'm sure we'll meet again somewhere.$"
