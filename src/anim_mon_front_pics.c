@@ -395,13 +395,13 @@ const u32 gMonFrontPic_Deoxys[] = INCGFX_U32("graphics/pokemon/deoxys/anim_front
 const u32 gMonFrontPic_Chimecho[] = INCGFX_U32("graphics/pokemon/chimecho/anim_front.png", ".4bpp.lz");
 
 
-const u32 gMonFrontPic_Leafeon[] = INCBIN_U32("graphics/pokemon/leafeon/anim_front.png", ".4bpp.lz");
-const u32 gMonFrontPic_Glaceon[] = INCBIN_U32("graphics/pokemon/glaceon/anim_front.png", ".4bpp.lz");
-const u32 gMonFrontPic_Sylveon[] = INCBIN_U32("graphics/pokemon/sylveon/anim_front.png", ".4bpp.lz");
-const u32 gMonFrontPic_DeoxysA[] = INCBIN_U32("graphics/pokemon/deoxys/attack/anim_front.png", ".4bpp.lz");
-const u32 gMonFrontPic_DeoxysD[] = INCBIN_U32("graphics/pokemon/deoxys/defense/anim_front.png", ".4bpp.lz");
-const u32 gMonFrontPic_DeoxysS[] = INCBIN_U32("graphics/pokemon/deoxys/speed/anim_front.png", ".4bpp.lz");
-const u32 gMonFrontPic_Spiritomb[] = INCBIN_U32("graphics/pokemon/spiritomb/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Leafeon[] = INCGFX_U32("graphics/pokemon/leafeon/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Glaceon[] = INCGFX_U32("graphics/pokemon/glaceon/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Sylveon[] = INCGFX_U32("graphics/pokemon/sylveon/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_DeoxysA[] = INCGFX_U32("graphics/pokemon/deoxys/attack/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_DeoxysD[] = INCGFX_U32("graphics/pokemon/deoxys/defense/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_DeoxysS[] = INCGFX_U32("graphics/pokemon/deoxys/speed/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Spiritomb[] = INCGFX_U32("graphics/pokemon/spiritomb/anim_front.png", ".4bpp.lz");
 
 
 const u32 gMonFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/anim_front.png", ".4bpp.lz");
