@@ -11,7 +11,6 @@ ChangeDeoxysForm_End:
 ChangeDeoxysForm_Start:
 	msgbox ChangeDeoxysForm_Text_Select, MSGBOX_DEFAULT
 	special ChoosePartyMon
-	waitstate
 	compare VAR_0x8004, 255
 	goto_if_eq ChangeDeoxysForm_End
 	special TryChangeDeoxysForm

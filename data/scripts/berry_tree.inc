@@ -149,9 +149,6 @@ BerryTree_EventScript_ItemUseWailmerPail::
 BerryTree_EventScript_WaterBerry::
 	special ObjectEventInteractionWaterBerryTree
 	special DoWateringBerryTreeAnim
-	message BerryTree_Text_PlantIsDelighted
-	waitmessage
-	waitbuttonpress
 	releaseall
 	end
 

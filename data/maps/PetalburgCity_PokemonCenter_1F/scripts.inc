@@ -138,7 +138,6 @@ PetalburgCity_PokemonCenter_1F_EventScript_SecretMon_End::
 	fadescreen FADE_TO_BLACK
 	hidemoneybox
 	special ChangeBoxPokemonNickname
-	waitstate
 	setflag FLAG_BOUGHT_SECRETMON
 	release
 	end

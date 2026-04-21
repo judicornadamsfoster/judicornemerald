@@ -732,7 +732,6 @@ MeteorFalls_1F_1R_ChangeDeoxysForm::
 
 MeteorFalls_1F_1R_ChangeDeoxysForm_Start:
 	special ChoosePartyMon
-	waitstate
 	compare VAR_0x8004, 255
 	goto_if_eq MeteorFalls_1F_1R_EventScript_DeoxysEnd
 	special TryChangeDeoxysForm
