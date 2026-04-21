@@ -182,6 +182,7 @@ SECTIONS {
         src/script_pokemon_util.o(.text);
         src/field_poison.o(.text);
         src/pokemon_size_record.o(.text);
+        src/give_gift_ribbon_to_party.o(.text);
         src/fldeff_misc.o(.text);
         src/field_special_scene.o(.text);
         src/rotating_gate.o(.text);
@@ -562,6 +563,7 @@ SECTIONS {
         src/contest_util.o(.rodata);
         src/script_pokemon_util.o(.rodata);
         src/pokemon_size_record.o(.rodata)
+        src/give_gift_ribbon_to_party.o(.rodata);
         src/fldeff_misc.o(.rodata);
         src/field_special_scene.o(.rodata);
         src/rotating_gate.o(.rodata);
