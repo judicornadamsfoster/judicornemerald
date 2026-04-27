@@ -1070,3 +1070,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/VictoryRoad_Sapphire_1/scripts.inc"
 	.include "data/maps/VictoryRoad_Sapphire_2/scripts.inc"
 	.include "data/scripts/change_deoxys_form.inc"
+
+	.include "data/maps/PetalburgWoods_Shrine/scripts.inc"

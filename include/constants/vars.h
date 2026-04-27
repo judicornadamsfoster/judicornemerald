@@ -99,7 +99,7 @@
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
 #define VAR_OLDALE_TOWN_STATE                            0x4051
-#define VAR_DEWFORD_TOWN_STATE                           0x4052 // Unused Var
+#define VAR_LEAF_STATE                                   0x4052 // Unused Var -tenaya
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_VERDANTURF_TOWN_STATE                        0x4055 // Unused Var
@@ -185,7 +185,7 @@
 #define VAR_TRICK_HOUSE_BEING_WATCHED_STATE              0x40A5
 #define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER               0x40A6
 #define VAR_TRICK_HOUSE_ENTRANCE_STATE                   0x40A7
-#define VAR_UNUSED_0x40A8                                0x40A8 // Unused Var
+#define VAR_SHRINE_MEOWTH_STATE                          0x40A8 // Unused Var -tenaya
 #define VAR_CYCLING_CHALLENGE_STATE                      0x40A9
 #define VAR_SLATEPORT_MUSEUM_1F_STATE                    0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE                   0x40AB

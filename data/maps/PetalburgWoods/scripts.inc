@@ -1,5 +1,159 @@
 PetalburgWoods_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, PetalburgWoods_OnLoad
+	map_script MAP_SCRIPT_ON_RESUME, PetalburgWoods_OnLoad
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, PetalburgWoods_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgWoods_OnLoad
 	.byte 0
+
+
+PetalburgWoods_OnLoad:
+	call_if_eq VAR_LEAF_STATE, 1, PetalburgWoods_ShowLeaf
+	call_if_eq VAR_LEAF_STATE, 2, PetalburgWoods_ShowLeaf
+	call_if_eq VAR_LEAF_STATE, 0, PetalburgWoods_ClosePath
+	call_if_ge VAR_LEAF_STATE, 3, PetalburgWoods_HideLeaf
+	end
+
+PetalburgWoods_HideLeaf:
+	removeobject LOCALID_PW_LEAF
+	setflag FLAG_HIDE_PW_LEAF
+	return
+
+PetalburgWoods_ShowLeaf:
+	clearflag FLAG_HIDE_PW_LEAF
+	return
+
+PetalburgWoods_ClosePath:
+	removeobject LOCALID_PW_LEAF
+	setflag FLAG_HIDE_PW_LEAF
+	setmetatile 46, 21, 0x1DC, TRUE
+	setmetatile 47, 21, 0x1DD, TRUE
+	setmetatile 48, 21, 0x1DC, TRUE
+	setmetatile 49, 21, 0x1DD, TRUE
+	setmetatile 50, 21, 0x1DC, TRUE
+	setmetatile 51, 21, 0x1DD, TRUE
+	setmetatile 52, 21, 0x1DC, TRUE
+	setmetatile 53, 21, 0x1DD, TRUE
+	setmetatile 54, 21, 0x1DC, TRUE
+	setmetatile 55, 21, 0x1DD, TRUE
+	setmetatile 56, 21, 0x1DC, TRUE
+	setmetatile 57, 21, 0x1DD, TRUE
+
+	setmetatile 46, 22, 0x1D4, TRUE
+	setmetatile 47, 22, 0x1D5, TRUE
+	setmetatile 48, 22, 0x1D4, TRUE
+	setmetatile 49, 22, 0x1D5, TRUE
+	setmetatile 50, 22, 0x1D4, TRUE
+	setmetatile 51, 22, 0x1D5, TRUE
+	setmetatile 52, 22, 0x1D4, TRUE
+	setmetatile 53, 22, 0x1D5, TRUE
+	setmetatile 54, 22, 0x1D4, TRUE
+	setmetatile 55, 22, 0x1D5, TRUE
+	setmetatile 56, 22, 0x1D4, TRUE
+	setmetatile 57, 22, 0x1D5, TRUE
+	
+	setmetatile 46, 23, 0x1DC, TRUE
+	setmetatile 47, 23, 0x1DD, TRUE
+	setmetatile 48, 23, 0x1DC, TRUE
+	setmetatile 49, 23, 0x1DD, TRUE
+	setmetatile 50, 23, 0x1DC, TRUE
+	setmetatile 51, 23, 0x1DD, TRUE
+	setmetatile 52, 23, 0x1DC, TRUE
+	setmetatile 53, 23, 0x1DD, TRUE
+	setmetatile 54, 23, 0x1DC, TRUE
+	setmetatile 55, 23, 0x1DD, TRUE
+	setmetatile 56, 23, 0x1DC, TRUE
+	setmetatile 57, 23, 0x1DD, TRUE
+	
+	special DrawWholeMapView
+	return
+//MapScripts end
+
+
+PetalburgWoods_EventScript_Leaf_TriggerVar1::
+	goto PetalburgWoods_EventScript_Leaf_Start
+
+PetalburgWoods_EventScript_Leaf_TriggerVar2::
+	goto PetalburgWoods_EventScript_Leaf_AskVar2
+
+PetalburgWoods_EventScript_Leaf_Start::
+	goto_if_eq VAR_LEAF_STATE, 2, PetalburgWoods_EventScript_Leaf_AskVar2
+	lock
+	faceplayer
+	msgbox PetalburgWoods_Text_Leaf_CutThrough, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgWoods_EventScript_Leaf_NoVar1
+	goto PetalburgWoods_EventScript_Leaf_PrepareToMove
+
+PetalburgWoods_Text_Leaf_CutThrough:
+	.string "Oh {PLAYER}, it's terrible.\n"
+	.string "They've already cut through.\p"
+	.string "It looks quite dark and scary.\p"
+	.string "Could you help me investigate?\n"
+	.string "Not that I'm scared or anything.$"
+
+
+PetalburgWoods_EventScript_Leaf_NoVar1:
+	setvar VAR_LEAF_STATE, 2
+	msgbox PetalburgWoods_Text_Leaf_NoVar1, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_Text_Leaf_NoVar1:
+	.string "Oh, you're busy?\p"
+	.string "That's okay, I'll wait here for you\n"
+	.string "to finish what you're doing.$"
+
+PetalburgWoods_EventScript_Leaf_AskVar2:
+	lock
+	faceplayer
+	msgbox PetalburgWoods_Text_Leaf_AskVar2, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PetalburgWoods_EventScript_Leaf_NoVar2
+	goto PetalburgWoods_EventScript_Leaf_PrepareToMove
+	release
+	end
+
+PetalburgWoods_Text_Leaf_AskVar2:
+	.string "Oh, hi {PLAYER}.\n"
+	.string "Are you ready to go investigate what\p"
+	.string "has been done to the forest?$"
+
+
+PetalburgWoods_EventScript_Leaf_NoVar2:
+	msgbox PetalburgWoods_Text_Leaf_NoVar2, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_Text_Leaf_NoVar2:
+	.string "Oh, you're still busy?\p"
+	.string "That's okay, I'll still wait here for\n"
+	.string "you to finish what you're doing.$"
+
+PetalburgWoods_EventScript_Leaf_PrepareToMove:
+	msgbox PetalburgWoods_Text_Leaf_LetsGo, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	applymovement LOCALID_PW_LEAF, PetalburgWoods_EventScript_Movement_Leaf_Move
+	waitmovement 0
+	removeobject LOCALID_PW_LEAF
+	setflag FLAG_HIDE_PW_LEAF
+	setvar VAR_LEAF_STATE, 3
+	RELEASE
+	end
+
+PetalburgWoods_Text_Leaf_LetsGo:
+	.string "Thanks, {PLAYER}.\n"
+	.string "Let's go.$"
+
+PetalburgWoods_EventScript_Movement_Leaf_Move:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 
 PetalburgWoods_EventScript_DevonResearcherLeft::
 	lockall

@@ -12,7 +12,13 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_PETALBURG_WOODS_SHRINE",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -210,6 +216,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PetalburgWoods_EventScript_RockBoy",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_PW_LEAF",
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 46,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgWoods_EventScript_Leaf_Start",
+      "flag": "FLAG_HIDE_PW_LEAF"
     }
   ],
   "warp_events": [
@@ -337,6 +357,24 @@
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "PetalburgWoods_EventScript_MossRock_EeveeNoise_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_LEAF_STATE",
+      "var_value": "1",
+      "script": "PetalburgWoods_EventScript_Leaf_TriggerVar1"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_LEAF_STATE",
+      "var_value": "2",
+      "script": "PetalburgWoods_EventScript_Leaf_TriggerVar2"
     }
   ],
   "bg_events": [

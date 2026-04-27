@@ -460,8 +460,8 @@
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
-#define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
+#define FLAG_HIDE_PW_LEAF                    0x1AA // Unused Flag -tenaya
+#define FLAG_PETALBURG_WOODS_OPEN            0x1AB // Unused Flag -tenaya
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
@@ -510,14 +510,14 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
+#define FLAG_CELEBI_SHRINE_WON               0x1DA // Unused Flag -tenaya
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
+#define FLAG_HIDE_SHRINE_LEAF1               0x1DE // Unused Flag -tenaya
+#define FLAG_HIDE_SHRINE_LEAF2               0x1DF // Unused Flag -tenaya
 #define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
