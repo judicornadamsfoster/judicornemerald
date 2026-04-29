@@ -77,19 +77,15 @@ EventScript_MirageMan_Start::
 EventScript_MirageMan_Intro::
 	lockall
 	faceplayer
-	compare VAR_ROUTE130_STATE, 0
-	goto_if_eq EventScript_MirageMan_0a
-	compare VAR_ROUTE130_STATE, 1
-	goto_if_eq EventScript_MirageMan_1
+	goto_if_eq VAR_ROUTE130_STATE, 0, EventScript_MirageMan_0a
+	goto_if_eq VAR_ROUTE130_STATE, 1, EventScript_MirageMan_1
 //state 2 activates with a trigger
 //state 3 is only temporary
-	compare VAR_ROUTE130_STATE, 4
-	goto_if_eq EventScript_MirageMan_4
+	goto_if_eq VAR_ROUTE130_STATE, 4, EventScript_MirageMan_4
 //state 5 activates with a trigger
 //state 6 is only temporary
 //state 7 activates with a trigger
-	compare VAR_ROUTE130_STATE, 9
-	goto_if_eq EventScript_MirageMan_0b
+	goto_if_eq VAR_ROUTE130_STATE, 9, EventScript_MirageMan_0b
 //state 5 activates with a trigger
 //state 6 set at the end
 	end
@@ -171,15 +167,7 @@ EventScript_MirageMan_Trigger0::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceDown
 	waitmovement 0
-	msgbox Text_MirageMan_2a, MSGBOX_DEFAULT
-	applymovement LOCALID_MIRAGE_MAN, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox Text_MirageMan_2b, MSGBOX_DEFAULT
-	removeitem ITEM_RUBY
-	msgbox Text_MirageMan_GiveRuby, MSGBOX_DEFAULT
-	playfanfare SE_SUCCESS
-	waitfanfare
-	msgbox Text_MirageMan_2c, MSGBOX_DEFAULT
+	call EventScript_MirageMan_Pre_DidntWork
 	applymovement LOCALID_PLAYER, Movement_Setup_Player_0
 	waitmovement 0
 	goto EventScript_MirageMan_DidntWork_1
@@ -191,15 +179,7 @@ EventScript_MirageMan_Trigger1::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceLeft
 	waitmovement 0
-	msgbox Text_MirageMan_2a, MSGBOX_DEFAULT
-	applymovement LOCALID_MIRAGE_MAN, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox Text_MirageMan_2b, MSGBOX_DEFAULT
-	removeitem ITEM_RUBY
-	msgbox Text_MirageMan_GiveRuby, MSGBOX_DEFAULT
-	playfanfare SE_SUCCESS
-	waitfanfare
-	msgbox Text_MirageMan_2c, MSGBOX_DEFAULT
+	call EventScript_MirageMan_Pre_DidntWork
 	applymovement LOCALID_PLAYER, Movement_Setup_Player_1
 	waitmovement 0
 	goto EventScript_MirageMan_DidntWork_1
@@ -211,13 +191,7 @@ EventScript_MirageMan_Trigger2::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceUp
 	waitmovement 0
-	msgbox Text_MirageMan_2a, MSGBOX_DEFAULT
-	applymovement LOCALID_MIRAGE_MAN, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox Text_MirageMan_2b, MSGBOX_DEFAULT
-	removeitem ITEM_RUBY
-	msgbox Text_MirageMan_GiveRuby, MSGBOX_DEFAULT
-	msgbox Text_MirageMan_2c, MSGBOX_DEFAULT
+	call EventScript_MirageMan_Pre_DidntWork
 	applymovement LOCALID_PLAYER, Movement_Setup_Player_2
 	waitmovement 0
 	goto EventScript_MirageMan_DidntWork_1
@@ -229,19 +203,23 @@ EventScript_MirageMan_Trigger3::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceRight
 	waitmovement 0
+	call EventScript_MirageMan_Pre_DidntWork
+	applymovement LOCALID_PLAYER, Movement_Setup_Player_3
+	waitmovement 0
+	goto EventScript_MirageMan_DidntWork_1
+	end
+
+EventScript_MirageMan_Pre_DidntWork:
 	msgbox Text_MirageMan_2a, MSGBOX_DEFAULT
-	playse SE_PIN
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox Text_MirageMan_2b, MSGBOX_DEFAULT
 	removeitem ITEM_RUBY
 	msgbox Text_MirageMan_GiveRuby, MSGBOX_DEFAULT
+	playfanfare SE_SUCCESS
+	waitfanfare
 	msgbox Text_MirageMan_2c, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Movement_Setup_Player_3
-	waitmovement 0
-	setvar VAR_ROUTE130_STATE, 3
-	goto EventScript_MirageMan_DidntWork_1
-	end
+	return
 
 Text_MirageMan_2a:
 	.string "Hey, how goes the search?$"
@@ -309,6 +287,7 @@ Movement_MirageMan_LookAround:
 
 //when VAR is 3
 EventScript_MirageMan_DidntWork_1::
+	setvar VAR_ROUTE130_STATE, 3
 	message Text_MirageMan_Spell
 	waitmessage
 	applymovement LOCALID_MIRAGE_MAN, Movement_MirageMan_Delay
@@ -394,14 +373,7 @@ EventScript_MirageMan_Trigger4::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceDown
 	waitmovement 0
-	msgbox Text_MirageMan_5a, MSGBOX_DEFAULT
-	playse SE_PIN
-	applymovement LOCALID_MIRAGE_MAN, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox Text_MirageMan_5b, MSGBOX_DEFAULT
-	removeitem ITEM_SAPPHIRE
-	msgbox Text_MirageMan_GiveSapphire, MSGBOX_DEFAULT
-	msgbox Text_MirageMan_5c, MSGBOX_DEFAULT
+	call EventScript_MirageMan_PreIslandRefresh
 	applymovement LOCALID_PLAYER, Movement_Setup_Player_0
 	waitmovement 0
 	setvar VAR_ROUTE130_STATE, 6
@@ -414,14 +386,7 @@ EventScript_MirageMan_Trigger5::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceLeft
 	waitmovement 0
-	msgbox Text_MirageMan_5a, MSGBOX_DEFAULT
-	playse SE_PIN
-	applymovement LOCALID_MIRAGE_MAN, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox Text_MirageMan_5b, MSGBOX_DEFAULT
-	removeitem ITEM_SAPPHIRE
-	msgbox Text_MirageMan_GiveSapphire, MSGBOX_DEFAULT
-	msgbox Text_MirageMan_5c, MSGBOX_DEFAULT
+	call EventScript_MirageMan_PreIslandRefresh
 	applymovement LOCALID_PLAYER, Movement_Setup_Player_1
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceDown
 	waitmovement 0
@@ -435,14 +400,7 @@ EventScript_MirageMan_Trigger6::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceUp
 	waitmovement 0
-	msgbox Text_MirageMan_5a, MSGBOX_DEFAULT
-	playse SE_PIN
-	applymovement LOCALID_MIRAGE_MAN, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox Text_MirageMan_5b, MSGBOX_DEFAULT
-	removeitem ITEM_SAPPHIRE
-	msgbox Text_MirageMan_GiveSapphire, MSGBOX_DEFAULT
-	msgbox Text_MirageMan_5c, MSGBOX_DEFAULT
+	call EventScript_MirageMan_PreIslandRefresh
 	applymovement LOCALID_PLAYER, Movement_Setup_Player_2
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceDown
 	waitmovement 0
@@ -456,6 +414,15 @@ EventScript_MirageMan_Trigger7::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceRight
 	waitmovement 0
+	call EventScript_MirageMan_PreIslandRefresh
+	applymovement LOCALID_PLAYER, Movement_Setup_Player_3
+	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceDown
+	waitmovement 0
+	setvar VAR_ROUTE130_STATE, 6
+	goto EventScript_MirageMan_IslandRefresh
+	end
+
+EventScript_MirageMan_PreIslandRefresh:
 	msgbox Text_MirageMan_5a, MSGBOX_DEFAULT
 	playse SE_PIN
 	applymovement LOCALID_MIRAGE_MAN, Common_Movement_ExclamationMark
@@ -464,12 +431,7 @@ EventScript_MirageMan_Trigger7::
 	removeitem ITEM_SAPPHIRE
 	msgbox Text_MirageMan_GiveSapphire, MSGBOX_DEFAULT
 	msgbox Text_MirageMan_5c, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Movement_Setup_Player_3
-	applymovement LOCALID_MIRAGE_MAN, Common_Movement_FaceDown
-	waitmovement 0
-	setvar VAR_ROUTE130_STATE, 6
-	goto EventScript_MirageMan_IslandRefresh
-	end
+	return
 
 Text_MirageMan_5a:
 	.string "Hey, how goes the search for a\n"
