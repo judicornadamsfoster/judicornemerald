@@ -4,6 +4,11 @@
 #include "constants/global.h"
 #include "constants/map_event_ids.h"
 
+// Emotes for emote scripting macro
+#define EXCLAM 0
+#define QUESTION 1
+#define HEART 3
+
 #define OBJ_EVENT_GFX_BRENDAN_NORMAL               0
 #define OBJ_EVENT_GFX_BRENDAN_MACH_BIKE            1
 #define OBJ_EVENT_GFX_BRENDAN_SURFING              2
