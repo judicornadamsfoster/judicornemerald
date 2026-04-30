@@ -1072,3 +1072,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/scripts/change_deoxys_form.inc"
 
 	.include "data/maps/PetalburgWoods_Shrine/scripts.inc"
+	.include "data/scripts/tenaya_scripts.inc"
+
