@@ -2214,4 +2214,32 @@
 	waitmovement 0
 	.endm
 
-
+	@ This replicates the typical OW NPC Pokemon script, which is:
+	@ -----
+	@ lock
+	@ faceplayer
+	@ waitse
+	@ playmoncry SPECIES, MODE
+	@ msgbox SOME_MESSAGE
+	@ waitmoncry
+	@ -----
+	@ release and end should follow this macro in most cases.
+	@ message should just be what the Pokemon says, not its species name.
+	@ Its species name is automatically buffered, rendering the msgbox as:
+	@ "SPECIES: MESSAGE"
+	@ If mode is not provided, it will use CRY_MODE_NORMAL. Otherwise,
+	@ it'll use the CRY_MODE_* constants.
+	.macro moncryscript species:req, message:req, mode
+	lock
+	faceplayer
+	waitse
+	.ifb \mode
+		playmoncry \species, CRY_MODE_NORMAL
+	.else
+		playmoncry \species, \mode
+	.endif
+		bufferspeciesname 1, \species
+		bufferstring 2, \message
+		msgbox Text_MonCryScript
+		waitmoncry
+	.endm
