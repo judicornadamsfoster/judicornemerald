@@ -784,6 +784,7 @@ MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase:
 	.string "You can't play if you don't have\n"
 	.string "a COIN CASE.$"
 
+
 //pokemon seller
 EventScript_PrizeCornerMon::
 	lock
@@ -812,12 +813,7 @@ EventScript_ChooseMonPrize::
 	end
 
 EventScript_BuyBulbasaurMon::
-	checkcoins VAR_TEMP_2
-	goto_if_lt VAR_TEMP_2, MON_COINS, EventScript_NotEnoughCoinsForMon
-    getpartysize
-    compare VAR_RESULT, 6
-	goto_if_eq EventScript_NoRoomForMon
-	removecoins MON_COINS
+	call EventScript_PreBuyMon
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BULBASAUR
 	givemon SPECIES_BULBASAUR 5, ITEM_MIRACLE_SEED
 	updatecoinsbox 1, 1
@@ -829,12 +825,7 @@ EventScript_BuyBulbasaurMon::
 	end
 
 EventScript_BuyCharmanderMon::
-	checkcoins VAR_TEMP_2
-	goto_if_lt VAR_TEMP_2, MON_COINS, EventScript_NotEnoughCoinsForMon
-    getpartysize
-    compare VAR_RESULT, 6
-	goto_if_eq EventScript_NoRoomForMon
-	removecoins MON_COINS
+	call EventScript_PreBuyMon
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHARMANDER
 	givemon SPECIES_CHARMANDER 5, ITEM_CHARCOAL
 	updatecoinsbox 1, 1
@@ -846,12 +837,7 @@ EventScript_BuyCharmanderMon::
 	end
 
 EventScript_BuySquirtleMon::
-	checkcoins VAR_TEMP_2
-	goto_if_lt VAR_TEMP_2, MON_COINS, EventScript_NotEnoughCoinsForMon
-    getpartysize
-    compare VAR_RESULT, 6
-	goto_if_eq EventScript_NoRoomForMon
-	removecoins MON_COINS
+	call EventScript_PreBuyMon
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SQUIRTLE
 	givemon SPECIES_SQUIRTLE 5, ITEM_MYSTIC_WATER
 	updatecoinsbox 1, 1
@@ -861,6 +847,15 @@ EventScript_BuySquirtleMon::
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, EventScript_ReceiveSquirtlePC
 	goto EventScript_NoRoomForMon
 	end
+
+EventScript_PreBuyMon:
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, MON_COINS, EventScript_NotEnoughCoinsForMon
+    getpartysize
+    compare VAR_RESULT, 6
+	goto_if_eq VAR_RESULT, FALSE, EventScript_NoRoomForMon
+	removecoins MON_COINS
+	return
 
 EventScript_ReceiveBulbasaurParty::
 	call EventScript_ReceivedBulbasaurFanfare
