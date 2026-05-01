@@ -273,7 +273,9 @@
 #define OBJ_EVENT_GFX_METEOR2                    256
 #define OBJ_EVENT_GFX_METEOR3                    257
 #define OBJ_EVENT_GFX_HALLOWED_TOWER             258
-
+#define OBJ_EVENT_GFX_CELEBI                     259
+#define OBJ_EVENT_GFX_JIRACHI                    260
+#define OBJ_EVENT_GFX_VULPIX                     261
 
 
 
@@ -286,7 +288,7 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_OBJ_EVENT_GFX                        259
+#define NUM_OBJ_EVENT_GFX                        262
 
 
 // These are dynamic object gfx ids.

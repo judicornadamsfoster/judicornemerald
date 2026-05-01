@@ -415,4 +415,10 @@ const u32 gObjectEventPic_Meteor2[] = INCGFX_U32("graphics/object_events/pics/mi
 const u32 gObjectEventPic_Meteor3[] = INCGFX_U32("graphics/object_events/pics/misc/meteor3.png", ".4bpp", "-mwidth 2 -mheight 2");
 const u32 gObjectEventPic_Hallowed_Tower[] = INCGFX_U32("graphics/object_events/pics/misc/hallowed_tower.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u16 gObjectEventPal_Hallowed_Tower[] = INCGFX_U16("graphics/object_events/palettes/hallowed_tower.pal", ".gbapal");
+const u32 gObjectEventPic_Celebi[] = INCGFX_U32("graphics/object_events/pics/pokemon/celebi.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Celebi[] = INCGFX_U16("graphics/object_events/palettes/celebi.pal", ".gbapal");
+const u32 gObjectEventPic_Jirachi[] = INCGFX_U32("graphics/object_events/pics/pokemon/jirachi.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Jirachi[] = INCGFX_U16("graphics/object_events/palettes/jirachi.pal", ".gbapal");
+const u32 gObjectEventPic_Vulpix[] = INCGFX_U32("graphics/object_events/pics/pokemon/vulpix.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Vulpix[] = INCGFX_U16("graphics/object_events/palettes/vulpix.pal", ".gbapal");
 

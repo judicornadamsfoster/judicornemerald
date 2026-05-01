@@ -518,7 +518,7 @@
 
 #define FLAG_HIDE_SHRINE_LEAF1               0x1DE // Unused Flag -tenaya
 #define FLAG_HIDE_SHRINE_LEAF2               0x1DF // Unused Flag -tenaya
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
+#define FLAG_CELEBI_SHRINE_CAUGHT            0x1E0 // Unused Flag -tenaya
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag

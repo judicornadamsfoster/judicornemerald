@@ -35,3 +35,82 @@ EverGrandeCity_Text_CitySign:
 	.string "“The paradise of flowers, the sea,\n"
 	.string "and POKéMON.”$"
 
+
+//triggers when VAR_LEAF_STATE=??
+EvergrandeCity_Celebi_Trigger::
+	lock
+	setflag FLAG_FORCE_LOAD_OFFSCREEN_OBJ
+	moncryscript SPECIES_CELEBI, EvergrandeCity_Text_Celebi
+	closemessage
+	delay 20
+	emote LOCALID_PLAYER, QUESTION
+	special SpawnCameraObject
+	applymovement LOCALID_CAMERA, EvergrandeCity_Movement_CameraPanUp
+	waitmovement 0
+	delay 50
+	applymovement LOCALID_EGC_CELEBI, EvergrandeCity_Movement_Celebi
+	waitmovement 0
+	delay 30
+	applymovement LOCALID_EGC_CELEBI, EvergrandeCity_Movement_Celebi2
+	waitmovement 0
+	delay 30
+	applymovement LOCALID_CAMERA, EvergrandeCity_Movement_CameraPanDown
+	waitmovement 0
+	delay 20
+	special RemoveCameraObject
+//	setvar VAR_LEAF_STATE, ??
+	clearflag FLAG_FORCE_LOAD_OFFSCREEN_OBJ
+	release
+	end
+
+
+EvergrandeCity_Text_Celebi:
+	.string "Biiiiii!$"
+
+EvergrandeCity_Movement_Celebi:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right	
+	walk_right
+	walk_right
+	walk_right
+	delay_16
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+EvergrandeCity_Movement_Celebi2:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+EvergrandeCity_Movement_CameraPanUp:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+EvergrandeCity_Movement_CameraPanDown:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_faster_up
+	step_end

@@ -267,6 +267,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Icy_Rock;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meteor2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meteor3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hallowed_Tower;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Celebi;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jirachi;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vulpix;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
@@ -538,7 +541,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_METEOR2] =                  &gObjectEventGraphicsInfo_Meteor2,
 	[OBJ_EVENT_GFX_METEOR3] =                  &gObjectEventGraphicsInfo_Meteor3,
 	[OBJ_EVENT_GFX_HALLOWED_TOWER] =           &gObjectEventGraphicsInfo_Hallowed_Tower,
-
+	[OBJ_EVENT_GFX_CELEBI] =                   &gObjectEventGraphicsInfo_Celebi,
+	[OBJ_EVENT_GFX_JIRACHI] =                  &gObjectEventGraphicsInfo_Jirachi,
+	[OBJ_EVENT_GFX_VULPIX] =                   &gObjectEventGraphicsInfo_Vulpix,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
