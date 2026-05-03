@@ -315,6 +315,7 @@ PetalburgWoods_Shrine_EventScript_Leaf_AfterFinalBattle:
 	setvar VAR_LEAF_STATE, 23
 	removeobject LOCALID_SHRINE_LEAF2
 	setflag FLAG_HIDE_SHRINE_LEAF2
+	clearflag FLAG_DEFEATED_RED
 	release
 	end
 
@@ -336,8 +337,8 @@ PetalburgWoods_Shrine_Text_Leaf_FinalGoingHome2:
 	.string "chance to train somewhere.\p"
 	.string "...\p"
 	.string "Now where did he say he was heading?\p"
-	.string "'In a place where rocks from space\n"
-	.string "once fell'.\p"
+	.string "“In a place where rocks from space\n"
+	.string "once fell”.\p"
 	.string "I wonder where that could be?\p"
 	.string "...\p"
 	.string "{PLAYER}, I will always remember\n"

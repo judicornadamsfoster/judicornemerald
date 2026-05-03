@@ -1,8 +1,32 @@
+/*
+In this file:
+daily battle with red at meteor falls
 
 
 
+*/
 
 
+EventScript_Red_Trigger::
+	lock
+	setvar VAR_TEMP_0, 1
+	goto_if_ne VAR_LEAF_STATE, 23, EventScript_Red_HideRed
+//	goto_if_eq VAR_LEAF_STATE, 23, EventScript_Red_ShowRed
+//	goto_if_unset FLAG_HIDE_RED, EventScript_Red_ShowRed
+	end
+
+EventScript_Red_HideRed:
+	removeobject LOCALID_SPBATTLE_RED
+	setflag FLAG_HIDE_RED
+	release
+	end
+
+/*
+EventScript_Red_ShowRed:
+	addobject LOCALID_SPBATTLE_RED
+	release
+	end
+*/
 
 EventScript_Red_Start::
 	lock
@@ -111,7 +135,7 @@ EventScript_Red_AfterGive::
 	lock
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_RED
-//	removeobject LOCALID_SPBATTLE_RED
+	removeobject LOCALID_SPBATTLE_RED
 	fadescreen FADE_FROM_BLACK
 	setflag FLAG_DEFEATED_RED
 	msgbox Red_Text_RedDisappeared, MSGBOX_DEFAULT
@@ -140,4 +164,29 @@ Red_Text_SentToPC:
 
 Red_Text_RedDisappeared:
 	.string "RED disappeared.$"
+
+
+//npc tells of red coming daily
+EventScript_MeteorBoy_Start::
+	goto_if_eq VAR_LEAF_STATE, 23, EventScript_MeteorBoy_23
+	lock
+	faceplayer
+	msgbox Text_MeteorBoy_Not23, MSGBOX_DEFAULT
+	release
+	end
+
+EventScript_MeteorBoy_23:
+	lock
+	faceplayer
+	msgbox Text_MeteorBoy_DailyMan, MSGBOX_DEFAULT
+	release
+	end
+
+Text_MeteorBoy_Not23:
+	.string "I come here daily to swim.$"
+
+Text_MeteorBoy_DailyMan:
+	.string "I come here daily to swim.\p"
+	.string "There's another guy that started\n"
+	.string "coming here every day too.$"
 
