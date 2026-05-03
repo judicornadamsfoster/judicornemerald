@@ -519,9 +519,9 @@
 #define FLAG_HIDE_SHRINE_LEAF1               0x1DE // Unused Flag -tenaya
 #define FLAG_HIDE_SHRINE_LEAF2               0x1DF // Unused Flag -tenaya
 #define FLAG_CELEBI_SHRINE_CAUGHT            0x1E0 // Unused Flag -tenaya
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_FALSE_SWIPE_SWABLU              0x1E1 // Unused Flag -tenaya
+#define FLAG_EXTREME_SPEED_ZIGZAGOON         0x1E2 // Unused Flag -tenaya
+#define FLAG_PAY_DAY_SKITTY                  0x1E3 // Unused Flag -tenaya
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4

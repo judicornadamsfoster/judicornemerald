@@ -1078,3 +1078,5 @@ Text_MonCryScript::
 	.include "data/maps/PetalburgWoods_Shrine/scripts.inc"
 	.include "data/scripts/tenaya_scripts.inc"
 
+
+	.include "data/maps/RustboroCity_Flat2_Basement/scripts.inc"
