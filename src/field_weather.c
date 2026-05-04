@@ -157,7 +157,7 @@ void (*const gWeatherPalStateFuncs[])(void) =
 
 // This table specifies which of the color maps should be
 // applied to each of the background and sprite palettes.
-static const u8 ALIGNED(2) sBasePaletteColorMapTypes[32] =
+EWRAM_DATA u8 ALIGNED(2) sBasePaletteGammaTypes[32] =
 {
     // background palettes
     COLOR_MAP_DARK_CONTRAST,
@@ -199,13 +199,15 @@ const u16 ALIGNED(4) gFogPalette[] = INCGFX_U16("graphics/weather/fog.pal", ".gb
 
 void StartWeather(void)
 {
+	u16 i;
     if (!FuncIsActiveTask(Task_WeatherMain))
     {
-        u8 index = AllocSpritePalette(PALTAG_WEATHER);
+        u8 index = 15;
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[OBJ_PLTT_ID(index)], PLTT_SIZE_4BPP);
-        sPaletteColorMapTypes = sBasePaletteColorMapTypes;
+        for (i = 0; i < 13; i++)
+            sBasePaletteGammaTypes[i] = GAMMA_NORMAL;
+        sPaletteColorMapTypes = sBasePaletteGammaTypes;
         gWeatherPtr->contrastColorMapSpritePalIndex = index;
-        gWeatherPtr->weatherPicSpritePalIndex = AllocSpritePalette(PALTAG_WEATHER_2);
         gWeatherPtr->rainSpriteCount = 0;
         gWeatherPtr->curRainSpriteIndex = 0;
         gWeatherPtr->cloudSpritesCreated = 0;
@@ -828,10 +830,10 @@ static bool8 UNUSED IsFirstFrameOfWeatherFadeIn(void)
         return FALSE;
 }
 
-void LoadCustomWeatherSpritePalette(const u16 *palette)
+void LoadCustomWeatherSpritePalette(const struct SpritePalette *palette)
 {
-    LoadPalette(palette, OBJ_PLTT_ID(gWeatherPtr->weatherPicSpritePalIndex), PLTT_SIZE_4BPP);
-    UpdateSpritePaletteWithWeather(gWeatherPtr->weatherPicSpritePalIndex);
+    LoadSpritePalette(palette);
+    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(palette->tag));
 }
 
 static void LoadDroughtWeatherPalette(u8 *palsIndex, u8 *palsOffset)
@@ -1064,12 +1066,18 @@ void SetWeatherPalStateIdle(void)
 
 void PreservePaletteInWeather(u8 preservedPalIndex)
 {
-    CpuCopy16(sBasePaletteColorMapTypes, sFieldEffectPaletteColorMapTypes, 32);
-    sFieldEffectPaletteColorMapTypes[preservedPalIndex] = COLOR_MAP_NONE;
+    CpuCopy16(sBasePaletteGammaTypes, sFieldEffectPaletteColorMapTypes, 32);
+    sFieldEffectPaletteColorMapTypes[preservedPalIndex] = GAMMA_NONE;
     sPaletteColorMapTypes = sFieldEffectPaletteColorMapTypes;
 }
 
 void ResetPreservedPalettesInWeather(void)
 {
-    sPaletteColorMapTypes = sBasePaletteColorMapTypes;
+    sPaletteColorMapTypes = sBasePaletteGammaTypes;
+}
+
+void UpdatePaletteGammaType(u8 index, u8 gammaType)
+{
+    if (index != 0xFF)
+        sBasePaletteGammaTypes[index + 16] = gammaType;
 }
