@@ -1,8 +1,8 @@
 VictoryRoad_Sapphire_2_MapScripts::
 	.byte 0
 
-//Pikachu battle is a placeholder for a different mon
-//search and replace SPECIES_PIKACHU to change the "eating mon"
+//SNEASEL battle is a placeholder for a different mon
+//search and replace SPECIES_SNEASEL to change the "eating mon"
 
 
 //sets FLAG_HIDE_TEA
@@ -16,7 +16,7 @@ VictoryRoad_Sapphire_2_EventScript_EatingMonCheck::
 	
 VictoryRoad_Sapphire_2_EventScript_MonEating::
 	lock
-	bufferspeciesname 1, SPECIES_PIKACHU
+	bufferspeciesname 1, SPECIES_SNEASEL
 	message VictoryRoad_Sapphire_2_Text_MonEating
 	waitmessage
 	waitbuttonpress
@@ -30,8 +30,8 @@ VictoryRoad_Sapphire_2_Text_MonEating:
 VictoryRoad_Sapphire_2_EventScript_MonBattle::
 	lock
 	faceplayer
-	setwildbattle SPECIES_PIKACHU, 30
-	bufferspeciesname 1, SPECIES_PIKACHU
+	setwildbattle SPECIES_SNEASEL, 30
+	bufferspeciesname 1, SPECIES_SNEASEL
 	msgbox VictoryRoad_Sapphire_2_Text_MonBattle, MSGBOX_DEFAULT
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -69,7 +69,7 @@ VictoryRoad_Sapphire_2_EventScript_FinalThiefCheck::
 VictoryRoad_Sapphire_2_EventScript_FinalThiefFreezing::
 	lock
 	faceplayer
-	bufferspeciesname 1, SPECIES_PIKACHU
+	bufferspeciesname 1, SPECIES_SNEASEL
 	msgbox VictoryRoad_Sapphire_2_Text_ThiefFreezing, MSGBOX_DEFAULT
 	setvar VAR_VICTORY_ROAD_THIEF, 9
 	release
@@ -88,7 +88,7 @@ VictoryRoad_Sapphire_2_Text_ThiefFreezing:
 VictoryRoad_Sapphire_2_EventScript_FinalThiefFoundAnything::
 	lock
 	faceplayer
-	bufferspeciesname 1, SPECIES_PIKACHU
+	bufferspeciesname 1, SPECIES_SNEASEL
 	msgbox VictoryRoad_Sapphire_2_Text_FoundAnything, MSGBOX_DEFAULT
 	release
 	end
