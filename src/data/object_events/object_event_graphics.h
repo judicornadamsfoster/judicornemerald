@@ -421,4 +421,8 @@ const u32 gObjectEventPic_Jirachi[] = INCGFX_U32("graphics/object_events/pics/po
 const u16 gObjectEventPal_Jirachi[] = INCGFX_U16("graphics/object_events/palettes/jirachi.pal", ".gbapal");
 const u32 gObjectEventPic_Vulpix[] = INCGFX_U32("graphics/object_events/pics/pokemon/vulpix.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u16 gObjectEventPal_Vulpix[] = INCGFX_U16("graphics/object_events/palettes/vulpix.pal", ".gbapal");
+const u32 gObjectEventPic_Blue[] = INCGFX_U32("graphics/object_events/pics/people/blue.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Blue[] = INCGFX_U16("graphics/object_events/palettes/blue.pal", ".gbapal");
+const u32 gObjectEventPic_Silver[] = INCGFX_U32("graphics/object_events/pics/people/silver.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Silver[] = INCGFX_U16("graphics/object_events/palettes/silver.pal", ".gbapal");
 

@@ -12486,3 +12486,103 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Trainer855[] = {
+    {
+        .iv = 30,
+        .lvl = 50,
+        .species = SPECIES_CHANSEY,
+    },
+};
+
+//blue
+static const struct TrainerMonItemCustomMoves sParty_Trainer856[] = {
+    {
+        .iv = 250,
+        .lvl = 61,
+        .species = SPECIES_PIDGEOT,
+        .heldItem = ITEM_NONE,
+        .moves = {MOVE_AERIAL_ACE, MOVE_FEATHER_DANCE, MOVE_SAND_ATTACK, MOVE_WHIRLWIND},
+    },
+    {
+        .iv = 250,
+        .lvl = 59,
+        .species = SPECIES_ARCANINE,
+        .heldItem = ITEM_NONE,
+        .moves = {MOVE_EXTREME_SPEED, MOVE_FLAMETHROWER, MOVE_ROAR, MOVE_BITE},
+    },
+    {
+        .iv = 250,
+        .lvl = 61,
+        .species = SPECIES_GYARADOS,
+        .heldItem = ITEM_NONE,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_DRAGON_RAGE, MOVE_BITE, MOVE_THRASH},
+    },
+    {
+        .iv = 250,
+        .lvl = 59,
+        .species = SPECIES_EXEGGUTOR,
+        .heldItem = ITEM_NONE,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_EGG_BOMB, MOVE_SLEEP_POWDER, MOVE_LIGHT_SCREEN},
+    },
+    {
+        .iv = 250,
+        .lvl = 57,
+        .species = SPECIES_ALAKAZAM,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .moves = {MOVE_PSYCHIC, MOVE_FUTURE_SIGHT, MOVE_RECOVER, MOVE_REFLECT},
+    },
+    {
+        .iv = 250,
+        .lvl = 59,
+        .species = SPECIES_RHYDON,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .moves = {MOVE_TAKE_DOWN, MOVE_EARTHQUAKE, MOVE_ROCK_TOMB, MOVE_SCARY_FACE},
+    },
+};
+
+//silver
+static const struct TrainerMonItemCustomMoves sParty_Trainer857[] = {
+    {
+        .iv = 250,
+        .lvl = 52,
+        .species = SPECIES_SNEASEL,
+        .heldItem = ITEM_NONE,
+        .moves = {MOVE_FAINT_ATTACK, MOVE_METAL_CLAW, MOVE_ICY_WIND, MOVE_QUICK_ATTACK},
+    },
+    {
+        .iv = 250,
+        .lvl = 51,
+        .species = SPECIES_GOLBAT,
+        .heldItem = ITEM_NONE,
+        .moves = {MOVE_POISON_FANG, MOVE_AIR_CUTTER, MOVE_CONFUSE_RAY, MOVE_BITE},
+    },
+    {
+        .iv = 250,
+        .lvl = 52,
+        .species = SPECIES_MAGNETON,
+        .heldItem = ITEM_NONE,
+        .moves = {MOVE_THUNDERBOLT, MOVE_THUNDER_WAVE, MOVE_MAGIC_COAT, MOVE_SUPERSONIC},
+    },
+    {
+        .iv = 250,
+        .lvl = 54,
+        .species = SPECIES_TYPHLOSION,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .moves = {MOVE_FLAMETHROWER, MOVE_QUICK_ATTACK, MOVE_FLAME_WHEEL, MOVE_SWIFT},
+    },
+    {
+        .iv = 250,
+        .lvl = 54,
+        .species = SPECIES_FERALIGATR,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .moves = {MOVE_WATERFALL, MOVE_HYPER_FANG, MOVE_SLASH, MOVE_CRUNCH},
+    },
+    {
+        .iv = 250,
+        .lvl = 54,
+        .species = SPECIES_MEGANIUM,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .moves = {MOVE_LIGHT_SCREEN, MOVE_PETAL_DANCE, MOVE_SYNTHESIS, MOVE_POISON_POWDER},
+    },
+};
