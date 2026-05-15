@@ -1170,9 +1170,7 @@ to		Route110_TrickHousePuzzle7_EventScript_SetSwitch5Off::
 // delete the 17 lines that start 'FLAG_WONDER_CARD_UNUSED' (lines 234 to 250)
 
 
-#define FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE               0x405 // Unused Flag. Used in R/S to indicate whether player defeated or caught Groudon/Kyogre in Cave of Origin.
-
-
+#define FLAG_UNUSED_0x405                                  0x405 // Unused Flag
 #define FLAG_UNUSED_0x406                                  0x406 // Unused Flag
 #define FLAG_UNUSED_0x407                                  0x407 // Unused Flag
 #define FLAG_UNUSED_0x408                                  0x408 // Unused Flag
