@@ -1123,30 +1123,12 @@ to 		MossdeepCity_Gym_EventScript_ClearSwitch4
 // in 'data/scripts/contest_hall.inc', delete line 1047 'setflag FLAG_CONTEST_SKETCH_CREATED'
 
 
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1       0x3EF // Leftover from the RS version of Puzzle Room 7, functionally unused
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2       0x3F0 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3       0x3F1 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4       0x3F2 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5       0x3F3 //
-/* in 'data/maps/Route110_TrickHousePuzzle7/scripts.inc
-delete line 2:	map_script MAP_SCRIPT_ON_RESUME, Route110_TrickHousePuzzle7_OnResume
-delete entire sections (lines 8 to 72)
-from 	@ Puzzle Room 7 in RSE uses whatever puzzle Mossdeep Gym uses
-to 		Route110_TrickHousePuzzle7_OnResume:
+#define FLAG_UNUSED_0x3EF                        0x3EF // Unused Flag
 
-in section 'Route110_TrickHousePuzzle7_OnTransition', delete these 5 lines (76 to 80):
-	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1
-	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2
-	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3
-	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4
-	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5
-
-then delete entire sections (lines 109 to 223
-from 	@ Unused, leftover from R/S
-to		Route110_TrickHousePuzzle7_EventScript_SetSwitch5Off::
-*/
-
-
+#define FLAG_UNUSED_0x3F0                        0x3F0 // Unused Flag
+#define FLAG_UNUSED_0x3F1                        0x3F1 // Unused Flag
+#define FLAG_UNUSED_0x3F2                        0x3F2 // Unused Flag
+#define FLAG_UNUSED_0x3F3                        0x3F3 // Unused Flag
 #define FLAG_UNUSED_0x3F4                        0x3F4 // Unused Flag
 #define FLAG_UNUSED_0x3F5                        0x3F5 // Unused Flag
 #define FLAG_UNUSED_0x3F6                        0x3F6 // Unused Flag
@@ -1159,6 +1141,7 @@ to		Route110_TrickHousePuzzle7_EventScript_SetSwitch5Off::
 #define FLAG_UNUSED_0x3FD                        0x3FD // Unused Flag
 #define FLAG_UNUSED_0x3FE                        0x3FE // Unused Flag
 #define FLAG_UNUSED_0x3FF                        0x3FF // Unused Flag
+
 #define FLAG_UNUSED_0x400                        0x400 // Unused Flag
 #define FLAG_UNUSED_0x401                        0x401 // Unused Flag
 #define FLAG_UNUSED_0x402                        0x402 // Unused Flag
