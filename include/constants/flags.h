@@ -1147,41 +1147,35 @@ to		Route110_TrickHousePuzzle7_EventScript_SetSwitch5Off::
 */
 
 
-//Wonder Cards
-#define FLAG_WONDER_CARD_UNUSED_1                0x3F4 // These Wonder Card flags are referenced but never set
-#define FLAG_WONDER_CARD_UNUSED_2                0x3F5
-#define FLAG_WONDER_CARD_UNUSED_3                0x3F6
-#define FLAG_WONDER_CARD_UNUSED_4                0x3F7
-#define FLAG_WONDER_CARD_UNUSED_5                0x3F8
-#define FLAG_WONDER_CARD_UNUSED_6                0x3F9
-#define FLAG_WONDER_CARD_UNUSED_7                0x3FA
-#define FLAG_WONDER_CARD_UNUSED_8                0x3FB
-#define FLAG_WONDER_CARD_UNUSED_9                0x3FC
-#define FLAG_WONDER_CARD_UNUSED_10               0x3FD
-#define FLAG_WONDER_CARD_UNUSED_11               0x3FE
-#define FLAG_WONDER_CARD_UNUSED_12               0x3FF
-#define FLAG_WONDER_CARD_UNUSED_13               0x400
-#define FLAG_WONDER_CARD_UNUSED_14               0x401
-#define FLAG_WONDER_CARD_UNUSED_15               0x402
-#define FLAG_WONDER_CARD_UNUSED_16               0x403
-#define FLAG_WONDER_CARD_UNUSED_17               0x404
-// in 'src/mystery_gift.c'
-// in section: 'static const u16 sReceivedGiftFlags[]'
-// delete the 17 lines that start 'FLAG_WONDER_CARD_UNUSED' (lines 234 to 250)
+#define FLAG_UNUSED_0x3F4                        0x3F4 // Unused Flag
+#define FLAG_UNUSED_0x3F5                        0x3F5 // Unused Flag
+#define FLAG_UNUSED_0x3F6                        0x3F6 // Unused Flag
+#define FLAG_UNUSED_0x3F7                        0x3F7 // Unused Flag
+#define FLAG_UNUSED_0x3F8                        0x3F8 // Unused Flag
+#define FLAG_UNUSED_0x3F9                        0x3F9 // Unused Flag
+#define FLAG_UNUSED_0x3FA                        0x3FA // Unused Flag
+#define FLAG_UNUSED_0x3FB                        0x3FB // Unused Flag
+#define FLAG_UNUSED_0x3FC                        0x3FC // Unused Flag
+#define FLAG_UNUSED_0x3FD                        0x3FD // Unused Flag
+#define FLAG_UNUSED_0x3FE                        0x3FE // Unused Flag
+#define FLAG_UNUSED_0x3FF                        0x3FF // Unused Flag
+#define FLAG_UNUSED_0x400                        0x400 // Unused Flag
+#define FLAG_UNUSED_0x401                        0x401 // Unused Flag
+#define FLAG_UNUSED_0x402                        0x402 // Unused Flag
+#define FLAG_UNUSED_0x403                        0x403 // Unused Flag
+#define FLAG_UNUSED_0x404                        0x404 // Unused Flag
+#define FLAG_UNUSED_0x405                        0x405 // Unused Flag
+#define FLAG_UNUSED_0x406                        0x406 // Unused Flag
+#define FLAG_UNUSED_0x407                        0x407 // Unused Flag
+#define FLAG_UNUSED_0x408                        0x408 // Unused Flag
+#define FLAG_UNUSED_0x409                        0x409 // Unused Flag
+#define FLAG_UNUSED_0x40A                        0x40A // Unused Flag
+#define FLAG_UNUSED_0x40B                        0x40B // Unused Flag
+#define FLAG_UNUSED_0x40C                        0x40C // Unused Flag
 
-
-#define FLAG_UNUSED_0x405                                  0x405 // Unused Flag
-#define FLAG_UNUSED_0x406                                  0x406 // Unused Flag
-#define FLAG_UNUSED_0x407                                  0x407 // Unused Flag
-#define FLAG_UNUSED_0x408                                  0x408 // Unused Flag
-#define FLAG_UNUSED_0x409                                  0x409 // Unused Flag
-#define FLAG_UNUSED_0x40A                                  0x40A // Unused Flag
-#define FLAG_UNUSED_0x40B                                  0x40B // Unused Flag
-#define FLAG_UNUSED_0x40C                                  0x40C // Unused Flag
-
-#define FLAG_REMOVE_WARP_FADE                              0x40D // Unused Flag -tenaya
-#define FLAG_FORCE_LOAD_OFFSCREEN_OBJ                      0x40E // Unused Flag -tenaya
-#define FLAG_SET_BATTLE_BGM                                0x40F // Unused Flag -tenaya
+#define FLAG_REMOVE_WARP_FADE                    0x40D // Unused Flag -tenaya
+#define FLAG_FORCE_LOAD_OFFSCREEN_OBJ            0x40E // Unused Flag -tenaya
+#define FLAG_SET_BATTLE_BGM                      0x40F // Unused Flag -tenaya
 
 
 // Trainer Flags
