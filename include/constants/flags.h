@@ -1081,96 +1081,61 @@
 
 #define FLAG_NEVER_SET_0x0DC                     0x3E7 // This flag is read, but never written to
 
-
-//functionally unused flags
-//if you wish to use/rename these flags, make sure to remove references to these in map scripts as detailed below
-
-#define FLAG_MOSSDEEP_GYM_SWITCH_1               0x3E8 // Leftover from the RS version of Mossdeep Gym, functionally unused
-#define FLAG_MOSSDEEP_GYM_SWITCH_2               0x3E9 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_3               0x3EA //
-#define FLAG_MOSSDEEP_GYM_SWITCH_4               0x3EB //
-/* in 'data/maps/MossdeepCity/scripts.inc', delete these 4 lines (lines 6 to 9)
-MossdeepCity_OnTransition:
--	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
--	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
--	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
--	clearflag FLAG_MOSSDEEP_GYM_SWITCH_4
-
-in 'data/maps/MossdeepCity_Gym/scripts.inc', delete (line 2):
-	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_Gym_OnLoad
-
-delete entire sections (lines 5 to 49)
-from 	@ NOTE: Mossdeep Gym was redesigned between R/S and E. Leftover (and now functionally unused) scripts are commented below
-to 		MossdeepCity_Gym_EventScript_SetSwitch4Metatiles
-
-delete entire sections (line 112 to 197)
-from	@ All the below switch scripts are leftover from RS and are functionally unused
-to 		MossdeepCity_Gym_EventScript_ClearSwitch4
-*/
-
-
-#define FLAG_UNKNOWN_0x363                       0x3EC // Set, however has no purpose.
-// in 'data/scripts/new_game.inc', delete line 126 'setflag FLAG_UNKNOWN_0x363'
-
-
-#define FLAG_UNKNOWN_0x393                       0x3ED // Set, however has no purpose.
-// in 'data/scripts/new_game.inc', delete line 223 'setflag FLAG_UNKNOWN_0x393'
-// and in 'data/maps/MossdeepCity_Gym/scripts.inc', delete line 69 'clearflag FLAG_UNKNOWN_0x393'
-
-
-#define FLAG_CONTEST_SKETCH_CREATED              0x3EE  // Set but never read
-// in 'data/maps/FallarborTown/scripts.inc', line 8, delete line 8 'clearflag FLAG_CONTEST_SKETCH_CREATED'
-// in 'data/scripts/contest_hall.inc', delete line 1047 'setflag FLAG_CONTEST_SKETCH_CREATED'
-
-
+#define FLAG_UNUSED_0x3E8                        0x3E8 // Unused Flag
+#define FLAG_UNUSED_0x3E9                        0x3E9 // Unused Flag
+#define FLAG_UNUSED_0x3EA                        0x3EA // Unused Flag
+#define FLAG_UNUSED_0x3EB                        0x3EB // Unused Flag
+#define FLAG_UNUSED_0x3EC                        0x3EC // Unused Flag
+#define FLAG_UNUSED_0x3ED                        0x3ED // Unused Flag
+#define FLAG_UNUSED_0x3EE                        0x3EE // Unused Flag 
 #define FLAG_UNUSED_0x3EF                        0x3EF // Unused Flag
 
-#define FLAG_UNUSED_0x3F0                        0x3F0 // Unused Flag
-#define FLAG_UNUSED_0x3F1                        0x3F1 // Unused Flag
-#define FLAG_UNUSED_0x3F2                        0x3F2 // Unused Flag
-#define FLAG_UNUSED_0x3F3                        0x3F3 // Unused Flag
-#define FLAG_UNUSED_0x3F4                        0x3F4 // Unused Flag
-#define FLAG_UNUSED_0x3F5                        0x3F5 // Unused Flag
-#define FLAG_UNUSED_0x3F6                        0x3F6 // Unused Flag
-#define FLAG_UNUSED_0x3F7                        0x3F7 // Unused Flag
-#define FLAG_UNUSED_0x3F8                        0x3F8 // Unused Flag
-#define FLAG_UNUSED_0x3F9                        0x3F9 // Unused Flag
-#define FLAG_UNUSED_0x3FA                        0x3FA // Unused Flag
-#define FLAG_UNUSED_0x3FB                        0x3FB // Unused Flag
-#define FLAG_UNUSED_0x3FC                        0x3FC // Unused Flag
-#define FLAG_UNUSED_0x3FD                        0x3FD // Unused Flag
-#define FLAG_UNUSED_0x3FE                        0x3FE // Unused Flag
-#define FLAG_UNUSED_0x3FF                        0x3FF // Unused Flag
-
-#define FLAG_UNUSED_0x400                        0x400 // Unused Flag
-#define FLAG_UNUSED_0x401                        0x401 // Unused Flag
-#define FLAG_UNUSED_0x402                        0x402 // Unused Flag
-#define FLAG_UNUSED_0x403                        0x403 // Unused Flag
-#define FLAG_UNUSED_0x404                        0x404 // Unused Flag
-#define FLAG_UNUSED_0x405                        0x405 // Unused Flag
-#define FLAG_UNUSED_0x406                        0x406 // Unused Flag
-#define FLAG_UNUSED_0x407                        0x407 // Unused Flag
-#define FLAG_UNUSED_0x408                        0x408 // Unused Flag
-#define FLAG_UNUSED_0x409                        0x409 // Unused Flag
-#define FLAG_UNUSED_0x40A                        0x40A // Unused Flag
-#define FLAG_UNUSED_0x40B                        0x40B // Unused Flag
-#define FLAG_UNUSED_0x40C                        0x40C // Unused Flag
-
-#define FLAG_REMOVE_WARP_FADE                    0x40D // Unused Flag -tenaya
-#define FLAG_FORCE_LOAD_OFFSCREEN_OBJ            0x40E // Unused Flag -tenaya
-#define FLAG_SET_BATTLE_BGM                      0x40F // Unused Flag -tenaya
 
 
 // Trainer Flags
-// Trainer flags occupy 0x410 - 0x76F, the last 9 of which are unused
+// Trainer flags currently occupy 0x3F0 - 0x74F, the last 9 of which are unused
 // See constants/opponents.h. The values there + FLAG_TRAINER_FLAG_START are the flag IDs
 
-#define TRAINER_FLAGS_START                      0x410
-#define TRAINER_FLAGS_END                        (TRAINER_FLAGS_START + MAX_TRAINERS_COUNT - 1) // 0x76F
+#define TRAINER_FLAGS_START                      0x3F0
+#define TRAINER_FLAGS_END                        (TRAINER_FLAGS_START + MAX_TRAINERS_COUNT - 1) // 0x74F
 
 
-// 240 unused flags
-// unused flags start 0x770
+
+// unused flags start 0x750
+#define FLAG_UNUSED_0x750                        0x750 // Unused Flag
+#define FLAG_UNUSED_0x751                        0x751 // Unused Flag
+#define FLAG_UNUSED_0x752                        0x752 // Unused Flag
+#define FLAG_UNUSED_0x753                        0x753 // Unused Flag
+#define FLAG_UNUSED_0x754                        0x754 // Unused Flag
+#define FLAG_UNUSED_0x755                        0x755 // Unused Flag
+#define FLAG_UNUSED_0x756                        0x756 // Unused Flag
+#define FLAG_UNUSED_0x757                        0x757 // Unused Flag
+#define FLAG_UNUSED_0x758                        0x758 // Unused Flag
+#define FLAG_UNUSED_0x759                        0x759 // Unused Flag
+#define FLAG_UNUSED_0x75A                        0x75A // Unused Flag
+#define FLAG_UNUSED_0x75B                        0x75B // Unused Flag
+#define FLAG_UNUSED_0x75C                        0x75C // Unused Flag
+#define FLAG_UNUSED_0x75D                        0x75D // Unused Flag
+#define FLAG_UNUSED_0x75E                        0x75E // Unused Flag
+#define FLAG_UNUSED_0x75F                        0x75F // Unused Flag
+
+#define FLAG_UNUSED_0x760                        0x760 // Unused Flag
+#define FLAG_UNUSED_0x761                        0x761 // Unused Flag
+#define FLAG_UNUSED_0x762                        0x762 // Unused Flag
+#define FLAG_UNUSED_0x763                        0x763 // Unused Flag
+#define FLAG_UNUSED_0x764                        0x764 // Unused Flag
+#define FLAG_UNUSED_0x765                        0x765 // Unused Flag
+#define FLAG_UNUSED_0x766                        0x766 // Unused Flag
+#define FLAG_UNUSED_0x767                        0x767 // Unused Flag
+#define FLAG_UNUSED_0x768                        0x768 // Unused Flag
+#define FLAG_UNUSED_0x769                        0x769 // Unused Flag
+#define FLAG_UNUSED_0x76A                        0x76A // Unused Flag
+#define FLAG_UNUSED_0x76B                        0x76B // Unused Flag
+#define FLAG_UNUSED_0x76C                        0x76C // Unused Flag
+#define FLAG_UNUSED_0x76D                        0x76D // Unused Flag
+#define FLAG_UNUSED_0x76E                        0x76E // Unused Flag
+#define FLAG_UNUSED_0x76F                        0x76F // Unused Flag
+
 #define FLAG_UNUSED_0x770                        0x770 // Unused Flag
 #define FLAG_UNUSED_0x771                        0x771 // Unused Flag
 #define FLAG_UNUSED_0x772                        0x772 // Unused Flag
@@ -1413,9 +1378,9 @@ to 		MossdeepCity_Gym_EventScript_ClearSwitch4
 #define FLAG_EXTREME_SPEED_ZIGZAGOON             0x851 // Unused Flag -tenaya
 #define FLAG_PAY_DAY_SKITTY                      0x852 // Unused Flag -tenaya
 #define FLAG_DEFEATED_BLUE_NAVAL                 0x853 // Unused Flag -tenaya
-#define FLAG_UNUSED_0x854                        0x854 // Unused Flag
-#define FLAG_UNUSED_0x855                        0x855 // Unused Flag
-#define FLAG_UNUSED_0x856                        0x856 // Unused Flag
+#define FLAG_REMOVE_WARP_FADE                    0x854 // Unused Flag -tenaya
+#define FLAG_FORCE_LOAD_OFFSCREEN_OBJ            0x855 // Unused Flag -tenaya
+#define FLAG_SET_BATTLE_BGM                      0x856 // Unused Flag -tenaya
 #define FLAG_UNUSED_0x857                        0x857 // Unused Flag
 #define FLAG_UNUSED_0x858                        0x858 // Unused Flag
 #define FLAG_UNUSED_0x859                        0x859 // Unused Flag
