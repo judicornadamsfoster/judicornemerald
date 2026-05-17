@@ -1046,62 +1046,58 @@
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE) //0x3C9
 
-// Mystery Gift Flags (Unknown)
-#define FLAG_MYSTERY_GIFT_DONE                   0x3CA
-#define FLAG_MYSTERY_GIFT_1                      0x3CB
-#define FLAG_MYSTERY_GIFT_2                      0x3CC
-#define FLAG_MYSTERY_GIFT_3                      0x3CD
-#define FLAG_MYSTERY_GIFT_4                      0x3CE
-#define FLAG_MYSTERY_GIFT_5                      0x3CF
-#define FLAG_MYSTERY_GIFT_6                      0x3D0
-#define FLAG_MYSTERY_GIFT_7                      0x3D1
-#define FLAG_MYSTERY_GIFT_8                      0x3D2
-#define FLAG_MYSTERY_GIFT_9                      0x3D3
-#define FLAG_MYSTERY_GIFT_10                     0x3D4
-#define FLAG_MYSTERY_GIFT_11                     0x3D5
-#define FLAG_MYSTERY_GIFT_12                     0x3D6
-#define FLAG_MYSTERY_GIFT_13                     0x3D7
-#define FLAG_MYSTERY_GIFT_14                     0x3D8
-#define FLAG_MYSTERY_GIFT_15                     0x3D9
+#define FLAG_DEFEATED_RUSTBORO_GYM               0x3CA
+#define FLAG_DEFEATED_DEWFORD_GYM                0x3CB
+#define FLAG_DEFEATED_MAUVILLE_GYM               0x3CC
+#define FLAG_DEFEATED_LAVARIDGE_GYM              0x3CD
+#define FLAG_DEFEATED_PETALBURG_GYM              0x3CE
+#define FLAG_DEFEATED_FORTREE_GYM                0x3CF
+#define FLAG_DEFEATED_MOSSDEEP_GYM               0x3D0
+#define FLAG_DEFEATED_SOOTOPOLIS_GYM             0x3D1
+#define FLAG_DEFEATED_METEOR_FALLS_STEVEN        0x3D2
 
-#define FLAG_DEFEATED_RUSTBORO_GYM               0x3DA
-#define FLAG_DEFEATED_DEWFORD_GYM                0x3DB
-#define FLAG_DEFEATED_MAUVILLE_GYM               0x3DC
-#define FLAG_DEFEATED_LAVARIDGE_GYM              0x3DD
-#define FLAG_DEFEATED_PETALBURG_GYM              0x3DE
-#define FLAG_DEFEATED_FORTREE_GYM                0x3DF
-#define FLAG_DEFEATED_MOSSDEEP_GYM               0x3E0
-#define FLAG_DEFEATED_SOOTOPOLIS_GYM             0x3E1
-#define FLAG_DEFEATED_METEOR_FALLS_STEVEN        0x3E2
+#define FLAG_DEFEATED_ELITE_4_SIDNEY             0x3D3
+#define FLAG_DEFEATED_ELITE_4_PHOEBE             0x3D4
+#define FLAG_DEFEATED_ELITE_4_GLACIA             0x3D5
+#define FLAG_DEFEATED_ELITE_4_DRAKE              0x3D6
 
-#define FLAG_DEFEATED_ELITE_4_SIDNEY             0x3E3
-#define FLAG_DEFEATED_ELITE_4_PHOEBE             0x3E4
-#define FLAG_DEFEATED_ELITE_4_GLACIA             0x3E5
-#define FLAG_DEFEATED_ELITE_4_DRAKE              0x3E6
+#define FLAG_MYSTERY_GIFT_DONE                   0x3D7
 
-#define FLAG_NEVER_SET_0x0DC                     0x3E7 // This flag is read, but never written to
-
-#define FLAG_UNUSED_0x3E8                        0x3E8 // Unused Flag
-#define FLAG_UNUSED_0x3E9                        0x3E9 // Unused Flag
-#define FLAG_UNUSED_0x3EA                        0x3EA // Unused Flag
-#define FLAG_UNUSED_0x3EB                        0x3EB // Unused Flag
-#define FLAG_UNUSED_0x3EC                        0x3EC // Unused Flag
-#define FLAG_UNUSED_0x3ED                        0x3ED // Unused Flag
-#define FLAG_UNUSED_0x3EE                        0x3EE // Unused Flag 
-#define FLAG_UNUSED_0x3EF                        0x3EF // Unused Flag
-
-
+#define FLAG_UNUSED_0x3D8                        0x3D8
+#define FLAG_UNUSED_0x3D9                        0x3D9
+#define FLAG_UNUSED_0x3DA                        0x3DA
+#define FLAG_UNUSED_0x3DB                        0x3DB
+#define FLAG_UNUSED_0x3DC                        0x3DC
+#define FLAG_UNUSED_0x3DD                        0x3DD
+#define FLAG_UNUSED_0x3DE                        0x3DE
+#define FLAG_UNUSED_0x3DF                        0x3DF
 
 // Trainer Flags
-// Trainer flags currently occupy 0x3F0 - 0x74F, the last 9 of which are unused
+// Trainer flags currently occupy 0x3E0 - 0x73F, the last 9 of which are unused
 // See constants/opponents.h. The values there + FLAG_TRAINER_FLAG_START are the flag IDs
 
-#define TRAINER_FLAGS_START                      0x3F0
-#define TRAINER_FLAGS_END                        (TRAINER_FLAGS_START + MAX_TRAINERS_COUNT - 1) // 0x74F
+#define TRAINER_FLAGS_START                      0x3E0
+#define TRAINER_FLAGS_END                        (TRAINER_FLAGS_START + MAX_TRAINERS_COUNT - 1) // 0x73F
 
 
+// unused flags start 0x740
+#define FLAG_UNUSED_0x740                        0x740 // Unused Flag
+#define FLAG_UNUSED_0x741                        0x741 // Unused Flag
+#define FLAG_UNUSED_0x742                        0x742 // Unused Flag
+#define FLAG_UNUSED_0x743                        0x743 // Unused Flag
+#define FLAG_UNUSED_0x744                        0x744 // Unused Flag
+#define FLAG_UNUSED_0x745                        0x745 // Unused Flag
+#define FLAG_UNUSED_0x746                        0x746 // Unused Flag
+#define FLAG_UNUSED_0x747                        0x747 // Unused Flag
+#define FLAG_UNUSED_0x748                        0x748 // Unused Flag
+#define FLAG_UNUSED_0x749                        0x749 // Unused Flag
+#define FLAG_UNUSED_0x74A                        0x74A // Unused Flag
+#define FLAG_UNUSED_0x74B                        0x74B // Unused Flag
+#define FLAG_UNUSED_0x74C                        0x74C // Unused Flag
+#define FLAG_UNUSED_0x74D                        0x74D // Unused Flag
+#define FLAG_UNUSED_0x74E                        0x74E // Unused Flag 
+#define FLAG_UNUSED_0x74F                        0x74F // Unused Flag
 
-// unused flags start 0x750
 #define FLAG_UNUSED_0x750                        0x750 // Unused Flag
 #define FLAG_UNUSED_0x751                        0x751 // Unused Flag
 #define FLAG_UNUSED_0x752                        0x752 // Unused Flag
