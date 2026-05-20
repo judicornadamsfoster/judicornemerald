@@ -1012,6 +1012,9 @@ Common_EventScript_LegendaryFlewAway::
 Text_MonCryScript::
 	.string "{STR_VAR_2}: {STR_VAR_3}$"
 
+Common_EventScript_End::
+	end
+
 
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"

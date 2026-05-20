@@ -14,6 +14,7 @@ MarineCave_End_EventScript_TryRemoveKyogre::
 	return
 
 MarineCave_End_OnTransition:
+	goto_if_set FLAG_CAUGHT_KYOGRE, Common_EventScript_End
 	call_if_unset FLAG_DEFEATED_KYOGRE, MarineCave_End_EventScript_ShowKyogre
 	end
 
@@ -39,6 +40,7 @@ MarineCave_End_EventScript_Kyogre::
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	setvar VAR_TEMP_1, 0
 	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MarineCave_End_EventScript_CaughtKyogre
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MarineCave_End_EventScript_DefeatedKyogre
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MarineCave_End_EventScript_RanFromKyogre
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MarineCave_End_EventScript_RanFromKyogre
@@ -46,6 +48,14 @@ MarineCave_End_EventScript_Kyogre::
 	setflag FLAG_DEFEATED_KYOGRE
 	releaseall
 	end
+
+MarineCave_End_EventScript_CaughtKyogre::
+	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
+	setflag FLAG_CAUGHT_KYOGRE
+	setflag FLAG_DEFEATED_KYOGRE
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
 
 MarineCave_End_EventScript_DefeatedKyogre::
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1

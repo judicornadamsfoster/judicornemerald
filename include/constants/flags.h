@@ -1377,12 +1377,12 @@
 #define FLAG_REMOVE_WARP_FADE                    0x854 // Unused Flag -tenaya
 #define FLAG_FORCE_LOAD_OFFSCREEN_OBJ            0x855 // Unused Flag -tenaya
 #define FLAG_SET_BATTLE_BGM                      0x856 // Unused Flag -tenaya
-#define FLAG_UNUSED_0x857                        0x857 // Unused Flag
-#define FLAG_UNUSED_0x858                        0x858 // Unused Flag
-#define FLAG_UNUSED_0x859                        0x859 // Unused Flag
-#define FLAG_UNUSED_0x85A                        0x85A // Unused Flag
-#define FLAG_UNUSED_0x85B                        0x85B // Unused Flag
-#define FLAG_UNUSED_0x85C                        0x85C // Unused Flag
+#define FLAG_CAUGHT_REGIROCK                     0x857 // Unused Flag
+#define FLAG_CAUGHT_REGICE                       0x858 // Unused Flag
+#define FLAG_CAUGHT_REGISTEEL                    0x859 // Unused Flag
+#define FLAG_CAUGHT_KYOGRE                       0x85A // Unused Flag
+#define FLAG_CAUGHT_GROUDON                      0x85B // Unused Flag
+#define FLAG_CAUGHT_RAYQUAZA                     0x85C // Unused Flag
 #define FLAG_UNUSED_0x85D                        0x85D // Unused Flag
 #define FLAG_UNUSED_0x85E                        0x85E // Unused Flag
 #define FLAG_UNUSED_0x85F                        0x85F // Unused Flag
