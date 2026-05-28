@@ -267,9 +267,9 @@
 #define OBJ_EVENT_GFX_MOLTRES                    250
 #define OBJ_EVENT_GFX_SNEASEL                    251
 #define OBJ_EVENT_GFX_ZAPDOS                     252
-#define OBJ_EVENT_GFX_METEOR                   253
-#define OBJ_EVENT_GFX_MOSS_ROCK                254
-#define OBJ_EVENT_GFX_ICY_ROCK                 255
+#define OBJ_EVENT_GFX_METEOR                     253
+#define OBJ_EVENT_GFX_MOSS_ROCK                  254
+#define OBJ_EVENT_GFX_ICY_ROCK                   255
 #define OBJ_EVENT_GFX_METEOR2                    256
 #define OBJ_EVENT_GFX_METEOR3                    257
 #define OBJ_EVENT_GFX_HALLOWED_TOWER             258
@@ -278,6 +278,7 @@
 #define OBJ_EVENT_GFX_VULPIX                     261
 #define OBJ_EVENT_GFX_BLUE                       262
 #define OBJ_EVENT_GFX_SILVER                     263
+#define OBJ_EVENT_GFX_SPIKY_PICHU                264 
 
 
 
@@ -292,7 +293,7 @@
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
 // this number must be +1 to the last #define above
-#define NUM_OBJ_EVENT_GFX                        264
+#define NUM_OBJ_EVENT_GFX                        265
 
 
 // These are dynamic object gfx ids.

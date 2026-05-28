@@ -425,4 +425,6 @@ const u32 gObjectEventPic_Blue[] = INCGFX_U32("graphics/object_events/pics/peopl
 const u16 gObjectEventPal_Blue[] = INCGFX_U16("graphics/object_events/palettes/blue.pal", ".gbapal");
 const u32 gObjectEventPic_Silver[] = INCGFX_U32("graphics/object_events/pics/people/silver.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_Silver[] = INCGFX_U16("graphics/object_events/palettes/silver.pal", ".gbapal");
+const u32 gObjectEventPic_Spiky_Pichu[] = INCGFX_U32("graphics/object_events/pics/pokemon/spiky_pichu.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Spiky_Pichu[] = INCGFX_U16("graphics/object_events/palettes/spiky_pichu.pal", ".gbapal");
 
