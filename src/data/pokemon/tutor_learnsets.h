@@ -5860,6 +5860,24 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_ENDURE)
                                 | TUTOR(MOVE_SWAGGER)
                                 | TUTOR(MOVE_SLEEP_TALK)),
+								
+    [SPECIES_SPIKY_PICHU]       = (TUTOR(MOVE_MEGA_PUNCH)
+                                | TUTOR(MOVE_MEGA_KICK)
+                                | TUTOR(MOVE_BODY_SLAM)
+                                | TUTOR(MOVE_DOUBLE_EDGE)
+                                | TUTOR(MOVE_COUNTER)
+                                | TUTOR(MOVE_SEISMIC_TOSS)
+                                | TUTOR(MOVE_MIMIC)
+                                | TUTOR(MOVE_THUNDER_WAVE)
+                                | TUTOR(MOVE_SUBSTITUTE)
+                                | TUTOR(MOVE_ROLLOUT)
+                                | TUTOR(MOVE_SNORE)
+                                | TUTOR(MOVE_ENDURE)
+                                | TUTOR(MOVE_MUD_SLAP)
+                                | TUTOR(MOVE_SWAGGER)
+                                | TUTOR(MOVE_SLEEP_TALK)
+                                | TUTOR(MOVE_SWIFT)
+                                | TUTOR(MOVE_DEFENSE_CURL)),
 
 };
 

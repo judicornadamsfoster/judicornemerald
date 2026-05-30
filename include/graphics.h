@@ -2794,6 +2794,14 @@ extern const u32 gMonStillFrontPic_Spiritomb[];
 extern const u8 gMonIcon_Spiritomb[];
 extern const u8 gMonFootprint_Spiritomb[];
 
+extern const u32 gMonFrontPic_Spiky_Pichu[];
+extern const u32 gMonPalette_Spiky_Pichu[];
+extern const u32 gMonBackPic_Spiky_Pichu[];
+extern const u32 gMonShinyPalette_Spiky_Pichu[];
+extern const u32 gMonStillFrontPic_Spiky_Pichu[];
+extern const u8 gMonIcon_Spiky_Pichu[];
+extern const u8 gMonFootprint_Spiky_Pichu[];
+
 extern const u32 gMonPic_Egg[];
 extern const u32 gMonPalette_Egg[];
 extern const u32 gMonFrontPic_Egg[];

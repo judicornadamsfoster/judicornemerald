@@ -416,5 +416,6 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_GLACEON] = gMonFootprint_Glaceon,
     [SPECIES_SYLVEON] = gMonFootprint_Sylveon,
 	[SPECIES_SPIRITOMB] = gMonFootprint_Spiritomb,
+	[SPECIES_SPIKY_PICHU] = gMonFootprint_Spiky_Pichu,
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
 };

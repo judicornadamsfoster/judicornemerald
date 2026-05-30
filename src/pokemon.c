@@ -525,6 +525,7 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
 	[SPECIES_DEOXYS_ATTACK - 1] = HOENN_DEX_DEOXYS,
 	[SPECIES_DEOXYS_DEFENSE - 1] = HOENN_DEX_DEOXYS,
 	[SPECIES_DEOXYS_SPEED - 1] = HOENN_DEX_DEOXYS,
+	[SPECIES_SPIKY_PICHU -1] = HOENN_DEX_PICHU,
 };
 
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -948,6 +949,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
 	[SPECIES_DEOXYS_ATTACK - 1] = NATIONAL_DEX_DEOXYS,
 	[SPECIES_DEOXYS_DEFENSE - 1] = NATIONAL_DEX_DEOXYS,
 	[SPECIES_DEOXYS_SPEED - 1] = NATIONAL_DEX_DEOXYS,
+	[SPECIES_SPIKY_PICHU -1] = NATIONAL_DEX_PICHU,
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -1371,6 +1373,7 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     //HOENN_TO_NATIONAL(DEOXYS_ATTACK),
     //HOENN_TO_NATIONAL(DEOXYS_DEFENSE),
     //HOENN_TO_NATIONAL(DEOXYS_SPEED),
+	//HOENN_TO_NATIONAL(SPIKY_PICHU),
 };
 
 const struct SpindaSpot gSpindaSpotGraphics[] =
@@ -1818,6 +1821,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_DEOXYS_DEFENSE - 1]   = ANIM_GROW_VIBRATE,
     [SPECIES_DEOXYS_SPEED - 1]     = ANIM_GROW_VIBRATE,
 	[SPECIES_SPIRITOMB - 1]   = ANIM_GROW_IN_STAGES,
+    [SPECIES_SPIKY_PICHU - 1]       = ANIM_V_JUMPS_BIG,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =

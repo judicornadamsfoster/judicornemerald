@@ -423,6 +423,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_DEOXYS_DEFENSE]   = { .size = MON_COORDS_SIZE(56, 64), .y_offset =  0 },
     [SPECIES_DEOXYS_SPEED]     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  1 },
     [SPECIES_SPIRITOMB]   = { .size = MON_COORDS_SIZE(56, 56), .y_offset =  6 },
+    [SPECIES_SPIKY_PICHU] = { .size = MON_COORDS_SIZE(32, 40), .y_offset = 12 },
     [SPECIES_EGG]         = { .size = MON_COORDS_SIZE(24, 24), .y_offset = 20 },
     [SPECIES_UNOWN_B]     = { .size = MON_COORDS_SIZE(24, 32), .y_offset = 16 },
     [SPECIES_UNOWN_C]     = { .size = MON_COORDS_SIZE(32, 32), .y_offset = 16 },

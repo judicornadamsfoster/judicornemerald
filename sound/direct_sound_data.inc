@@ -1967,6 +1967,10 @@ Cry_Spiritomb::
 	.incbin "sound/direct_sound_samples/cries/spiritomb.bin"
 
 	.align 2
+Cry_Spiky_Pichu::
+	.incbin "sound/direct_sound_samples/cries/pichu.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

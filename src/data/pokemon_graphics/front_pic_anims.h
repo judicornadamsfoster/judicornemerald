@@ -4668,6 +4668,16 @@ static const union AnimCmd sAnim_Spiritomb_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_Spiky_Pichu_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_Egg_1[] =
 {
     ANIMCMD_FRAME(0, 6),
@@ -5316,6 +5326,7 @@ DOUBLE_ANIMATION(DeoxysA);
 DOUBLE_ANIMATION(DeoxysD);
 DOUBLE_ANIMATION(DeoxysS);
 SINGLE_ANIMATION(Spiritomb);
+SINGLE_ANIMATION(Spiky_Pichu);
 SINGLE_ANIMATION(Egg);
 SINGLE_ANIMATION(UnownB);
 SINGLE_ANIMATION(UnownC);
@@ -5766,6 +5777,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_DEOXYS_DEFENSE]   = sAnims_DeoxysD,
     [SPECIES_DEOXYS_SPEED]     = sAnims_DeoxysS,
 	[SPECIES_SPIRITOMB]   = sAnims_Spiritomb,
+	[SPECIES_SPIKY_PICHU] = sAnims_Spiky_Pichu,
 
     [SPECIES_EGG]         = sAnims_Egg,
     [SPECIES_UNOWN_B]     = sAnims_UnownB,

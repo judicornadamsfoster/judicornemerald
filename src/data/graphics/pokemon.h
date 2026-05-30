@@ -2762,6 +2762,12 @@ const u32 gMonShinyPalette_Spiritomb[] = INCGFX_U32("graphics/pokemon/spiritomb/
 const u8 gMonIcon_Spiritomb[] = INCGFX_U8("graphics/pokemon/spiritomb/icon.png", ".4bpp");
 const u8 gMonFootprint_Spiritomb[] = INCGFX_U8("graphics/pokemon/spiritomb/footprint.png", ".1bpp");
 
+const u32 gMonStillFrontPic_Spiky_Pichu[] = INCGFX_U32("graphics/pokemon/spiky_pichu/anim_front.png", ".4bpp.lz");
+const u32 gMonPalette_Spiky_Pichu[] = INCGFX_U32("graphics/pokemon/spiky_pichu/normal.pal", ".gbapal.lz");
+const u32 gMonBackPic_Spiky_Pichu[] = INCGFX_U32("graphics/pokemon/spiky_pichu/back.png", ".4bpp.lz");
+const u32 gMonShinyPalette_Spiky_Pichu[] = INCGFX_U32("graphics/pokemon/spiky_pichu/shiny.pal", ".gbapal.lz");
+const u8 gMonIcon_Spiky_Pichu[] = INCGFX_U8("graphics/pokemon/spiky_pichu/icon.png", ".4bpp");
+const u8 gMonFootprint_Spiky_Pichu[] = INCGFX_U8("graphics/pokemon/spiky_pichu/footprint.png", ".1bpp");
 
 const u32 gMonStillFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/front.png", ".4bpp.lz");
 const u32 gMonPalette_Egg[] = INCGFX_U32("graphics/pokemon/egg/normal.pal", ".gbapal.lz");
