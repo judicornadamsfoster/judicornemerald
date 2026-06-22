@@ -68,14 +68,17 @@ EvergrandeCity_Text_Celebi:
 	.string "Biiiiii!$"
 
 EvergrandeCity_Movement_Celebi:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right	
-	walk_right
-	walk_right
-	walk_right
+	hide_reflection
+	lock_facing_direction
+	walk_diag_northeast
+	walk_diag_southeast
+	walk_diag_northeast
+	walk_diag_southeast
+	walk_diag_northeast
+	walk_diag_southeast
+	walk_diag_northeast
+	walk_diag_southeast
+	unlock_facing_direction
 	delay_16
 	delay_16
 	face_down
@@ -86,18 +89,22 @@ EvergrandeCity_Movement_Celebi:
 	step_end
 
 EvergrandeCity_Movement_Celebi2:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+	hide_reflection
+	face_right
+	lock_facing_direction
+	walk_diag_northeast
+	walk_diag_southeast
+	walk_diag_northeast
+	walk_diag_southeast
+	walk_diag_northeast
+	walk_diag_southeast
+	walk_diag_northeast
+	walk_diag_southeast
+	walk_diag_northeast
+	walk_diag_southeast
+	walk_diag_northeast
+	walk_diag_southeast
+	unlock_facing_direction
 	step_end
 
 EvergrandeCity_Movement_CameraPanUp:
